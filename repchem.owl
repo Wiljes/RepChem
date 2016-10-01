@@ -299,15 +299,6 @@
     
 
 
-    <!-- http://dbpedia.org/resource/Biology -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Biology">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
-        <rdfs:label xml:lang="en">biology</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://dbpedia.org/resource/Catalyst -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Catalyst">
@@ -326,15 +317,6 @@
         <rdfs:comment xml:lang="de">Eine chemische Reaktion ist ein Vorgang, bei dem eine oder meist mehrere chemische Verbindungen in andere umgewandelt werden. Auch Elemente können an Reaktionen beteiligt sein. Chemische Reaktionen sind in der Regel mit Veränderungen der chemischen Bindungen in Molekülen oder Kristallen verbunden. Durch eine chemische Reaktion können sich die Eigenschaften der Produkte im Vergleich zu den Edukten stark ändern.</rdfs:comment>
         <rdfs:label xml:lang="en">chemical reaction</rdfs:label>
         <rdfs:label xml:lang="de">chemische Reaktion</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Chemistry -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Chemistry">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
-        <rdfs:label xml:lang="en">chemistry</rdfs:label>
     </owl:Class>
     
 
@@ -615,23 +597,6 @@
     
 
 
-    <!-- http://dbpedia.org/resource/Physics -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Physics">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
-        <rdfs:label xml:lang="en">physics</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Science -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Science">
-        <rdfs:label xml:lang="en">science</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://dbpedia.org/resource/Subatomic_particle -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Subatomic_particle">
@@ -721,30 +686,6 @@
 
     <owl:Class rdf:about="http://www.physical-chemistry.com/OrganicNameReacton">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_reaction"/>
-    </owl:Class>
-    
-
-
-    <!-- https://dbpedia.org/resource/Analytical_chemistry -->
-
-    <owl:Class rdf:about="https://dbpedia.org/resource/Analytical_chemistry">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
-    </owl:Class>
-    
-
-
-    <!-- https://dbpedia.org/resource/Environmental_chemistry -->
-
-    <owl:Class rdf:about="https://dbpedia.org/resource/Environmental_chemistry">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
-    </owl:Class>
-    
-
-
-    <!-- https://dbpedia.org/resource/Physical_chemistry -->
-
-    <owl:Class rdf:about="https://dbpedia.org/resource/Physical_chemistry">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
     </owl:Class>
     
 
@@ -2123,25 +2064,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://dbpedia.org/resource/Biology"/>
-            <rdf:Description rdf:about="http://dbpedia.org/resource/Chemistry"/>
-            <rdf:Description rdf:about="http://dbpedia.org/resource/Physics"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://dbpedia.org/resource/Science"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000019"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000027"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
