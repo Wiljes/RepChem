@@ -303,12 +303,6 @@ dbr:Group_9_element rdf:type owl:Class ;
 
 
 
-###  http://dbpedia.org/resource/Group__element
-
-dbr:Group__element rdf:type owl:Class .
-
-
-
 ###  http://dbpedia.org/resource/Length
 
 dbr:Length rdf:type owl:Class ;
@@ -397,10 +391,30 @@ dbr:Time rdf:type owl:Class ;
 #################################################################
 
 
+###  http://dbpedia.org/resource/Acetone
+
+dbr:Acetone rdf:type owl:NamedIndividual ,
+                     dbr:Chemical_compound ;
+            
+            rdfs:label "Aceton"@de ,
+                       "Acetone"@en .
+
+
+
+###  http://dbpedia.org/resource/Acetylene
+
+dbr:Acetylene rdf:type owl:NamedIndividual ,
+                       dbr:Chemical_compound ;
+              
+              rdfs:label "Acetylen"@de ,
+                         "Acetylene"@en .
+
+
+
 ###  http://dbpedia.org/resource/Actinium
 
 dbr:Actinium rdf:type owl:NamedIndividual ,
-                      dbr:Group__element ;
+                      dbr:Chemical_element ;
              
              :hasSymbol "Ac" ;
              
@@ -422,7 +436,7 @@ dbr:Aluminium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Americium
 
 dbr:Americium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Am" ;
               
@@ -498,7 +512,7 @@ dbr:Barium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Berkelium
 
 dbr:Berkelium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Bk" ;
               
@@ -600,7 +614,7 @@ dbr:Calcium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Californium
 
 dbr:Californium rdf:type owl:NamedIndividual ,
-                         dbr:Group__element ;
+                         dbr:Chemical_element ;
                 
                 :hasSymbol "Cf" ;
                 
@@ -622,7 +636,7 @@ dbr:Carbon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Cerium
 
 dbr:Cerium rdf:type owl:NamedIndividual ,
-                    dbr:Group__element ;
+                    dbr:Chemical_element ;
            
            :hasSymbol "Ce" ;
            
@@ -688,7 +702,7 @@ dbr:Copper rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Curium
 
 dbr:Curium rdf:type owl:NamedIndividual ,
-                    dbr:Group__element ;
+                    dbr:Chemical_element ;
            
            :hasSymbol "Cm" ;
            
@@ -734,7 +748,7 @@ dbr:Dubnium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Dysprosium
 
 dbr:Dysprosium rdf:type owl:NamedIndividual ,
-                        dbr:Group__element ;
+                        dbr:Chemical_element ;
                
                :hasSymbol "Dy" ;
                
@@ -745,7 +759,7 @@ dbr:Dysprosium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Einsteinium
 
 dbr:Einsteinium rdf:type owl:NamedIndividual ,
-                         dbr:Group__element ;
+                         dbr:Chemical_element ;
                 
                 :hasSymbol "Es" ;
                 
@@ -756,7 +770,7 @@ dbr:Einsteinium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Erbium
 
 dbr:Erbium rdf:type owl:NamedIndividual ,
-                    dbr:Group__element ;
+                    dbr:Chemical_element ;
            
            :hasSymbol "Er" ;
            
@@ -767,7 +781,7 @@ dbr:Erbium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Europium
 
 dbr:Europium rdf:type owl:NamedIndividual ,
-                      dbr:Group__element ;
+                      dbr:Chemical_element ;
              
              :hasSymbol "Eu" ;
              
@@ -778,7 +792,7 @@ dbr:Europium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Fermium
 
 dbr:Fermium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "Fm" ;
             
@@ -837,7 +851,7 @@ dbr:Freezing rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Gadolinium
 
 dbr:Gadolinium rdf:type owl:NamedIndividual ,
-                        dbr:Group__element ;
+                        dbr:Chemical_element ;
                
                :hasSymbol "Gd" ;
                
@@ -907,6 +921,8 @@ dbr:Helium rdf:type owl:NamedIndividual ,
            
            :hasSymbol "He" ;
            
+           rdfs:comment "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among all the elements.Helium is the second lightest element and is the second most abundant element in the observable universe, being present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined."@en ;
+           
            rdfs:label "Helium"@de ,
                       "Helium"@en .
 
@@ -915,7 +931,7 @@ dbr:Helium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Holmium
 
 dbr:Holmium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "Ho" ;
             
@@ -1005,7 +1021,7 @@ dbr:Krypton rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Lanthanum
 
 dbr:Lanthanum rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "La" ;
               
@@ -1106,7 +1122,7 @@ dbr:Meitnerium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Mendelevium
 
 dbr:Mendelevium rdf:type owl:NamedIndividual ,
-                         dbr:Group__element ;
+                         dbr:Chemical_element ;
                 
                 :hasSymbol "Md" ;
                 
@@ -1150,7 +1166,7 @@ dbr:Natrium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Neodymium
 
 dbr:Neodymium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Nd" ;
               
@@ -1173,7 +1189,7 @@ dbr:Neon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Neptunium
 
 dbr:Neptunium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Np" ;
               
@@ -1217,7 +1233,7 @@ dbr:Nitrogen rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Nobelium
 
 dbr:Nobelium rdf:type owl:NamedIndividual ,
-                      dbr:Group__element ;
+                      dbr:Chemical_element ;
              
              :hasSymbol "No" ;
              
@@ -1283,7 +1299,7 @@ dbr:Platinum rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Plutonium
 
 dbr:Plutonium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Pu" ;
               
@@ -1316,7 +1332,7 @@ dbr:Potassium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Praseodymium
 
 dbr:Praseodymium rdf:type owl:NamedIndividual ,
-                          dbr:Group__element ;
+                          dbr:Chemical_element ;
                  
                  :hasSymbol "Pr" ;
                  
@@ -1327,7 +1343,7 @@ dbr:Praseodymium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Promethium
 
 dbr:Promethium rdf:type owl:NamedIndividual ,
-                        dbr:Group__element ;
+                        dbr:Chemical_element ;
                
                :hasSymbol "Pm" ;
                
@@ -1338,7 +1354,7 @@ dbr:Promethium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Protactinium
 
 dbr:Protactinium rdf:type owl:NamedIndividual ,
-                          dbr:Group__element ;
+                          dbr:Chemical_element ;
                  
                  :hasSymbol "Pa" ;
                  
@@ -1439,7 +1455,7 @@ dbr:Rutherfordium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Samarium
 
 dbr:Samarium rdf:type owl:NamedIndividual ,
-                      dbr:Group__element ;
+                      dbr:Chemical_element ;
              
              :hasSymbol "Sm" ;
              
@@ -1571,7 +1587,7 @@ dbr:Tellurium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Terbium
 
 dbr:Terbium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "Tb" ;
             
@@ -1593,7 +1609,7 @@ dbr:Thallium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Thorium
 
 dbr:Thorium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "Th" ;
             
@@ -1604,7 +1620,7 @@ dbr:Thorium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Thulium
 
 dbr:Thulium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "Tm" ;
             
@@ -1692,7 +1708,7 @@ dbr:Ununtrium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Uranium
 
 dbr:Uranium rdf:type owl:NamedIndividual ,
-                     dbr:Group__element ;
+                     dbr:Chemical_element ;
             
             :hasSymbol "U" ;
             
@@ -1735,7 +1751,7 @@ dbr:Xenon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Ytterbium
 
 dbr:Ytterbium rdf:type owl:NamedIndividual ,
-                       dbr:Group__element ;
+                       dbr:Chemical_element ;
               
               :hasSymbol "Yb" ;
               
