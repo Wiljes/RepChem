@@ -12,9 +12,22 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://physical-chemistry.com/> .
 
-<http://physical-chemistry.com/> rdf:type owl:Ontology ;
-                                 
-                                 owl:imports <http://www.ifomis.org/bfo/1.1> .
+<http://physical-chemistry.com/> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+
 
 
 #################################################################
@@ -127,7 +140,7 @@ dbo:ChemicalCompound rdf:type owl:Class ;
 
 dbo:ChemicalSubstance rdf:type owl:Class ;
                       
-                      rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate> .
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000027> .
 
 
 
@@ -135,7 +148,7 @@ dbo:ChemicalSubstance rdf:type owl:Class ;
 
 dbo:Si_Qualities rdf:type owl:Class ;
                  
-                 rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Quality> ;
+                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                  
                  rdfs:label "SI Größen"@de ,
                             "SI Qualities"@en .
@@ -154,7 +167,7 @@ dbr:Amount_of_substance rdf:type owl:Class ;
 
 dbr:Catalyst rdf:type owl:Class ;
              
-             rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Role> ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
              
              rdfs:label "Katalysator"@de ,
                         "catalyst"@en .
@@ -165,7 +178,7 @@ dbr:Catalyst rdf:type owl:Class ;
 
 dbr:Chemical_compound rdf:type owl:Class ;
                       
-                      rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate> ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000027> ;
                       
                       rdfs:label "Chemical compound"@en ,
                                  "Chemische Verbindung"@de .
@@ -176,7 +189,7 @@ dbr:Chemical_compound rdf:type owl:Class ;
 
 dbr:Chemical_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Object> ;
+                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
                      
                      rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en ,
                                   "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
@@ -190,13 +203,13 @@ dbr:Chemical_element rdf:type owl:Class ;
 
 dbr:Chemical_reaction rdf:type owl:Class ;
                       
-                      rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#Process> ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                       
                       rdfs:comment "A chemical reaction is a process that leads to the transformation of one set of chemical substances to another. Classically, chemical reactions encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei (no change to the elements present), and can often be described by a chemical equation."@en ,
                                    "Eine chemische Reaktion ist ein Vorgang, bei dem eine oder meist mehrere chemische Verbindungen in andere umgewandelt werden. Auch Elemente können an Reaktionen beteiligt sein. Chemische Reaktionen sind in der Regel mit Veränderungen der chemischen Bindungen in Molekülen oder Kristallen verbunden. Durch eine chemische Reaktion können sich die Eigenschaften der Produkte im Vergleich zu den Edukten stark ändern."@de ;
                       
-                      rdfs:label "Chemische Reaktion"@de ,
-                                 "chemical reaction"@en .
+                      rdfs:label "chemical reaction"@en ,
+                                 "chemische Reaktion"@de .
 
 
 
@@ -212,7 +225,7 @@ dbr:Diels_Alder_reaction rdf:type owl:Class ;
 
 dbr:Drug rdf:type owl:Class ;
          
-         rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Role> .
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> .
 
 
 
@@ -465,7 +478,7 @@ dbr:Melting rdf:type owl:Class ;
 
 dbr:Melting_point rdf:type owl:Class ;
                   
-                  rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Quality> ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                   
                   rdfs:comment "Als Schmelztemperatur bezeichnet man die Temperatur, bei der ein Stoff schmilzt, das heißt vom festen in den flüssigen Aggregatzustand übergeht. Die Schmelztemperatur ist abhängig vom Stoff, im Gegensatz zur Siedetemperatur aber nur sehr wenig vom Druck (Schmelzdruck). Schmelztemperatur und Druck werden zusammen als Schmelzpunkt bezeichnet, wobei dieser den Zustand eines Reinstoffes beschreibt und Teil der Schmelzkurve im Phasendiagramm des Stoffes ist."@de ,
                                "The melting point (or, rarely, liquefaction point) of a solid is the temperature at which it changes state from solid to liquid at atmospheric pressure. At the melting point the solid and liquid phase exist in equilibrium. The melting point of a substance depends on pressure and is usually specified at standard pressure. When considered as the temperature of the reverse change from liquid to solid, it is referred to as the freezing point or crystallization point."@en ;
@@ -487,7 +500,7 @@ dbr:Neutron rdf:type owl:Class ;
 
 dbr:Phase_transition rdf:type owl:Class ;
                      
-                     rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#Process> ;
+                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                      
                      rdfs:comment "A phase transition is the transformation of a thermodynamic system from one phase or state of matter to another one by heat transfer. The term is most commonly used to describe transitions between solid, liquid and gaseous states of matter, and, in rare cases, plasma. A phase of a thermodynamic system and the states of matter have uniform physical properties."@en ,
                                   "Ein Phasenübergang bzw. eine Phasenumwandlung oder Phasentransformation ist in der Thermodynamik die Umwandlung einer oder mehrerer Phasen eines Stoffes in andere Phasen. Eine grafische Darstellung der Stabilitätsbereiche der Phasen in Abhängigkeit von den Zustandsvariablen wie Druck, Temperatur, chemischer Zusammensetzung und magnetischer Feldstärke liefern Phasendiagramme."@de ;
@@ -511,7 +524,7 @@ dbr:Proton rdf:type owl:Class ;
 
 dbr:Subatomic_particle rdf:type owl:Class ;
                        
-                       rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Object> ;
+                       rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
                        
                        rdfs:seeAlso "https://en.wikipedia.org/wiki/Elementary_particle"@en .
 
@@ -530,6 +543,36 @@ dbr:Temperature rdf:type owl:Class ;
 dbr:Time rdf:type owl:Class ;
          
          rdfs:subClassOf dbo:Si_Qualities .
+
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000015
+
+<http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000019
+
+<http://purl.obolibrary.org/obo/BFO_0000019> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000023
+
+<http://purl.obolibrary.org/obo/BFO_0000023> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000027
+
+<http://purl.obolibrary.org/obo/BFO_0000027> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000030
+
+<http://purl.obolibrary.org/obo/BFO_0000030> rdf:type owl:Class .
 
 
 
