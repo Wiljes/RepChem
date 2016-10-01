@@ -1,4 +1,4 @@
-@prefix : <http://physical-chemistry.com/> .
+@prefix : <#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix dbr: <http://dbpedia.org/resource/> .
@@ -77,7 +77,8 @@ dbo:atomicNumber rdf:type owl:ObjectProperty ;
 
 dbo:boilingPoint rdf:type owl:ObjectProperty ;
                  
-                 rdfs:domain dbo:ChemicalSubstance .
+                 rdfs:domain dbo:ChemicalCompound ,
+                             dbo:ChemicalSubstance .
 
 
 
@@ -170,9 +171,7 @@ dbo:smiles rdf:type owl:ObjectProperty ;
 
 ###  http://dbpedia.org/ontology/boilingPoint
 
-dbo:boilingPoint rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:domain dbo:ChemicalCompound .
+dbo:boilingPoint rdf:type owl:DatatypeProperty .
 
 
 
