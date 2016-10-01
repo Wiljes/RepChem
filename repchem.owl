@@ -12,11 +12,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://physical-chemistry.com/> .
+@base <http://www.w3.org/2002/07/owl#> .
 
-<http://physical-chemistry.com/> rdf:type owl:Ontology ;
-                                 
-                                 owl:imports obo:bfo/2.0/bfo.owl .
 
 
 #################################################################
@@ -68,11 +65,43 @@ dbo:metre rdf:type rdfs:Datatype .
 #################################################################
 
 
+###  http://dbpedia.org/ontology/atomicNumber
+
+dbo:atomicNumber rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain dbo:ChemicalElement .
+
+
+
 ###  http://dbpedia.org/ontology/boilingPoint
 
 dbo:boilingPoint rdf:type owl:ObjectProperty ;
                  
                  rdfs:domain dbo:ChemicalSubstance .
+
+
+
+###  http://dbpedia.org/ontology/elementBlock
+
+dbo:elementBlock rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain dbo:ChemicalElement .
+
+
+
+###  http://dbpedia.org/ontology/elementGroup
+
+dbo:elementGroup rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain dbo:ChemicalElement .
+
+
+
+###  http://dbpedia.org/ontology/elementPeriod
+
+dbo:elementPeriod rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain dbo:ChemicalElement .
 
 
 
@@ -102,9 +131,7 @@ dbo:inn rdf:type owl:ObjectProperty ;
 
 dbo:molecularWeight rdf:type owl:ObjectProperty ;
                     
-                    rdfs:domain dbo:ChemicalSubstance ;
-                    
-                    rdfs:label "has malecular weight" .
+                    rdfs:domain dbo:ChemicalSubstance .
 
 
 
@@ -116,13 +143,19 @@ dbo:pubchem rdf:type owl:ObjectProperty ;
 
 
 
+###  http://dbpedia.org/ontology/relativeAtomicMass
+
+dbo:relativeAtomicMass rdf:type owl:ObjectProperty ;
+                       
+                       rdfs:domain dbo:ChemicalElement .
+
+
+
 ###  http://dbpedia.org/ontology/smiles
 
 dbo:smiles rdf:type owl:ObjectProperty ;
            
-           rdfs:domain dbo:ChemicalCompound ;
-           
-           rdfs:range dbr:Chemical_reaction .
+           rdfs:domain dbo:ChemicalCompound .
 
 
 
@@ -199,6 +232,23 @@ dbo:ChemicalCompound rdf:type owl:Class ;
 
 
 
+###  http://dbpedia.org/ontology/ChemicalElement
+
+dbo:ChemicalElement rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf obo:BFO_0000030 ;
+                    
+                    rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en ,
+                                 "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
+                    
+                    rdfs:label "Chemical element"@en ,
+                               "Chemisches Element"@de ;
+                    
+                    rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemisches_Element"@de ,
+                                 "https://en.wikipedia.org/wiki/Chemical_element"@en .
+
+
+
 ###  http://dbpedia.org/ontology/ChemicalSubstance
 
 dbo:ChemicalSubstance rdf:type owl:Class ;
@@ -239,23 +289,6 @@ dbr:Catalyst rdf:type owl:Class ;
              
              rdfs:label "Katalysator"@de ,
                         "catalyst"@en .
-
-
-
-###  http://dbpedia.org/resource/Chemical_element
-
-dbr:Chemical_element rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf obo:BFO_0000030 ;
-                     
-                     rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en ,
-                                  "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
-                     
-                     rdfs:label "Chemical element"@en ,
-                                "Chemisches Element"@de ;
-                     
-                     rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemisches_Element"@de ,
-                                  "https://en.wikipedia.org/wiki/Chemical_element"@en .
 
 
 
@@ -317,7 +350,7 @@ dbr:Freezing rdf:type owl:Class ;
 
 dbr:Group_10_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element ;
+                     rdfs:subClassOf dbo:ChemicalElement ;
                      
                      rdfs:comment "Die Nickelgruppe, manchmal auch Platingruppe genannt, ist die 10. Gruppe des Periodensystems der Elemente mit den Elementen Nickel (Ni), Palladium (Pd), Platin (Pt) und dem erstmals 1994 hergestellten Darmstadtium (Ds).Die Bezeichnung wird selten verwendet, da die Gruppe meist mit der 8. und 9. Gruppe zur Eisen-Platin-Gruppe zusammengefasst wird.Nicht damit verwechseln darf man die Elemente der Gruppen 8 bis 10 der 5. und 6."@de ,
                                   "Group 10, numbered by current IUPAC style, is the group of chemical elements in the periodic table that consists of nickel (Ni), palladium (Pd), platinum (Pt), and darmstadtium (Ds). All are d-block transition metals."@en ;
@@ -331,7 +364,7 @@ dbr:Group_10_element rdf:type owl:Class ;
 
 dbr:Group_11_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element ;
+                     rdfs:subClassOf dbo:ChemicalElement ;
                      
                      rdfs:comment "Group 11, by modern IUPAC numbering, is a group of chemical elements in the periodic table, consisting of copper (Cu), silver (Ag), and gold (Au). Roentgenium (Rg) is also placed in this group in the periodic table, although no chemical experiments have yet been carried out to confirm that it behaves like the heavier homologue to gold. Group 11 is also known as the coinage metals, due to their former usage. They were most likely the first three elements discovered."@en ,
                                   "In der 11. Gruppe des Periodensystems sind die Elemente Kupfer, die beiden Edelmetalle Silber und Gold und das erstmals 1994 hergestellte Element 111 Roentgenium enthalten. Die Gruppe wird auch als Kupfergruppe bezeichnet. Wegen ihrer traditionellen Verwendung werden Kupfer, Silber und Gold als Münzmetalle benannt."@en ;
@@ -345,7 +378,7 @@ dbr:Group_11_element rdf:type owl:Class ;
 
 dbr:Group_12_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element .
+                     rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -353,7 +386,7 @@ dbr:Group_12_element rdf:type owl:Class ;
 
 dbr:Group_13_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element .
+                     rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -361,7 +394,7 @@ dbr:Group_13_element rdf:type owl:Class ;
 
 dbr:Group_14_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element .
+                     rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -369,7 +402,7 @@ dbr:Group_14_element rdf:type owl:Class ;
 
 dbr:Group_15_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element .
+                     rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -377,7 +410,7 @@ dbr:Group_15_element rdf:type owl:Class ;
 
 dbr:Group_16_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element ;
+                     rdfs:subClassOf dbo:ChemicalElement ;
                      
                      rdfs:comment "Die Elemente der 6. Hauptgruppe des Periodensystems werden Chalkogene genannt (wörtlich „Erzbildner“, von griech.: χαλκός „Kupfer, Bronze“ und γεννάω „erzeugen“). Die Gruppe wird nach dem ersten Element auch als Sauerstoff-Gruppe bezeichnet. Nach der neueren Nummerierung der IUPAC der Gruppen ist es die Gruppe 16. Zu dieser Stoffgruppe gehören die Elemente Sauerstoff, Schwefel, Selen, Tellur, Polonium sowie das künstlich hergestellte Livermorium."@en ,
                                   "The chalcogens (/ˈkælkədʒɨnz/) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family. It consists of the elements oxygen (O), sulfur (S), selenium (Se), tellurium (Te), and the radioactive element polonium (Po). The synthetic element livermorium (Lv) is predicted to be a chalcogen as well."@en ;
@@ -391,7 +424,7 @@ dbr:Group_16_element rdf:type owl:Class ;
 
 dbr:Group_17_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element ;
+                     rdfs:subClassOf dbo:ChemicalElement ;
                      
                      rdfs:comment "Die Halogene [halogeːnə] („Salzbildner“, von altgriechisch ἅλος halos „Salz“ und γεννάω gennáō „erzeugen“) bilden die 7. Hauptgruppe oder nach neuer Gruppierung des Periodensystems die Gruppe 17 im Periodensystem der Elemente, die aus folgenden sechs Elementen besteht: Fluor, Chlor, Brom, Iod, dem äußerst seltenen radioaktiven Astat und dem 2010 erstmals künstlich erzeugten, sehr instabilen Ununseptium."@de ,
                                   "The halogens or halogen elements (/ˈhælɵdʒɨn/) are a group in the periodic table consisting of five chemically related elements: fluorine (F), chlorine (Cl), bromine (Br), iodine (I), and astatine (At). The artificially created element 117 (ununseptium) may also be a halogen. In the modern IUPAC nomenclature, this group is known as group 17.The name 'halogen' means 'salt-producing'."@en ;
@@ -405,7 +438,7 @@ dbr:Group_17_element rdf:type owl:Class ;
 
 dbr:Group_18_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbr:Chemical_element ;
+                     rdfs:subClassOf dbo:ChemicalElement ;
                      
                      rdfs:comment "Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8."@de ,
                                   "The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity."@en ;
@@ -419,7 +452,7 @@ dbr:Group_18_element rdf:type owl:Class ;
 
 dbr:Group_1_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element ;
+                    rdfs:subClassOf dbo:ChemicalElement ;
                     
                     rdfs:comment "Als Alkalimetalle werden die chemischen Elemente Lithium, Natrium, Kalium, Rubidium, Caesium und Francium aus der 1. Hauptgruppe des Periodensystems bezeichnet. Sie sind silbrig glänzende, reaktive Metalle, die in ihrer Valenzschale ein einzelnes Elektron besitzen."@de ,
                                  "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this element/electron configuration results in their characteristic properties."@en ;
@@ -433,7 +466,7 @@ dbr:Group_1_element rdf:type owl:Class ;
 
 dbr:Group_2_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element ;
+                    rdfs:subClassOf dbo:ChemicalElement ;
                     
                     rdfs:comment "Der Name Erdalkalimetalle [ˈeːrtʔalˌkaːlimeˌtalə] bezeichnet die Elemente der 2. Hauptgruppe des Periodensystems. Die Bezeichnung leitet sich von den beiden benachbarten Hauptgruppen, den Alkalimetallen und den Erdmetallen, ab. Ihr gehören die stabilen Elemente Beryllium (Be), Magnesium (Mg), Calcium (Ca), Strontium (Sr) und Barium (Ba) an. Das 6. Element der Gruppe, Radium (Ra), ist ein radioaktives Zwischenprodukt natürlicher Zerfallsreihen."@de ,
                                  "The alkaline earth metals are six chemical elements in column (group) 2 of the Periodic table. They are beryllium (Be), magnesium (Mg), calcium (Ca), strontium (Sr), barium (Ba), and radium (Ra). They have very similar properties: they are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure.Structurally, they have in common an outer s- electron shell which is full;. ("@en ;
@@ -447,7 +480,7 @@ dbr:Group_2_element rdf:type owl:Class ;
 
 dbr:Group_3_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -455,7 +488,7 @@ dbr:Group_3_element rdf:type owl:Class ;
 
 dbr:Group_4_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -463,7 +496,7 @@ dbr:Group_4_element rdf:type owl:Class ;
 
 dbr:Group_5_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -471,7 +504,7 @@ dbr:Group_5_element rdf:type owl:Class ;
 
 dbr:Group_6_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -479,7 +512,7 @@ dbr:Group_6_element rdf:type owl:Class ;
 
 dbr:Group_7_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -487,7 +520,7 @@ dbr:Group_7_element rdf:type owl:Class ;
 
 dbr:Group_8_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -495,7 +528,7 @@ dbr:Group_8_element rdf:type owl:Class ;
 
 dbr:Group_9_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf dbr:Chemical_element .
+                    rdfs:subClassOf dbo:ChemicalElement .
 
 
 
@@ -545,6 +578,14 @@ dbr:Melting_point rdf:type owl:Class ;
                   
                   rdfs:label "Schmelzpunkt"@de ,
                              "melting point"@en .
+
+
+
+###  http://dbpedia.org/resource/Molecule
+
+dbr:Molecule rdf:type owl:Class ;
+             
+             rdfs:subClassOf obo:BFO_0000030 .
 
 
 
@@ -618,14 +659,6 @@ dul:ChemicalObject rdf:type owl:Class ;
 
 
 
-###  https://dbpedisa.org/resource/Molecule
-
-<https://dbpedisa.org/resource/Molecule> rdf:type owl:Class ;
-                                         
-                                         rdfs:subClassOf obo:BFO_0000030 .
-
-
-
 
 
 #################################################################
@@ -656,7 +689,7 @@ dbr:Acetylene rdf:type owl:NamedIndividual ;
 ###  http://dbpedia.org/resource/Actinium
 
 dbr:Actinium rdf:type owl:NamedIndividual ,
-                      dbr:Chemical_element ;
+                      dbo:ChemicalElement ;
              
              dbo:hasSymbol "Ac" ;
              
@@ -678,7 +711,7 @@ dbr:Aluminium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Americium
 
 dbr:Americium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Am" ;
               
@@ -759,7 +792,7 @@ dbr:Barium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Berkelium
 
 dbr:Berkelium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Bk" ;
               
@@ -861,7 +894,7 @@ dbr:Calcium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Californium
 
 dbr:Californium rdf:type owl:NamedIndividual ,
-                         dbr:Chemical_element ;
+                         dbo:ChemicalElement ;
                 
                 dbo:hasSymbol "Cf" ;
                 
@@ -883,7 +916,7 @@ dbr:Carbon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Cerium
 
 dbr:Cerium rdf:type owl:NamedIndividual ,
-                    dbr:Chemical_element ;
+                    dbo:ChemicalElement ;
            
            dbo:hasSymbol "Ce" ;
            
@@ -949,7 +982,7 @@ dbr:Copper rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Curium
 
 dbr:Curium rdf:type owl:NamedIndividual ,
-                    dbr:Chemical_element ;
+                    dbo:ChemicalElement ;
            
            dbo:hasSymbol "Cm" ;
            
@@ -982,7 +1015,7 @@ dbr:Dubnium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Dysprosium
 
 dbr:Dysprosium rdf:type owl:NamedIndividual ,
-                        dbr:Chemical_element ;
+                        dbo:ChemicalElement ;
                
                dbo:hasSymbol "Dy" ;
                
@@ -993,7 +1026,7 @@ dbr:Dysprosium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Einsteinium
 
 dbr:Einsteinium rdf:type owl:NamedIndividual ,
-                         dbr:Chemical_element ;
+                         dbo:ChemicalElement ;
                 
                 dbo:hasSymbol "Es" ;
                 
@@ -1004,7 +1037,7 @@ dbr:Einsteinium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Erbium
 
 dbr:Erbium rdf:type owl:NamedIndividual ,
-                    dbr:Chemical_element ;
+                    dbo:ChemicalElement ;
            
            dbo:hasSymbol "Er" ;
            
@@ -1015,7 +1048,7 @@ dbr:Erbium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Europium
 
 dbr:Europium rdf:type owl:NamedIndividual ,
-                      dbr:Chemical_element ;
+                      dbo:ChemicalElement ;
              
              dbo:hasSymbol "Eu" ;
              
@@ -1026,7 +1059,7 @@ dbr:Europium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Fermium
 
 dbr:Fermium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "Fm" ;
             
@@ -1072,7 +1105,7 @@ dbr:Francium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Gadolinium
 
 dbr:Gadolinium rdf:type owl:NamedIndividual ,
-                        dbr:Chemical_element ;
+                        dbo:ChemicalElement ;
                
                dbo:hasSymbol "Gd" ;
                
@@ -1152,7 +1185,7 @@ dbr:Helium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Holmium
 
 dbr:Holmium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "Ho" ;
             
@@ -1163,7 +1196,7 @@ dbr:Holmium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Hydrogen
 
 dbr:Hydrogen rdf:type owl:NamedIndividual ,
-                      dbr:Chemical_element ,
+                      dbo:ChemicalElement ,
                       dbr:Group_1_element ;
              
              dbo:hasSymbol "H" ;
@@ -1242,7 +1275,7 @@ dbr:Krypton rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Lanthanum
 
 dbr:Lanthanum rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "La" ;
               
@@ -1343,7 +1376,7 @@ dbr:Meitnerium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Mendelevium
 
 dbr:Mendelevium rdf:type owl:NamedIndividual ,
-                         dbr:Chemical_element ;
+                         dbo:ChemicalElement ;
                 
                 dbo:hasSymbol "Md" ;
                 
@@ -1387,7 +1420,7 @@ dbr:Natrium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Neodymium
 
 dbr:Neodymium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Nd" ;
               
@@ -1410,7 +1443,7 @@ dbr:Neon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Neptunium
 
 dbr:Neptunium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Np" ;
               
@@ -1454,7 +1487,7 @@ dbr:Nitrogen rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Nobelium
 
 dbr:Nobelium rdf:type owl:NamedIndividual ,
-                      dbr:Chemical_element ;
+                      dbo:ChemicalElement ;
              
              dbo:hasSymbol "No" ;
              
@@ -1520,7 +1553,7 @@ dbr:Platinum rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Plutonium
 
 dbr:Plutonium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Pu" ;
               
@@ -1553,7 +1586,7 @@ dbr:Potassium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Praseodymium
 
 dbr:Praseodymium rdf:type owl:NamedIndividual ,
-                          dbr:Chemical_element ;
+                          dbo:ChemicalElement ;
                  
                  dbo:hasSymbol "Pr" ;
                  
@@ -1564,7 +1597,7 @@ dbr:Praseodymium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Promethium
 
 dbr:Promethium rdf:type owl:NamedIndividual ,
-                        dbr:Chemical_element ;
+                        dbo:ChemicalElement ;
                
                dbo:hasSymbol "Pm" ;
                
@@ -1575,7 +1608,7 @@ dbr:Promethium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Protactinium
 
 dbr:Protactinium rdf:type owl:NamedIndividual ,
-                          dbr:Chemical_element ;
+                          dbo:ChemicalElement ;
                  
                  dbo:hasSymbol "Pa" ;
                  
@@ -1676,7 +1709,7 @@ dbr:Rutherfordium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Samarium
 
 dbr:Samarium rdf:type owl:NamedIndividual ,
-                      dbr:Chemical_element ;
+                      dbo:ChemicalElement ;
              
              dbo:hasSymbol "Sm" ;
              
@@ -1808,7 +1841,7 @@ dbr:Tellurium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Terbium
 
 dbr:Terbium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "Tb" ;
             
@@ -1830,7 +1863,7 @@ dbr:Thallium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Thorium
 
 dbr:Thorium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "Th" ;
             
@@ -1841,7 +1874,7 @@ dbr:Thorium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Thulium
 
 dbr:Thulium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "Tm" ;
             
@@ -1929,7 +1962,7 @@ dbr:Ununtrium rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Uranium
 
 dbr:Uranium rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_element ;
+                     dbo:ChemicalElement ;
             
             dbo:hasSymbol "U" ;
             
@@ -1971,7 +2004,7 @@ dbr:Xenon rdf:type owl:NamedIndividual ,
 ###  http://dbpedia.org/resource/Ytterbium
 
 dbr:Ytterbium rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_element ;
+                       dbo:ChemicalElement ;
               
               dbo:hasSymbol "Yb" ;
               
@@ -2009,19 +2042,6 @@ dbr:Zirconium rdf:type owl:NamedIndividual ,
               dbo:hasSymbol "Zr" ;
               
               rdfs:label "Zirconium"@en .
-
-
-
-
-
-#################################################################
-#
-#    Annotations
-#
-#################################################################
-
-
-dbo:boilingPoint rdfs:label "has boiling point" .
 
 
 
