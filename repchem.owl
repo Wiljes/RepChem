@@ -4,18 +4,68 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY www2 "http://www.physical-chemistry.com/" >
+    <!ENTITY www "http://www.physical-chemistry.com/#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#"
-     xml:base="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32"
+<rdf:RDF xmlns="http://www.physical-chemistry.com/"
+     xml:base="http://www.physical-chemistry.com/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:www="&www2;#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:www2="http://www.physical-chemistry.com/">
+    <owl:Ontology rdf:about="http://www.physical-chemistry.com/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physical-chemistry.com/#cordComment -->
+
+    <owl:AnnotationProperty rdf:about="&www2;#cordComment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/abstract -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/abstract"/>
+    
+
+
+    <!-- http://www.physical-chemistry.com/hasSymbol -->
+
+    <owl:DatatypeProperty rdf:about="&www2;hasSymbol"/>
+    
+
+
+    <!-- http://www.physical-chemistry.com/#hasCASGroupNumber -->
+
+    <owl:DatatypeProperty rdf:about="&www2;#hasCASGroupNumber"/>
     
 
 
@@ -30,21 +80,57 @@
     
 
 
-    <!-- http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#MassNumber -->
+    <!-- http://dbpedia.org/resource/Chemical_element -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#MassNumber"/>
+    <owl:Class rdf:about="http://dbpedia.org/resource/Chemical_element">
+        <rdfs:label xml:lang="de">Chemisches Element</rdfs:label>
+        <rdfs:label xml:lang="en">Chemical element</rdfs:label>
+        <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
+    </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#absolute_zero -->
+    <!-- http://dbpedia.org/resource/Noble_gas -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#absolute_zero"/>
+    <owl:Class rdf:about="http://dbpedia.org/resource/Noble_gas">
+        <rdfs:label xml:lang="de">Edelgas</rdfs:label>
+        <rdfs:label xml:lang="en">Noble gas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+        <rdfs:comment xml:lang="de">Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity.</rdfs:comment>
+    </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#A-conformation_(DNA) -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cord/ontologies/2016/4/untitled-ontology-32#A-conformation_(DNA)"/>
+    
+
+
+    <!-- http://sbpedia.org/resource/Hydrogen -->
+
+    <owl:NamedIndividual rdf:about="http://sbpedia.org/resource/Hydrogen">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+        <rdfs:label xml:lang="en">Hydrogen</rdfs:label>
+        <rdfs:label xml:lang="en">Wasserstoff</rdfs:label>
+        <hasSymbol>H</hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/#Helium -->
+
+    <owl:NamedIndividual rdf:about="&www2;#Helium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Noble_gas"/>
+        <hasSymbol>He</hasSymbol>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
