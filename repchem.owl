@@ -1,1670 +1,2359 @@
-@prefix : <#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix dbr: <http://dbpedia.org/resource/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix www: <http://www.physical-chemistry.com/#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-_:genid1257584426 a owl:Ontology ;
-	owl:imports <https://raw.githubusercontent.com/BFO-ontology/BFO/v2.0/bfo.owl> .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2004/02/skos/core#example
-
-<http://www.w3.org/2004/02/skos/core#example> a owl:AnnotationProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/ontology/centimetre
-
-dbo:centimetre a rdfs:Datatype .
-# 
-# http://dbpedia.org/ontology/kelvin
-
-dbo:kelvin a rdfs:Datatype .
-# 
-# http://dbpedia.org/ontology/metre
-
-dbo:metre a rdfs:Datatype .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/ontology/atomicNumber
-
-dbo:atomicNumber a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalElement .
-# 
-# http://dbpedia.org/ontology/boilingPoint
-
-dbo:boilingPoint a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalCompound , dbo:ChemicalSubstance .
-# 
-# http://dbpedia.org/ontology/elementBlock
-
-dbo:elementBlock a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalElement .
-# 
-# http://dbpedia.org/ontology/elementGroup
-
-dbo:elementGroup a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalElement .
-# 
-# http://dbpedia.org/ontology/elementPeriod
-
-dbo:elementPeriod a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalElement .
-# 
-# http://dbpedia.org/ontology/formula
-
-dbo:formula a owl:ObjectProperty .
-# 
-# http://dbpedia.org/ontology/inchi
-
-dbo:inchi a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalCompound .
-# 
-# http://dbpedia.org/ontology/inn
-
-dbo:inn a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalCompound .
-# 
-# http://dbpedia.org/ontology/molecularWeight
-
-dbo:molecularWeight a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalSubstance .
-# 
-# http://dbpedia.org/ontology/pubchem
-
-dbo:pubchem a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalSubstance .
-# 
-# http://dbpedia.org/ontology/relativeAtomicMass
-
-dbo:relativeAtomicMass a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalElement .
-# 
-# http://dbpedia.org/ontology/smiles
-
-dbo:smiles a owl:ObjectProperty ;
-	rdfs:domain dbo:ChemicalCompound .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/ontology/boilingPoint
-
-dbo:boilingPoint a owl:DatatypeProperty .
-# 
-# http://dbpedia.org/ontology/hasAtomicNumber
-
-dbo:hasAtomicNumber a owl:DatatypeProperty .
-# 
-# http://dbpedia.org/ontology/hasGroupNumber
-
-dbo:hasGroupNumber a owl:DatatypeProperty .
-# 
-# http://dbpedia.org/ontology/hasSymbol
-
-dbo:hasSymbol a owl:DatatypeProperty .
-# 
-# http://dbpedia.org/ontology/weight
-
-dbo:weight a owl:DatatypeProperty ;
-	rdfs:range xsd:double .
-# 
-# http://dbpedia.org/property/synonyms
-
-<http://dbpedia.org/property/synonyms> a owl:DatatypeProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/ontology/ChemicalCompound
-
-dbo:ChemicalCompound a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalCompound , dbo:ChemicalSubstance ;
-	rdfs:label "Chemical Compound"@en , "Chemische Verbindung"@de ;
-	rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemische_Verbindung"@de , "https://en.wikipedia.org/wiki/Chemical_substance"@en .
-# 
-# http://dbpedia.org/ontology/ChemicalElement
-
-dbo:ChemicalElement a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000030 ;
-	rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en , "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
-	rdfs:label "Chemical element"@en , "Chemisches Element"@de ;
-	rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemisches_Element"@de , "https://en.wikipedia.org/wiki/Chemical_element"@en .
-# 
-# http://dbpedia.org/ontology/ChemicalSubstance
-
-dbo:ChemicalSubstance a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000027 ;
-	rdfs:label "chemical substance"@en , "chemische Substanz"@de .
-# 
-# http://dbpedia.org/ontology/Si_Qualities
-
-dbo:Si_Qualities a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000019 ;
-	rdfs:label "SI Größen"@de , "SI Qualities"@en .
-# 
-# http://dbpedia.org/resource/Amount_of_substance
-
-dbr:Amount_of_substance a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# http://dbpedia.org/resource/Catalyst
-
-dbr:Catalyst a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000023 ;
-	rdfs:label "Katalysator"@de , "catalyst"@en .
-# 
-# http://dbpedia.org/resource/Chemical_reaction
-
-dbr:Chemical_reaction a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000015 ;
-	rdfs:comment "A chemical reaction is a process that leads to the transformation of one set of chemical substances to another. Classically, chemical reactions encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei (no change to the elements present), and can often be described by a chemical equation."@en , "Eine chemische Reaktion ist ein Vorgang, bei dem eine oder meist mehrere chemische Verbindungen in andere umgewandelt werden. Auch Elemente können an Reaktionen beteiligt sein. Chemische Reaktionen sind in der Regel mit Veränderungen der chemischen Bindungen in Molekülen oder Kristallen verbunden. Durch eine chemische Reaktion können sich die Eigenschaften der Produkte im Vergleich zu den Edukten stark ändern."@de ;
-	rdfs:label "chemical reaction"@en , "chemische Reaktion"@de .
-# 
-# http://dbpedia.org/resource/Diels_Alder_reaction
-
-dbr:Diels_Alder_reaction a owl:Class ;
-	rdfs:subClassOf dbr:Chemical_reaction .
-# 
-# http://dbpedia.org/resource/Drug
-
-dbr:Drug a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000023 .
-# 
-# http://dbpedia.org/resource/Electric_current
-
-dbr:Electric_current a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# http://dbpedia.org/resource/Electron
-
-dbr:Electron a owl:Class ;
-	rdfs:subClassOf dbr:Subatomic_particle .
-# 
-# http://dbpedia.org/resource/Freezing
-
-dbr:Freezing a owl:Class ;
-	rdfs:subClassOf dbr:Phase_transition .
-# 
-# http://dbpedia.org/resource/Group_10_element
-
-dbr:Group_10_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Die Nickelgruppe, manchmal auch Platingruppe genannt, ist die 10. Gruppe des Periodensystems der Elemente mit den Elementen Nickel (Ni), Palladium (Pd), Platin (Pt) und dem erstmals 1994 hergestellten Darmstadtium (Ds).Die Bezeichnung wird selten verwendet, da die Gruppe meist mit der 8. und 9. Gruppe zur Eisen-Platin-Gruppe zusammengefasst wird.Nicht damit verwechseln darf man die Elemente der Gruppen 8 bis 10 der 5. und 6."@de , "Group 10, numbered by current IUPAC style, is the group of chemical elements in the periodic table that consists of nickel (Ni), palladium (Pd), platinum (Pt), and darmstadtium (Ds). All are d-block transition metals."@en ;
-	rdfs:label "Group 10 element"@en , "Nickelgruppe"@de .
-# 
-# http://dbpedia.org/resource/Group_11_element
-
-dbr:Group_11_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Group 11, by modern IUPAC numbering, is a group of chemical elements in the periodic table, consisting of copper (Cu), silver (Ag), and gold (Au). Roentgenium (Rg) is also placed in this group in the periodic table, although no chemical experiments have yet been carried out to confirm that it behaves like the heavier homologue to gold. Group 11 is also known as the coinage metals, due to their former usage. They were most likely the first three elements discovered."@en , "In der 11. Gruppe des Periodensystems sind die Elemente Kupfer, die beiden Edelmetalle Silber und Gold und das erstmals 1994 hergestellte Element 111 Roentgenium enthalten. Die Gruppe wird auch als Kupfergruppe bezeichnet. Wegen ihrer traditionellen Verwendung werden Kupfer, Silber und Gold als Münzmetalle benannt."@en ;
-	rdfs:label "Group 11 element"@en , "Kupfergruppe"@de .
-# 
-# http://dbpedia.org/resource/Group_12_element
-
-dbr:Group_12_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_13_element
-
-dbr:Group_13_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_14_element
-
-dbr:Group_14_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_15_element
-
-dbr:Group_15_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_16_element
-
-dbr:Group_16_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Die Elemente der 6. Hauptgruppe des Periodensystems werden Chalkogene genannt (wörtlich „Erzbildner“, von griech.: χαλκός „Kupfer, Bronze“ und γεννάω „erzeugen“). Die Gruppe wird nach dem ersten Element auch als Sauerstoff-Gruppe bezeichnet. Nach der neueren Nummerierung der IUPAC der Gruppen ist es die Gruppe 16. Zu dieser Stoffgruppe gehören die Elemente Sauerstoff, Schwefel, Selen, Tellur, Polonium sowie das künstlich hergestellte Livermorium."@en , "The chalcogens (/ˈkælkədʒɨnz/) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family. It consists of the elements oxygen (O), sulfur (S), selenium (Se), tellurium (Te), and the radioactive element polonium (Po). The synthetic element livermorium (Lv) is predicted to be a chalcogen as well."@en ;
-	rdfs:label "Chalcogen"@en , "Chalkogen"@de .
-# 
-# http://dbpedia.org/resource/Group_17_element
-
-dbr:Group_17_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Die Halogene [halogeːnə] („Salzbildner“, von altgriechisch ἅλος halos „Salz“ und γεννάω gennáō „erzeugen“) bilden die 7. Hauptgruppe oder nach neuer Gruppierung des Periodensystems die Gruppe 17 im Periodensystem der Elemente, die aus folgenden sechs Elementen besteht: Fluor, Chlor, Brom, Iod, dem äußerst seltenen radioaktiven Astat und dem 2010 erstmals künstlich erzeugten, sehr instabilen Ununseptium."@de , "The halogens or halogen elements (/ˈhælɵdʒɨn/) are a group in the periodic table consisting of five chemically related elements: fluorine (F), chlorine (Cl), bromine (Br), iodine (I), and astatine (At). The artificially created element 117 (ununseptium) may also be a halogen. In the modern IUPAC nomenclature, this group is known as group 17.The name 'halogen' means 'salt-producing'."@en ;
-	rdfs:label "Halogen"@de , "Halogen"@en .
-# 
-# http://dbpedia.org/resource/Group_18_element
-
-dbr:Group_18_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8."@de , "The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity."@en ;
-	rdfs:label "Edelgas"@de , "Noble gas"@en .
-# 
-# http://dbpedia.org/resource/Group_1_element
-
-dbr:Group_1_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Als Alkalimetalle werden die chemischen Elemente Lithium, Natrium, Kalium, Rubidium, Caesium und Francium aus der 1. Hauptgruppe des Periodensystems bezeichnet. Sie sind silbrig glänzende, reaktive Metalle, die in ihrer Valenzschale ein einzelnes Elektron besitzen."@de , "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this element/electron configuration results in their characteristic properties."@en ;
-	rdfs:label "Alkali metal"@en , "Alkalimetall"@de .
-# 
-# http://dbpedia.org/resource/Group_2_element
-
-dbr:Group_2_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement ;
-	rdfs:comment "Der Name Erdalkalimetalle [ˈeːrtʔalˌkaːlimeˌtalə] bezeichnet die Elemente der 2. Hauptgruppe des Periodensystems. Die Bezeichnung leitet sich von den beiden benachbarten Hauptgruppen, den Alkalimetallen und den Erdmetallen, ab. Ihr gehören die stabilen Elemente Beryllium (Be), Magnesium (Mg), Calcium (Ca), Strontium (Sr) und Barium (Ba) an. Das 6. Element der Gruppe, Radium (Ra), ist ein radioaktives Zwischenprodukt natürlicher Zerfallsreihen."@de , "The alkaline earth metals are six chemical elements in column (group) 2 of the Periodic table. They are beryllium (Be), magnesium (Mg), calcium (Ca), strontium (Sr), barium (Ba), and radium (Ra). They have very similar properties: they are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure.Structurally, they have in common an outer s- electron shell which is full;. ("@en ;
-	rdfs:label "Alkaline earth metal"@en , "Erdalkalimetall"@de .
-# 
-# http://dbpedia.org/resource/Group_3_element
-
-dbr:Group_3_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_4_element
-
-dbr:Group_4_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_5_element
-
-dbr:Group_5_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_6_element
-
-dbr:Group_6_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_7_element
-
-dbr:Group_7_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_8_element
-
-dbr:Group_8_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Group_9_element
-
-dbr:Group_9_element a owl:Class ;
-	rdfs:subClassOf dbo:ChemicalElement .
-# 
-# http://dbpedia.org/resource/Length
-
-dbr:Length a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# http://dbpedia.org/resource/Luminous_intensity
-
-dbr:Luminous_intensity a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# http://dbpedia.org/resource/Mass
-
-dbr:Mass a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities ;
-	rdfs:label "Masse"@de , "mass"@en .
-# 
-# http://dbpedia.org/resource/Melting
-
-dbr:Melting a owl:Class ;
-	rdfs:subClassOf dbr:Phase_transition .
-# 
-# http://dbpedia.org/resource/Melting_point
-
-dbr:Melting_point a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000019 ;
-	rdfs:comment "Als Schmelztemperatur bezeichnet man die Temperatur, bei der ein Stoff schmilzt, das heißt vom festen in den flüssigen Aggregatzustand übergeht. Die Schmelztemperatur ist abhängig vom Stoff, im Gegensatz zur Siedetemperatur aber nur sehr wenig vom Druck (Schmelzdruck). Schmelztemperatur und Druck werden zusammen als Schmelzpunkt bezeichnet, wobei dieser den Zustand eines Reinstoffes beschreibt und Teil der Schmelzkurve im Phasendiagramm des Stoffes ist."@de , "The melting point (or, rarely, liquefaction point) of a solid is the temperature at which it changes state from solid to liquid at atmospheric pressure. At the melting point the solid and liquid phase exist in equilibrium. The melting point of a substance depends on pressure and is usually specified at standard pressure. When considered as the temperature of the reverse change from liquid to solid, it is referred to as the freezing point or crystallization point."@en ;
-	rdfs:label "Schmelzpunkt"@de , "melting point"@en .
-# 
-# http://dbpedia.org/resource/Molecule
-
-dbr:Molecule a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000030 .
-# 
-# http://dbpedia.org/resource/Neutron
-
-dbr:Neutron a owl:Class ;
-	rdfs:subClassOf dbr:Subatomic_particle .
-# 
-# http://dbpedia.org/resource/Phase_transition
-
-dbr:Phase_transition a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000015 ;
-	rdfs:comment "A phase transition is the transformation of a thermodynamic system from one phase or state of matter to another one by heat transfer. The term is most commonly used to describe transitions between solid, liquid and gaseous states of matter, and, in rare cases, plasma. A phase of a thermodynamic system and the states of matter have uniform physical properties."@en , "Ein Phasenübergang bzw. eine Phasenumwandlung oder Phasentransformation ist in der Thermodynamik die Umwandlung einer oder mehrerer Phasen eines Stoffes in andere Phasen. Eine grafische Darstellung der Stabilitätsbereiche der Phasen in Abhängigkeit von den Zustandsvariablen wie Druck, Temperatur, chemischer Zusammensetzung und magnetischer Feldstärke liefern Phasendiagramme."@de ;
-	rdfs:label "Phasenübergang"@de , "phase transition"@en ;
-	<http://www.w3.org/2004/02/skos/core#example> "Freezing"@de .
-# 
-# http://dbpedia.org/resource/Proton
-
-dbr:Proton a owl:Class ;
-	rdfs:subClassOf dbr:Subatomic_particle .
-# 
-# http://dbpedia.org/resource/Subatomic_particle
-
-dbr:Subatomic_particle a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000030 ;
-	rdfs:label "Elementarteilchen"@de , "Elementary particle"@en ;
-	rdfs:seeAlso "https://de.wikipedia.org/wiki/Elementarteilchen"@de , "https://en.wikipedia.org/wiki/Elementary_particle"@en .
-# 
-# http://dbpedia.org/resource/Temperature
-
-dbr:Temperature a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# http://dbpedia.org/resource/Time
-
-dbr:Time a owl:Class ;
-	rdfs:subClassOf dbo:Si_Qualities .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/resource/Acetone
-
-dbr:Acetone a owl:NamedIndividual ;
-	rdfs:label "Aceton"@de , "Acetone"@en .
-# 
-# http://dbpedia.org/resource/Acetylene
-
-dbr:Acetylene a owl:NamedIndividual ;
-	rdfs:label "Acetylen"@de , "Acetylene"@en .
-# 
-# http://dbpedia.org/resource/Actinium
-
-dbr:Actinium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Ac" ;
-	rdfs:label "Actinium"@en .
-# 
-# http://dbpedia.org/resource/Aluminium
-
-dbr:Aluminium a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "Al" ;
-	rdfs:label "Aluminium"@en .
-# 
-# http://dbpedia.org/resource/Americium
-
-dbr:Americium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Am" ;
-	rdfs:label "Americium"@en .
-# 
-# http://dbpedia.org/resource/Antimony
-
-dbr:Antimony a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "Sb" ;
-	rdfs:label "Antimony"@en .
-# 
-# http://dbpedia.org/resource/Argon
-
-dbr:Argon a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Ar" ;
-	rdfs:label "Argon"@en .
-# 
-# http://dbpedia.org/resource/Arsenic
-
-dbr:Arsenic a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "As" ;
-	rdfs:label "Arsenic"@en .
-# 
-# http://dbpedia.org/resource/Aspirin
-
-dbr:Aspirin a owl:NamedIndividual ;
-	<http://dbpedia.org/property/synonyms> "O-acetylsalicylic acid"@en , "acetylsalicylate"@en , "acetylsalicylic acid"@en ;
-	rdfs:label "Aspirin"@de , "Aspirin"@en ;
-	rdfs:seeAlso "https://en.wikipedia.org/wiki/Aspirin"@en .
-# 
-# http://dbpedia.org/resource/Astatine
-
-dbr:Astatine a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "At" ;
-	rdfs:label "Astatine"@en .
-# 
-# http://dbpedia.org/resource/Barium
-
-dbr:Barium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Ba" ;
-	rdfs:label "Barium"@en .
-# 
-# http://dbpedia.org/resource/Berkelium
-
-dbr:Berkelium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Bk" ;
-	rdfs:label "Berkelium"@en .
-# 
-# http://dbpedia.org/resource/Beryllium
-
-dbr:Beryllium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Be" ;
-	rdfs:label "Beryllium"@en .
-# 
-# http://dbpedia.org/resource/Bismuth
-
-dbr:Bismuth a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "Bi" ;
-	rdfs:label "Bismuth"@en .
-# 
-# http://dbpedia.org/resource/Bohrium
-
-dbr:Bohrium a owl:NamedIndividual , dbr:Group_7_element ;
-	dbo:hasSymbol "Bh" ;
-	rdfs:label "Bohrium"@en .
-# 
-# http://dbpedia.org/resource/Boron
-
-dbr:Boron a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "B" ;
-	rdfs:label "Boron"@en .
-# 
-# http://dbpedia.org/resource/Bromine
-
-dbr:Bromine a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "Br" ;
-	rdfs:label "Bromine"@en .
-# 
-# http://dbpedia.org/resource/Cadmium
-
-dbr:Cadmium a owl:NamedIndividual , dbr:Group_12_element ;
-	dbo:hasSymbol "Cd" ;
-	rdfs:label "Cadmium"@en .
-# 
-# http://dbpedia.org/resource/Caesium
-
-dbr:Caesium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "55"^^xsd:integer ;
-	dbo:hasSymbol "Cs" ;
-	rdfs:label "Caesium"@de , "Caesium"@en .
-# 
-# http://dbpedia.org/resource/Calcium
-
-dbr:Calcium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Ca" ;
-	rdfs:label "Calcium"@en .
-# 
-# http://dbpedia.org/resource/Californium
-
-dbr:Californium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Cf" ;
-	rdfs:label "Californium"@en .
-# 
-# http://dbpedia.org/resource/Carbon
-
-dbr:Carbon a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "C" ;
-	rdfs:label "Carbon"@en .
-# 
-# http://dbpedia.org/resource/Cerium
-
-dbr:Cerium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Ce" ;
-	rdfs:label "Cerium"@en .
-# 
-# http://dbpedia.org/resource/Chlorine
-
-dbr:Chlorine a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "Cl" ;
-	rdfs:label "Chlorine"@en .
-# 
-# http://dbpedia.org/resource/Chromium
-
-dbr:Chromium a owl:NamedIndividual , dbr:Group_6_element ;
-	dbo:hasSymbol "Cr" ;
-	rdfs:label "Chromium"@en .
-# 
-# http://dbpedia.org/resource/Cobalt
-
-dbr:Cobalt a owl:NamedIndividual , dbr:Group_9_element ;
-	dbo:hasSymbol "Co" ;
-	rdfs:label "Cobalt"@en .
-# 
-# http://dbpedia.org/resource/Copernicium
-
-dbr:Copernicium a owl:NamedIndividual , dbr:Group_12_element ;
-	dbo:hasSymbol "Cn" ;
-	rdfs:label "Copernicium"@en .
-# 
-# http://dbpedia.org/resource/Copper
-
-dbr:Copper a owl:NamedIndividual , dbr:Group_11_element ;
-	dbo:hasSymbol "Cu" ;
-	rdfs:label "Copper"@en .
-# 
-# http://dbpedia.org/resource/Curium
-
-dbr:Curium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Cm" ;
-	rdfs:label "Curium"@en .
-# 
-# http://dbpedia.org/resource/Darmstadtium
-
-dbr:Darmstadtium a owl:NamedIndividual , dbr:Group_10_element ;
-	dbo:hasSymbol "Ds" ;
-	rdfs:label "Darmstadtium"@en .
-# 
-# http://dbpedia.org/resource/Dubnium
-
-dbr:Dubnium a owl:NamedIndividual , dbr:Group_5_element ;
-	dbo:hasSymbol "Db" ;
-	rdfs:label "Dubnium"@en .
-# 
-# http://dbpedia.org/resource/Dysprosium
-
-dbr:Dysprosium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Dy" ;
-	rdfs:label "Dysprosium"@en .
-# 
-# http://dbpedia.org/resource/Einsteinium
-
-dbr:Einsteinium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Es" ;
-	rdfs:label "Einsteinium"@en .
-# 
-# http://dbpedia.org/resource/Erbium
-
-dbr:Erbium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Er" ;
-	rdfs:label "Erbium"@en .
-# 
-# http://dbpedia.org/resource/Europium
-
-dbr:Europium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Eu" ;
-	rdfs:label "Europium"@en .
-# 
-# http://dbpedia.org/resource/Fermium
-
-dbr:Fermium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Fm" ;
-	rdfs:label "Fermium"@en .
-# 
-# http://dbpedia.org/resource/Flerovium
-
-dbr:Flerovium a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "Fl" ;
-	rdfs:label "Flerovium"@en .
-# 
-# http://dbpedia.org/resource/Fluorine
-
-dbr:Fluorine a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "F" ;
-	rdfs:label "Fluorine"@en .
-# 
-# http://dbpedia.org/resource/Francium
-
-dbr:Francium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "87"^^xsd:integer ;
-	dbo:hasSymbol "Fr" ;
-	rdfs:label "Francium"@en .
-# 
-# http://dbpedia.org/resource/Gadolinium
-
-dbr:Gadolinium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Gd" ;
-	rdfs:label "Gadolinium"@en .
-# 
-# http://dbpedia.org/resource/Gallium
-
-dbr:Gallium a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "Ga" ;
-	rdfs:label "Gallium"@en .
-# 
-# http://dbpedia.org/resource/Germanium
-
-dbr:Germanium a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "Ge" ;
-	rdfs:label "Germanium"@en .
-# 
-# http://dbpedia.org/resource/Gold
-
-dbr:Gold a owl:NamedIndividual , dbr:Group_11_element ;
-	dbo:hasSymbol "Au" ;
-	rdfs:label "Gold"@en .
-# 
-# http://dbpedia.org/resource/Hafnium
-
-dbr:Hafnium a owl:NamedIndividual , dbr:Group_4_element ;
-	dbo:hasSymbol "Hf" ;
-	rdfs:label "Hafnium"@en .
-# 
-# http://dbpedia.org/resource/Hassium
-
-dbr:Hassium a owl:NamedIndividual , dbr:Group_8_element ;
-	dbo:hasSymbol "Hs" ;
-	rdfs:label "Hassium"@en .
-# 
-# http://dbpedia.org/resource/Helium
-
-dbr:Helium a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "He" ;
-	rdfs:comment "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among all the elements.Helium is the second lightest element and is the second most abundant element in the observable universe, being present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined."@en ;
-	rdfs:label "Helium"@de , "Helium"@en .
-# 
-# http://dbpedia.org/resource/Holmium
-
-dbr:Holmium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Ho" ;
-	rdfs:label "Holmium"@en .
-# 
-# http://dbpedia.org/resource/Hydrogen
-
-dbr:Hydrogen a owl:NamedIndividual , dbo:ChemicalElement , dbr:Group_1_element ;
-	dbo:hasSymbol "H" ;
-	rdfs:label "Hydrogen"@en , "Wasserstoff"@en .
-# 
-# http://dbpedia.org/resource/Indium
-
-dbr:Indium a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "In" ;
-	rdfs:label "Indium"@en .
-# 
-# http://dbpedia.org/resource/Iodine
-
-dbr:Iodine a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "I" ;
-	rdfs:label "Iodine"@en .
-# 
-# http://dbpedia.org/resource/Iridium
-
-dbr:Iridium a owl:NamedIndividual , dbr:Group_9_element ;
-	dbo:hasSymbol "Ir" ;
-	rdfs:label "Iridium"@en .
-# 
-# http://dbpedia.org/resource/Iron
-
-dbr:Iron a owl:NamedIndividual , dbr:Group_8_element ;
-	dbo:hasSymbol "Fe" ;
-	rdfs:label "Iron"@en .
-# 
-# http://dbpedia.org/resource/Kalium
-
-dbr:Kalium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "19"^^xsd:integer ;
-	dbo:hasSymbol "K" .
-# 
-# http://dbpedia.org/resource/Krypton
-
-dbr:Krypton a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Kr" ;
-	rdfs:label "Krypton"@en .
-# 
-# http://dbpedia.org/resource/Lanthanum
-
-dbr:Lanthanum a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "La" ;
-	rdfs:label "Lanthanum"@en .
-# 
-# http://dbpedia.org/resource/Lawrencium
-
-dbr:Lawrencium a owl:NamedIndividual , dbr:Group_3_element ;
-	dbo:hasSymbol "Lr" ;
-	rdfs:label "Lawrencium"@en .
-# 
-# http://dbpedia.org/resource/Lead
-
-dbr:Lead a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "Pb" ;
-	rdfs:label "Lead"@en .
-# 
-# http://dbpedia.org/resource/Lithium
-
-dbr:Lithium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "3"^^xsd:integer ;
-	dbo:hasSymbol "Li" ;
-	rdfs:label "Lithium"@en .
-# 
-# http://dbpedia.org/resource/Livermorium
-
-dbr:Livermorium a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "Lv" ;
-	rdfs:label "Livermorium"@en .
-# 
-# http://dbpedia.org/resource/Lutetium
-
-dbr:Lutetium a owl:NamedIndividual , dbr:Group_3_element ;
-	dbo:hasSymbol "Lu" ;
-	rdfs:label "Lutetium"@en .
-# 
-# http://dbpedia.org/resource/Magnesium
-
-dbr:Magnesium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Mg" ;
-	rdfs:label "Magnesium"@en .
-# 
-# http://dbpedia.org/resource/Manganese
-
-dbr:Manganese a owl:NamedIndividual , dbr:Group_7_element ;
-	dbo:hasSymbol "Mn" ;
-	rdfs:label "Manganese"@en .
-# 
-# http://dbpedia.org/resource/Meitnerium
-
-dbr:Meitnerium a owl:NamedIndividual , dbr:Group_9_element ;
-	dbo:hasSymbol "Mt" ;
-	rdfs:label "Meitnerium"@en .
-# 
-# http://dbpedia.org/resource/Mendelevium
-
-dbr:Mendelevium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Md" ;
-	rdfs:label "Mendelevium"@en .
-# 
-# http://dbpedia.org/resource/Mercury
-
-dbr:Mercury a owl:NamedIndividual , dbr:Group_12_element ;
-	dbo:hasSymbol "Hg" ;
-	rdfs:label "Mercury"@en .
-# 
-# http://dbpedia.org/resource/Molybdenum
-
-dbr:Molybdenum a owl:NamedIndividual , dbr:Group_6_element ;
-	dbo:hasSymbol "Mo" ;
-	rdfs:label "Molybdenum"@en .
-# 
-# http://dbpedia.org/resource/Natrium
-
-dbr:Natrium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "11"^^xsd:integer ;
-	dbo:hasSymbol "Na" .
-# 
-# http://dbpedia.org/resource/Neodymium
-
-dbr:Neodymium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Nd" ;
-	rdfs:label "Neodymium"@en .
-# 
-# http://dbpedia.org/resource/Neon
-
-dbr:Neon a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Ne" ;
-	rdfs:label "Neon"@de , "Neon"@en .
-# 
-# http://dbpedia.org/resource/Neptunium
-
-dbr:Neptunium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Np" ;
-	rdfs:label "Neptunium"@en .
-# 
-# http://dbpedia.org/resource/Nickel
-
-dbr:Nickel a owl:NamedIndividual , dbr:Group_10_element ;
-	dbo:hasSymbol "Ni" ;
-	rdfs:label "Nickel"@en .
-# 
-# http://dbpedia.org/resource/Niobium
-
-dbr:Niobium a owl:NamedIndividual , dbr:Group_5_element ;
-	dbo:hasSymbol "Nb" ;
-	rdfs:label "Niobium"@en .
-# 
-# http://dbpedia.org/resource/Nitrogen
-
-dbr:Nitrogen a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "N" ;
-	rdfs:label "Nitrogen"@en .
-# 
-# http://dbpedia.org/resource/Nobelium
-
-dbr:Nobelium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "No" ;
-	rdfs:label "Nobelium"@en .
-# 
-# http://dbpedia.org/resource/Osmium
-
-dbr:Osmium a owl:NamedIndividual , dbr:Group_8_element ;
-	dbo:hasSymbol "Os" ;
-	rdfs:label "Osmium"@en .
-# 
-# http://dbpedia.org/resource/Oxygen
-
-dbr:Oxygen a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "O" ;
-	rdfs:label "Oxygen"@en .
-# 
-# http://dbpedia.org/resource/Palladium
-
-dbr:Palladium a owl:NamedIndividual , dbr:Group_10_element ;
-	dbo:hasSymbol "Pd" ;
-	rdfs:label "Palladium"@en .
-# 
-# http://dbpedia.org/resource/Phosphorus
-
-dbr:Phosphorus a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "P" ;
-	rdfs:label "Phosphorus"@en .
-# 
-# http://dbpedia.org/resource/Platinum
-
-dbr:Platinum a owl:NamedIndividual , dbr:Group_10_element ;
-	dbo:hasSymbol "Pt" ;
-	rdfs:label "Platinum"@en .
-# 
-# http://dbpedia.org/resource/Plutonium
-
-dbr:Plutonium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Pu" ;
-	rdfs:label "Plutonium"@en .
-# 
-# http://dbpedia.org/resource/Polonium
-
-dbr:Polonium a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "Po" ;
-	rdfs:label "Polonium"@en .
-# 
-# http://dbpedia.org/resource/Potassium
-
-dbr:Potassium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasSymbol "K" ;
-	rdfs:label "Potassium"@en .
-# 
-# http://dbpedia.org/resource/Praseodymium
-
-dbr:Praseodymium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Pr" ;
-	rdfs:label "Praseodymium"@en .
-# 
-# http://dbpedia.org/resource/Promethium
-
-dbr:Promethium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Pm" ;
-	rdfs:label "Promethium"@en .
-# 
-# http://dbpedia.org/resource/Protactinium
-
-dbr:Protactinium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Pa" ;
-	rdfs:label "Protactinium"@en .
-# 
-# http://dbpedia.org/resource/Radium
-
-dbr:Radium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Ra" ;
-	rdfs:label "Radium"@en .
-# 
-# http://dbpedia.org/resource/Radon
-
-dbr:Radon a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Rn" ;
-	rdfs:label "Radon"@en .
-# 
-# http://dbpedia.org/resource/Rhenium
-
-dbr:Rhenium a owl:NamedIndividual , dbr:Group_7_element ;
-	dbo:hasSymbol "Re" ;
-	rdfs:label "Rhenium"@en .
-# 
-# http://dbpedia.org/resource/Rhodium
-
-dbr:Rhodium a owl:NamedIndividual , dbr:Group_9_element ;
-	dbo:hasSymbol "Rh" ;
-	rdfs:label "Rhodium"@en .
-# 
-# http://dbpedia.org/resource/Roentgenium
-
-dbr:Roentgenium a owl:NamedIndividual , dbr:Group_11_element ;
-	dbo:hasSymbol "Rg" ;
-	rdfs:label "Roentgenium"@en .
-# 
-# http://dbpedia.org/resource/Rubidium
-
-dbr:Rubidium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasAtomicNumber "37"^^xsd:integer ;
-	dbo:hasSymbol "Rb" ;
-	rdfs:label "Rubidium"@en .
-# 
-# http://dbpedia.org/resource/Ruthenium
-
-dbr:Ruthenium a owl:NamedIndividual , dbr:Group_8_element ;
-	dbo:hasSymbol "Ru" ;
-	rdfs:label "Ruthenium"@en .
-# 
-# http://dbpedia.org/resource/Rutherfordium
-
-dbr:Rutherfordium a owl:NamedIndividual , dbr:Group_4_element ;
-	dbo:hasSymbol "Rf" ;
-	rdfs:label "Rutherfordium"@en .
-# 
-# http://dbpedia.org/resource/Samarium
-
-dbr:Samarium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Sm" ;
-	rdfs:label "Samarium"@en .
-# 
-# http://dbpedia.org/resource/Scandium
-
-dbr:Scandium a owl:NamedIndividual , dbr:Group_3_element ;
-	dbo:hasSymbol "Sc" ;
-	rdfs:label "Scandium"@en .
-# 
-# http://dbpedia.org/resource/Seaborgium
-
-dbr:Seaborgium a owl:NamedIndividual , dbr:Group_6_element ;
-	dbo:hasSymbol "Sg" ;
-	rdfs:label "Seaborgium"@en .
-# 
-# http://dbpedia.org/resource/Selenium
-
-dbr:Selenium a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "Se" ;
-	rdfs:label "Selenium"@en .
-# 
-# http://dbpedia.org/resource/Silicon
-
-dbr:Silicon a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "Si" ;
-	rdfs:label "Silicon"@en .
-# 
-# http://dbpedia.org/resource/Silver
-
-dbr:Silver a owl:NamedIndividual , dbr:Group_11_element ;
-	dbo:hasSymbol "Ag" ;
-	rdfs:label "Silver"@en .
-# 
-# http://dbpedia.org/resource/Sodium
-
-dbr:Sodium a owl:NamedIndividual , dbr:Group_1_element ;
-	dbo:hasSymbol "Na" ;
-	rdfs:label "Sodium"@en .
-# 
-# http://dbpedia.org/resource/Strontium
-
-dbr:Strontium a owl:NamedIndividual , dbr:Group_2_element ;
-	dbo:hasSymbol "Sr" ;
-	rdfs:label "Strontium"@en .
-# 
-# http://dbpedia.org/resource/Sulfur
-
-dbr:Sulfur a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "S" ;
-	rdfs:label "Sulfur"@en .
-# 
-# http://dbpedia.org/resource/Tantalum
-
-dbr:Tantalum a owl:NamedIndividual , dbr:Group_5_element ;
-	dbo:hasSymbol "Ta" ;
-	rdfs:label "Tantalum"@en .
-# 
-# http://dbpedia.org/resource/Technetium
-
-dbr:Technetium a owl:NamedIndividual , dbr:Group_7_element ;
-	dbo:hasSymbol "Tc" ;
-	rdfs:label "Technetium"@en .
-# 
-# http://dbpedia.org/resource/Tellurium
-
-dbr:Tellurium a owl:NamedIndividual , dbr:Group_16_element ;
-	dbo:hasSymbol "Te" ;
-	rdfs:label "Tellurium"@en .
-# 
-# http://dbpedia.org/resource/Terbium
-
-dbr:Terbium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Tb" ;
-	rdfs:label "Terbium"@en .
-# 
-# http://dbpedia.org/resource/Thallium
-
-dbr:Thallium a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "Tl" ;
-	rdfs:label "Thallium"@en .
-# 
-# http://dbpedia.org/resource/Thorium
-
-dbr:Thorium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Th" ;
-	rdfs:label "Thorium"@en .
-# 
-# http://dbpedia.org/resource/Thulium
-
-dbr:Thulium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Tm" ;
-	rdfs:label "Thulium"@en .
-# 
-# http://dbpedia.org/resource/Tin
-
-dbr:Tin a owl:NamedIndividual , dbr:Group_14_element ;
-	dbo:hasSymbol "Sn" ;
-	rdfs:label "Tin"@en .
-# 
-# http://dbpedia.org/resource/Titanium
-
-dbr:Titanium a owl:NamedIndividual , dbr:Group_4_element ;
-	dbo:hasSymbol "Ti" ;
-	rdfs:label "Titanium"@en .
-# 
-# http://dbpedia.org/resource/Tungsten
-
-dbr:Tungsten a owl:NamedIndividual , dbr:Group_6_element ;
-	dbo:hasSymbol "W" ;
-	rdfs:label "Tungsten"@en .
-# 
-# http://dbpedia.org/resource/Ununoctium
-
-dbr:Ununoctium a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Uuo" ;
-	rdfs:label "Ununoctium"@en .
-# 
-# http://dbpedia.org/resource/Ununpentium
-
-dbr:Ununpentium a owl:NamedIndividual , dbr:Group_15_element ;
-	dbo:hasSymbol "Uup" ;
-	rdfs:label "Ununpentium"@en .
-# 
-# http://dbpedia.org/resource/Ununseptium
-
-dbr:Ununseptium a owl:NamedIndividual , dbr:Group_17_element ;
-	dbo:hasSymbol "Uus" ;
-	rdfs:label "Ununseptium"@en .
-# 
-# http://dbpedia.org/resource/Ununtrium
-
-dbr:Ununtrium a owl:NamedIndividual , dbr:Group_13_element ;
-	dbo:hasSymbol "Uut" ;
-	rdfs:label "Ununtrium"@en .
-# 
-# http://dbpedia.org/resource/Uranium
-
-dbr:Uranium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "U" ;
-	rdfs:label "Uranium"@en .
-# 
-# http://dbpedia.org/resource/Vanadium
-
-dbr:Vanadium a owl:NamedIndividual , dbr:Group_5_element ;
-	dbo:hasSymbol "V" ;
-	rdfs:label "Vanadium"@en .
-# 
-# http://dbpedia.org/resource/Water
-
-dbr:Water a owl:NamedIndividual ;
-	rdfs:label "Wasser"@de , "Water"@en .
-# 
-# http://dbpedia.org/resource/Xenon
-
-dbr:Xenon a owl:NamedIndividual , dbr:Group_18_element ;
-	dbo:hasSymbol "Xe" ;
-	rdfs:label "Xenon"@en .
-# 
-# http://dbpedia.org/resource/Ytterbium
-
-dbr:Ytterbium a owl:NamedIndividual , dbo:ChemicalElement ;
-	dbo:hasSymbol "Yb" ;
-	rdfs:label "Ytterbium"@en .
-# 
-# http://dbpedia.org/resource/Yttrium
-
-dbr:Yttrium a owl:NamedIndividual , dbr:Group_3_element ;
-	dbo:hasSymbol "Y" ;
-	rdfs:label "Yttrium"@en .
-# 
-# http://dbpedia.org/resource/Zinc
-
-dbr:Zinc a owl:NamedIndividual , dbr:Group_12_element ;
-	dbo:hasSymbol "Zn" ;
-	rdfs:label "Zinc"@en .
-# 
-# http://dbpedia.org/resource/Zirconium
-
-dbr:Zirconium a owl:NamedIndividual , dbr:Group_4_element ;
-	dbo:hasSymbol "Zr" ;
-	rdfs:label "Zirconium"@en .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    General axioms
-# #
-# #################################################################
-# 
-# 
-
-_:genid1 a owl:AllDifferent ;
-	owl:distinctMembers _:genid125 .
-
-_:genid125 a rdf:List ;
-	rdf:first dbr:Acetone ;
-	rdf:rest _:genid124 .
-
-_:genid124 a rdf:List ;
-	rdf:first dbr:Acetylene ;
-	rdf:rest _:genid123 .
-
-_:genid123 a rdf:List ;
-	rdf:first dbr:Actinium ;
-	rdf:rest _:genid122 .
-
-_:genid122 a rdf:List ;
-	rdf:first dbr:Aluminium ;
-	rdf:rest _:genid121 .
-
-_:genid121 a rdf:List ;
-	rdf:first dbr:Americium ;
-	rdf:rest _:genid120 .
-
-_:genid120 a rdf:List ;
-	rdf:first dbr:Antimony ;
-	rdf:rest _:genid119 .
-
-_:genid119 a rdf:List ;
-	rdf:first dbr:Argon ;
-	rdf:rest _:genid118 .
-
-_:genid118 a rdf:List ;
-	rdf:first dbr:Arsenic ;
-	rdf:rest _:genid117 .
-
-_:genid117 a rdf:List ;
-	rdf:first dbr:Aspirin ;
-	rdf:rest _:genid116 .
-
-_:genid116 a rdf:List ;
-	rdf:first dbr:Astatine ;
-	rdf:rest _:genid115 .
-
-_:genid115 a rdf:List ;
-	rdf:first dbr:Barium ;
-	rdf:rest _:genid114 .
-
-_:genid114 a rdf:List ;
-	rdf:first dbr:Berkelium ;
-	rdf:rest _:genid113 .
-
-_:genid113 a rdf:List ;
-	rdf:first dbr:Beryllium ;
-	rdf:rest _:genid112 .
-
-_:genid112 a rdf:List ;
-	rdf:first dbr:Bismuth ;
-	rdf:rest _:genid111 .
-
-_:genid111 a rdf:List ;
-	rdf:first dbr:Bohrium ;
-	rdf:rest _:genid110 .
-
-_:genid110 a rdf:List ;
-	rdf:first dbr:Boron ;
-	rdf:rest _:genid109 .
-
-_:genid109 a rdf:List ;
-	rdf:first dbr:Bromine ;
-	rdf:rest _:genid108 .
-
-_:genid108 a rdf:List ;
-	rdf:first dbr:Cadmium ;
-	rdf:rest _:genid107 .
-
-_:genid107 a rdf:List ;
-	rdf:first dbr:Caesium ;
-	rdf:rest _:genid106 .
-
-_:genid106 a rdf:List ;
-	rdf:first dbr:Calcium ;
-	rdf:rest _:genid105 .
-
-_:genid105 a rdf:List ;
-	rdf:first dbr:Californium ;
-	rdf:rest _:genid104 .
-
-_:genid104 a rdf:List ;
-	rdf:first dbr:Carbon ;
-	rdf:rest _:genid103 .
-
-_:genid103 a rdf:List ;
-	rdf:first dbr:Cerium ;
-	rdf:rest _:genid102 .
-
-_:genid102 a rdf:List ;
-	rdf:first dbr:Chlorine ;
-	rdf:rest _:genid101 .
-
-_:genid101 a rdf:List ;
-	rdf:first dbr:Chromium ;
-	rdf:rest _:genid100 .
-
-_:genid100 a rdf:List ;
-	rdf:first dbr:Cobalt ;
-	rdf:rest _:genid99 .
-
-_:genid99 a rdf:List ;
-	rdf:first dbr:Copernicium ;
-	rdf:rest _:genid98 .
-
-_:genid98 a rdf:List ;
-	rdf:first dbr:Copper ;
-	rdf:rest _:genid97 .
-
-_:genid97 a rdf:List ;
-	rdf:first dbr:Curium ;
-	rdf:rest _:genid96 .
-
-_:genid96 a rdf:List ;
-	rdf:first dbr:Darmstadtium ;
-	rdf:rest _:genid95 .
-
-_:genid95 a rdf:List ;
-	rdf:first dbr:Dubnium ;
-	rdf:rest _:genid94 .
-
-_:genid94 a rdf:List ;
-	rdf:first dbr:Dysprosium ;
-	rdf:rest _:genid93 .
-
-_:genid93 a rdf:List ;
-	rdf:first dbr:Einsteinium ;
-	rdf:rest _:genid92 .
-
-_:genid92 a rdf:List ;
-	rdf:first dbr:Erbium ;
-	rdf:rest _:genid91 .
-
-_:genid91 a rdf:List ;
-	rdf:first dbr:Europium ;
-	rdf:rest _:genid90 .
-
-_:genid90 a rdf:List ;
-	rdf:first dbr:Fermium ;
-	rdf:rest _:genid89 .
-
-_:genid89 a rdf:List ;
-	rdf:first dbr:Flerovium ;
-	rdf:rest _:genid88 .
-
-_:genid88 a rdf:List ;
-	rdf:first dbr:Fluorine ;
-	rdf:rest _:genid87 .
-
-_:genid87 a rdf:List ;
-	rdf:first dbr:Francium ;
-	rdf:rest _:genid86 .
-
-_:genid86 a rdf:List ;
-	rdf:first dbr:Gadolinium ;
-	rdf:rest _:genid85 .
-
-_:genid85 a rdf:List ;
-	rdf:first dbr:Gallium ;
-	rdf:rest _:genid84 .
-
-_:genid84 a rdf:List ;
-	rdf:first dbr:Germanium ;
-	rdf:rest _:genid83 .
-
-_:genid83 a rdf:List ;
-	rdf:first dbr:Gold ;
-	rdf:rest _:genid82 .
-
-_:genid82 a rdf:List ;
-	rdf:first dbr:Hafnium ;
-	rdf:rest _:genid81 .
-
-_:genid81 a rdf:List ;
-	rdf:first dbr:Hassium ;
-	rdf:rest _:genid80 .
-
-_:genid80 a rdf:List ;
-	rdf:first dbr:Helium ;
-	rdf:rest _:genid79 .
-
-_:genid79 a rdf:List ;
-	rdf:first dbr:Holmium ;
-	rdf:rest _:genid78 .
-
-_:genid78 a rdf:List ;
-	rdf:first dbr:Hydrogen ;
-	rdf:rest _:genid77 .
-
-_:genid77 a rdf:List ;
-	rdf:first dbr:Indium ;
-	rdf:rest _:genid76 .
-
-_:genid76 a rdf:List ;
-	rdf:first dbr:Iodine ;
-	rdf:rest _:genid75 .
-
-_:genid75 a rdf:List ;
-	rdf:first dbr:Iridium ;
-	rdf:rest _:genid74 .
-
-_:genid74 a rdf:List ;
-	rdf:first dbr:Iron ;
-	rdf:rest _:genid73 .
-
-_:genid73 a rdf:List ;
-	rdf:first dbr:Kalium ;
-	rdf:rest _:genid72 .
-
-_:genid72 a rdf:List ;
-	rdf:first dbr:Krypton ;
-	rdf:rest _:genid71 .
-
-_:genid71 a rdf:List ;
-	rdf:first dbr:Lanthanum ;
-	rdf:rest _:genid70 .
-
-_:genid70 a rdf:List ;
-	rdf:first dbr:Lawrencium ;
-	rdf:rest _:genid69 .
-
-_:genid69 a rdf:List ;
-	rdf:first dbr:Lead ;
-	rdf:rest _:genid68 .
-
-_:genid68 a rdf:List ;
-	rdf:first dbr:Lithium ;
-	rdf:rest _:genid67 .
-
-_:genid67 a rdf:List ;
-	rdf:first dbr:Livermorium ;
-	rdf:rest _:genid66 .
-
-_:genid66 a rdf:List ;
-	rdf:first dbr:Lutetium ;
-	rdf:rest _:genid65 .
-
-_:genid65 a rdf:List ;
-	rdf:first dbr:Magnesium ;
-	rdf:rest _:genid64 .
-
-_:genid64 a rdf:List ;
-	rdf:first dbr:Manganese ;
-	rdf:rest _:genid63 .
-
-_:genid63 a rdf:List ;
-	rdf:first dbr:Meitnerium ;
-	rdf:rest _:genid62 .
-
-_:genid62 a rdf:List ;
-	rdf:first dbr:Mendelevium ;
-	rdf:rest _:genid61 .
-
-_:genid61 a rdf:List ;
-	rdf:first dbr:Mercury ;
-	rdf:rest _:genid60 .
-
-_:genid60 a rdf:List ;
-	rdf:first dbr:Molybdenum ;
-	rdf:rest _:genid59 .
-
-_:genid59 a rdf:List ;
-	rdf:first dbr:Natrium ;
-	rdf:rest _:genid58 .
-
-_:genid58 a rdf:List ;
-	rdf:first dbr:Neodymium ;
-	rdf:rest _:genid57 .
-
-_:genid57 a rdf:List ;
-	rdf:first dbr:Neon ;
-	rdf:rest _:genid56 .
-
-_:genid56 a rdf:List ;
-	rdf:first dbr:Neptunium ;
-	rdf:rest _:genid55 .
-
-_:genid55 a rdf:List ;
-	rdf:first dbr:Nickel ;
-	rdf:rest _:genid54 .
-
-_:genid54 a rdf:List ;
-	rdf:first dbr:Niobium ;
-	rdf:rest _:genid53 .
-
-_:genid53 a rdf:List ;
-	rdf:first dbr:Nitrogen ;
-	rdf:rest _:genid52 .
-
-_:genid52 a rdf:List ;
-	rdf:first dbr:Nobelium ;
-	rdf:rest _:genid51 .
-
-_:genid51 a rdf:List ;
-	rdf:first dbr:Osmium ;
-	rdf:rest _:genid50 .
-
-_:genid50 a rdf:List ;
-	rdf:first dbr:Oxygen ;
-	rdf:rest _:genid49 .
-
-_:genid49 a rdf:List ;
-	rdf:first dbr:Palladium ;
-	rdf:rest _:genid48 .
-
-_:genid48 a rdf:List ;
-	rdf:first dbr:Phosphorus ;
-	rdf:rest _:genid47 .
-
-_:genid47 a rdf:List ;
-	rdf:first dbr:Platinum ;
-	rdf:rest _:genid46 .
-
-_:genid46 a rdf:List ;
-	rdf:first dbr:Plutonium ;
-	rdf:rest _:genid45 .
-
-_:genid45 a rdf:List ;
-	rdf:first dbr:Polonium ;
-	rdf:rest _:genid44 .
-
-_:genid44 a rdf:List ;
-	rdf:first dbr:Potassium ;
-	rdf:rest _:genid43 .
-
-_:genid43 a rdf:List ;
-	rdf:first dbr:Praseodymium ;
-	rdf:rest _:genid42 .
-
-_:genid42 a rdf:List ;
-	rdf:first dbr:Promethium ;
-	rdf:rest _:genid41 .
-
-_:genid41 a rdf:List ;
-	rdf:first dbr:Protactinium ;
-	rdf:rest _:genid40 .
-
-_:genid40 a rdf:List ;
-	rdf:first dbr:Radium ;
-	rdf:rest _:genid39 .
-
-_:genid39 a rdf:List ;
-	rdf:first dbr:Radon ;
-	rdf:rest _:genid38 .
-
-_:genid38 a rdf:List ;
-	rdf:first dbr:Rhenium ;
-	rdf:rest _:genid37 .
-
-_:genid37 a rdf:List ;
-	rdf:first dbr:Rhodium ;
-	rdf:rest _:genid36 .
-
-_:genid36 a rdf:List ;
-	rdf:first dbr:Roentgenium ;
-	rdf:rest _:genid35 .
-
-_:genid35 a rdf:List ;
-	rdf:first dbr:Rubidium ;
-	rdf:rest _:genid34 .
-
-_:genid34 a rdf:List ;
-	rdf:first dbr:Ruthenium ;
-	rdf:rest _:genid33 .
-
-_:genid33 a rdf:List ;
-	rdf:first dbr:Rutherfordium ;
-	rdf:rest _:genid32 .
-
-_:genid32 a rdf:List ;
-	rdf:first dbr:Samarium ;
-	rdf:rest _:genid31 .
-
-_:genid31 a rdf:List ;
-	rdf:first dbr:Scandium ;
-	rdf:rest _:genid30 .
-
-_:genid30 a rdf:List ;
-	rdf:first dbr:Seaborgium ;
-	rdf:rest _:genid29 .
-
-_:genid29 a rdf:List ;
-	rdf:first dbr:Selenium ;
-	rdf:rest _:genid28 .
-
-_:genid28 a rdf:List ;
-	rdf:first dbr:Silicon ;
-	rdf:rest _:genid27 .
-
-_:genid27 a rdf:List ;
-	rdf:first dbr:Silver ;
-	rdf:rest _:genid26 .
-
-_:genid26 a rdf:List ;
-	rdf:first dbr:Sodium ;
-	rdf:rest _:genid25 .
-
-_:genid25 a rdf:List ;
-	rdf:first dbr:Strontium ;
-	rdf:rest _:genid24 .
-
-_:genid24 a rdf:List ;
-	rdf:first dbr:Sulfur ;
-	rdf:rest _:genid23 .
-
-_:genid23 a rdf:List ;
-	rdf:first dbr:Tantalum ;
-	rdf:rest _:genid22 .
-
-_:genid22 a rdf:List ;
-	rdf:first dbr:Technetium ;
-	rdf:rest _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first dbr:Tellurium ;
-	rdf:rest _:genid20 .
-
-_:genid20 a rdf:List ;
-	rdf:first dbr:Terbium ;
-	rdf:rest _:genid19 .
-
-_:genid19 a rdf:List ;
-	rdf:first dbr:Thallium ;
-	rdf:rest _:genid18 .
-
-_:genid18 a rdf:List ;
-	rdf:first dbr:Thorium ;
-	rdf:rest _:genid17 .
-
-_:genid17 a rdf:List ;
-	rdf:first dbr:Thulium ;
-	rdf:rest _:genid16 .
-
-_:genid16 a rdf:List ;
-	rdf:first dbr:Tin ;
-	rdf:rest _:genid15 .
-
-_:genid15 a rdf:List ;
-	rdf:first dbr:Titanium ;
-	rdf:rest _:genid14 .
-
-_:genid14 a rdf:List ;
-	rdf:first dbr:Tungsten ;
-	rdf:rest _:genid13 .
-
-_:genid13 a rdf:List ;
-	rdf:first dbr:Ununoctium ;
-	rdf:rest _:genid12 .
-
-_:genid12 a rdf:List ;
-	rdf:first dbr:Ununpentium ;
-	rdf:rest _:genid11 .
-
-_:genid11 a rdf:List ;
-	rdf:first dbr:Ununseptium ;
-	rdf:rest _:genid10 .
-
-_:genid10 a rdf:List ;
-	rdf:first dbr:Ununtrium ;
-	rdf:rest _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first dbr:Uranium ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first dbr:Vanadium ;
-	rdf:rest _:genid7 .
-
-_:genid7 a rdf:List ;
-	rdf:first dbr:Water ;
-	rdf:rest _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first dbr:Xenon ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
-	rdf:first dbr:Ytterbium ;
-	rdf:rest _:genid4 .
-
-_:genid4 a rdf:List ;
-	rdf:first dbr:Yttrium ;
-	rdf:rest _:genid3 .
-
-_:genid3 a rdf:List ;
-	rdf:first dbr:Zinc ;
-	rdf:rest _:genid2 .
-
-_:genid2 a rdf:List ;
-	rdf:first dbr:Zirconium ;
-	rdf:rest rdf:nil .
-# 
-# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:chem="http://www.physical-chemistry.com/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dbr="http://dbpedia.org/resource/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace/"
+     xmlns:property="http://dbpedia.org/property/"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <Ontology>
+        <imports rdf:resource="https://raw.githubusercontent.com/BFO-ontology/BFO/v2.0/bfo.owl"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/centimetre -->
+
+    <rdfs:Datatype rdf:about="http://dbpedia.org/ontology/centimetre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/kelvin -->
+
+    <rdfs:Datatype rdf:about="http://dbpedia.org/ontology/kelvin"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/metre -->
+
+    <rdfs:Datatype rdf:about="http://dbpedia.org/ontology/metre"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/atomicNumber -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/atomicNumber">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/boilingPoint -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/boilingPoint">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalSubstance"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/elementBlock -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/elementBlock">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/elementGroup -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/elementGroup">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/elementPeriod -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/elementPeriod">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/formula -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/formula"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/inchi -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/inchi">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/inn -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/inn">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/molecularWeight -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/molecularWeight">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalSubstance"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/pubchem -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/pubchem">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalSubstance"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/relativeAtomicMass -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/relativeAtomicMass">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/smiles -->
+
+    <ObjectProperty rdf:about="http://dbpedia.org/ontology/smiles">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/boilingPoint -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/ontology/boilingPoint"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/hasAtomicNumber -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/ontology/hasAtomicNumber"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/hasGroupNumber -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/ontology/hasGroupNumber"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/hasSymbol -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/ontology/hasSymbol"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/weight -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/ontology/weight">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>has weight</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/synonyms -->
+
+    <DatatypeProperty rdf:about="http://dbpedia.org/property/synonyms"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/ChemicalCompound -->
+
+    <Class rdf:about="http://dbpedia.org/ontology/ChemicalCompound">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalSubstance"/>
+        <rdfs:label xml:lang="en">Chemical Compound</rdfs:label>
+        <rdfs:label xml:lang="de">Chemische Verbindung</rdfs:label>
+        <rdfs:seeAlso xml:lang="de">https://de.wikipedia.org/wiki/Chemische_Verbindung</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Chemical_substance</rdfs:seeAlso>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ChemicalElement -->
+
+    <Class rdf:about="http://dbpedia.org/ontology/ChemicalElement">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical element</rdfs:label>
+        <rdfs:label xml:lang="de">Chemisches Element</rdfs:label>
+        <rdfs:seeAlso xml:lang="de">https://de.wikipedia.org/wiki/Chemisches_Element</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Chemical_element</rdfs:seeAlso>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ChemicalSubstance -->
+
+    <Class rdf:about="http://dbpedia.org/ontology/ChemicalSubstance">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <rdfs:label xml:lang="en">chemical substance</rdfs:label>
+        <rdfs:label xml:lang="de">chemische Substanz</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Si_Qualities -->
+
+    <Class rdf:about="http://dbpedia.org/ontology/Si_Qualities">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:label xml:lang="de">SI Größen</rdfs:label>
+        <rdfs:label xml:lang="en">SI Qualities</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Amount_of_substance -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Amount_of_substance">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Atom -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Atom">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Biology -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Biology">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Catalyst -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Catalyst">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:label xml:lang="de">Katalysator</rdfs:label>
+        <rdfs:label xml:lang="en">catalyst</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chemical_reaction -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Chemical_reaction">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:comment xml:lang="en">A chemical reaction is a process that leads to the transformation of one set of chemical substances to another. Classically, chemical reactions encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei (no change to the elements present), and can often be described by a chemical equation.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine chemische Reaktion ist ein Vorgang, bei dem eine oder meist mehrere chemische Verbindungen in andere umgewandelt werden. Auch Elemente können an Reaktionen beteiligt sein. Chemische Reaktionen sind in der Regel mit Veränderungen der chemischen Bindungen in Molekülen oder Kristallen verbunden. Durch eine chemische Reaktion können sich die Eigenschaften der Produkte im Vergleich zu den Edukten stark ändern.</rdfs:comment>
+        <rdfs:label xml:lang="en">chemical reaction</rdfs:label>
+        <rdfs:label xml:lang="de">chemische Reaktion</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chemistry -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Chemistry">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Drug -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Drug">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Electric_current -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Electric_current">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gas -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Gas">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_10_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_10_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="de">Die Nickelgruppe, manchmal auch Platingruppe genannt, ist die 10. Gruppe des Periodensystems der Elemente mit den Elementen Nickel (Ni), Palladium (Pd), Platin (Pt) und dem erstmals 1994 hergestellten Darmstadtium (Ds).Die Bezeichnung wird selten verwendet, da die Gruppe meist mit der 8. und 9. Gruppe zur Eisen-Platin-Gruppe zusammengefasst wird.Nicht damit verwechseln darf man die Elemente der Gruppen 8 bis 10 der 5. und 6.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Group 10, numbered by current IUPAC style, is the group of chemical elements in the periodic table that consists of nickel (Ni), palladium (Pd), platinum (Pt), and darmstadtium (Ds). All are d-block transition metals.</rdfs:comment>
+        <rdfs:label xml:lang="en">Group 10 element</rdfs:label>
+        <rdfs:label xml:lang="de">Nickelgruppe</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_11_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_11_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="en">Group 11, by modern IUPAC numbering, is a group of chemical elements in the periodic table, consisting of copper (Cu), silver (Ag), and gold (Au). Roentgenium (Rg) is also placed in this group in the periodic table, although no chemical experiments have yet been carried out to confirm that it behaves like the heavier homologue to gold. Group 11 is also known as the coinage metals, due to their former usage. They were most likely the first three elements discovered.</rdfs:comment>
+        <rdfs:comment xml:lang="en">In der 11. Gruppe des Periodensystems sind die Elemente Kupfer, die beiden Edelmetalle Silber und Gold und das erstmals 1994 hergestellte Element 111 Roentgenium enthalten. Die Gruppe wird auch als Kupfergruppe bezeichnet. Wegen ihrer traditionellen Verwendung werden Kupfer, Silber und Gold als Münzmetalle benannt.</rdfs:comment>
+        <rdfs:label xml:lang="en">Group 11 element</rdfs:label>
+        <rdfs:label xml:lang="de">Kupfergruppe</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_12_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_12_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_13_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_13_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_14_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_14_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_15_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_15_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_16_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_16_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="en">Die Elemente der 6. Hauptgruppe des Periodensystems werden Chalkogene genannt (wörtlich „Erzbildner“, von griech.: χαλκός „Kupfer, Bronze“ und γεννάω „erzeugen“). Die Gruppe wird nach dem ersten Element auch als Sauerstoff-Gruppe bezeichnet. Nach der neueren Nummerierung der IUPAC der Gruppen ist es die Gruppe 16. Zu dieser Stoffgruppe gehören die Elemente Sauerstoff, Schwefel, Selen, Tellur, Polonium sowie das künstlich hergestellte Livermorium.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The chalcogens (/ˈkælkədʒɨnz/) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family. It consists of the elements oxygen (O), sulfur (S), selenium (Se), tellurium (Te), and the radioactive element polonium (Po). The synthetic element livermorium (Lv) is predicted to be a chalcogen as well.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chalcogen</rdfs:label>
+        <rdfs:label xml:lang="de">Chalkogen</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_17_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_17_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="de">Die Halogene [halogeːnə] („Salzbildner“, von altgriechisch ἅλος halos „Salz“ und γεννάω gennáō „erzeugen“) bilden die 7. Hauptgruppe oder nach neuer Gruppierung des Periodensystems die Gruppe 17 im Periodensystem der Elemente, die aus folgenden sechs Elementen besteht: Fluor, Chlor, Brom, Iod, dem äußerst seltenen radioaktiven Astat und dem 2010 erstmals künstlich erzeugten, sehr instabilen Ununseptium.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The halogens or halogen elements (/ˈhælɵdʒɨn/) are a group in the periodic table consisting of five chemically related elements: fluorine (F), chlorine (Cl), bromine (Br), iodine (I), and astatine (At). The artificially created element 117 (ununseptium) may also be a halogen. In the modern IUPAC nomenclature, this group is known as group 17.The name &apos;halogen&apos; means &apos;salt-producing&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="de">Halogen</rdfs:label>
+        <rdfs:label xml:lang="en">Halogen</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_18_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_18_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="de">Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity.</rdfs:comment>
+        <rdfs:label xml:lang="de">Edelgas</rdfs:label>
+        <rdfs:label xml:lang="en">Noble gas</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_1_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_1_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="de">Als Alkalimetalle werden die chemischen Elemente Lithium, Natrium, Kalium, Rubidium, Caesium und Francium aus der 1. Hauptgruppe des Periodensystems bezeichnet. Sie sind silbrig glänzende, reaktive Metalle, die in ihrer Valenzschale ein einzelnes Elektron besitzen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this element/electron configuration results in their characteristic properties.</rdfs:comment>
+        <rdfs:label xml:lang="en">Alkali metal</rdfs:label>
+        <rdfs:label xml:lang="de">Alkalimetall</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_2_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_2_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdfs:comment xml:lang="de">Der Name Erdalkalimetalle [ˈeːrtʔalˌkaːlimeˌtalə] bezeichnet die Elemente der 2. Hauptgruppe des Periodensystems. Die Bezeichnung leitet sich von den beiden benachbarten Hauptgruppen, den Alkalimetallen und den Erdmetallen, ab. Ihr gehören die stabilen Elemente Beryllium (Be), Magnesium (Mg), Calcium (Ca), Strontium (Sr) und Barium (Ba) an. Das 6. Element der Gruppe, Radium (Ra), ist ein radioaktives Zwischenprodukt natürlicher Zerfallsreihen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The alkaline earth metals are six chemical elements in column (group) 2 of the Periodic table. They are beryllium (Be), magnesium (Mg), calcium (Ca), strontium (Sr), barium (Ba), and radium (Ra). They have very similar properties: they are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure.Structurally, they have in common an outer s- electron shell which is full;. (</rdfs:comment>
+        <rdfs:label xml:lang="en">Alkaline earth metal</rdfs:label>
+        <rdfs:label xml:lang="de">Erdalkalimetall</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_3_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_3_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_4_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_4_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_5_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_5_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_6_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_6_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_7_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_7_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_8_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_8_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Group_9_element -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Group_9_element">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Length -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Length">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Liquid -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Liquid">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Luminous_intensity -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Luminous_intensity">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mass -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Mass">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+        <rdfs:label xml:lang="de">Masse</rdfs:label>
+        <rdfs:label xml:lang="en">mass</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Melting_point -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Melting_point">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="de">Als Schmelztemperatur bezeichnet man die Temperatur, bei der ein Stoff schmilzt, das heißt vom festen in den flüssigen Aggregatzustand übergeht. Die Schmelztemperatur ist abhängig vom Stoff, im Gegensatz zur Siedetemperatur aber nur sehr wenig vom Druck (Schmelzdruck). Schmelztemperatur und Druck werden zusammen als Schmelzpunkt bezeichnet, wobei dieser den Zustand eines Reinstoffes beschreibt und Teil der Schmelzkurve im Phasendiagramm des Stoffes ist.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The melting point (or, rarely, liquefaction point) of a solid is the temperature at which it changes state from solid to liquid at atmospheric pressure. At the melting point the solid and liquid phase exist in equilibrium. The melting point of a substance depends on pressure and is usually specified at standard pressure. When considered as the temperature of the reverse change from liquid to solid, it is referred to as the freezing point or crystallization point.</rdfs:comment>
+        <rdfs:label xml:lang="de">Schmelzpunkt</rdfs:label>
+        <rdfs:label xml:lang="en">melting point</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Metal -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Metal">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Molecule -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Molecule">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Phase_transition -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Phase_transition">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:comment xml:lang="en">A phase transition is the transformation of a thermodynamic system from one phase or state of matter to another one by heat transfer. The term is most commonly used to describe transitions between solid, liquid and gaseous states of matter, and, in rare cases, plasma. A phase of a thermodynamic system and the states of matter have uniform physical properties.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Phasenübergang bzw. eine Phasenumwandlung oder Phasentransformation ist in der Thermodynamik die Umwandlung einer oder mehrerer Phasen eines Stoffes in andere Phasen. Eine grafische Darstellung der Stabilitätsbereiche der Phasen in Abhängigkeit von den Zustandsvariablen wie Druck, Temperatur, chemischer Zusammensetzung und magnetischer Feldstärke liefern Phasendiagramme.</rdfs:comment>
+        <rdfs:label xml:lang="de">Phasenübergang</rdfs:label>
+        <rdfs:label xml:lang="en">phase transition</rdfs:label>
+        <skos:example xml:lang="de">Freezing</skos:example>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Physics -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Physics">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Science"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Science -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Science"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Subatomic_particle -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Subatomic_particle">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:label xml:lang="de">Elementarteilchen</rdfs:label>
+        <rdfs:label xml:lang="en">elementary particle</rdfs:label>
+        <rdfs:seeAlso xml:lang="de">https://de.wikipedia.org/wiki/Elementarteilchen</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Elementary_particle</rdfs:seeAlso>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Temperature -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Temperature">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Time -->
+
+    <Class rdf:about="http://dbpedia.org/resource/Time">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Si_Qualities"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#FamousPerson -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#FamousPerson">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Person"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Person -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Solid -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Solid">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </Class>
+    
+
+
+    <!-- http://www.physical-chemistry.com/OrganicNameReacton -->
+
+    <Class rdf:about="http://www.physical-chemistry.com/OrganicNameReacton">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_reaction"/>
+    </Class>
+    
+
+
+    <!-- https://dbpedia.org/resource/Analytical_chemistry -->
+
+    <Class rdf:about="https://dbpedia.org/resource/Analytical_chemistry">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
+    </Class>
+    
+
+
+    <!-- https://dbpedia.org/resource/Environmental_chemistry -->
+
+    <Class rdf:about="https://dbpedia.org/resource/Environmental_chemistry">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
+    </Class>
+    
+
+
+    <!-- https://dbpedia.org/resource/Physical_chemistry -->
+
+    <Class rdf:about="https://dbpedia.org/resource/Physical_chemistry">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemistry"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Acetone -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Acetone">
+        <rdfs:label xml:lang="de">Aceton</rdfs:label>
+        <rdfs:label xml:lang="en">Acetone</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Acetylene -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Acetylene">
+        <rdfs:label xml:lang="de">Acetylen</rdfs:label>
+        <rdfs:label xml:lang="en">Acetylene</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Actinium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Actinium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Ac</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Actinium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aluminium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Aluminium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>Al</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Aluminium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Americium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Americium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Am</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Americium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Antimony -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Antimony">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>Sb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Antimony</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Argon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Argon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Ar</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Argon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arsenic -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Arsenic">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>As</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Arsenic</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aspirin -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Aspirin">
+        <property:synonyms xml:lang="en">O-acetylsalicylic acid</property:synonyms>
+        <property:synonyms xml:lang="en">acetylsalicylate</property:synonyms>
+        <property:synonyms xml:lang="en">acetylsalicylic acid</property:synonyms>
+        <rdfs:label xml:lang="de">Aspirin</rdfs:label>
+        <rdfs:label xml:lang="en">Aspirin</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Aspirin</rdfs:seeAlso>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Astatine -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Astatine">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>At</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Astatine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Barium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Barium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Ba</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Barium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Berkelium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Berkelium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Bk</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Berkelium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Beryllium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Beryllium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Be</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Beryllium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bismuth -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Bismuth">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>Bi</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Bismuth</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bohrium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Bohrium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_7_element"/>
+        <ontology:hasSymbol>Bh</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Bohrium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Boron -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Boron">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>B</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Boron</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bromine -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Bromine">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>Br</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Bromine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cadmium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Cadmium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_12_element"/>
+        <ontology:hasSymbol>Cd</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Cadmium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Caesium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Caesium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>Cs</ontology:hasSymbol>
+        <rdfs:label xml:lang="de">Caesium</rdfs:label>
+        <rdfs:label xml:lang="en">Caesium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Calcium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Calcium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Ca</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Calcium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Californium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Californium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Cf</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Californium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carbon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Carbon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>C</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Carbon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cerium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Cerium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Ce</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Cerium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chlorine -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Chlorine">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>Cl</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Chlorine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chromium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Chromium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_6_element"/>
+        <ontology:hasSymbol>Cr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Chromium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cobalt -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Cobalt">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_9_element"/>
+        <ontology:hasSymbol>Co</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Cobalt</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Copernicium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Copernicium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_12_element"/>
+        <ontology:hasSymbol>Cn</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Copernicium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Copper -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Copper">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_11_element"/>
+        <ontology:hasSymbol>Cu</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Copper</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Curium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Curium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Cm</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Curium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Darmstadtium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Darmstadtium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_10_element"/>
+        <ontology:hasSymbol>Ds</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Darmstadtium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Diels_Alder_reaction -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Diels_Alder_reaction">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Chemical_reaction"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dubnium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Dubnium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_5_element"/>
+        <ontology:hasSymbol>Db</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Dubnium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dysprosium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Dysprosium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Dy</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Dysprosium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Einsteinium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Einsteinium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Es</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Einsteinium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Electron -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Electron">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Subatomic_particle"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Erbium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Erbium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Er</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Erbium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Europium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Europium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Eu</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Europium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fermium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Fermium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Fm</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Fermium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Flerovium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Flerovium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>Fl</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Flerovium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fluorine -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Fluorine">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>F</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Fluorine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Francium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Francium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>Fr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Francium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Freezing -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Freezing">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Phase_transition"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gadolinium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Gadolinium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Gd</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Gadolinium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gallium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Gallium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>Ga</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Gallium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Germanium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Germanium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>Ge</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Germanium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gold -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Gold">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_11_element"/>
+        <ontology:hasSymbol>Au</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Gold</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hafnium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Hafnium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_4_element"/>
+        <ontology:hasSymbol>Hf</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Hafnium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hassium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Hassium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_8_element"/>
+        <ontology:hasSymbol>Hs</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Hassium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Helium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Helium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>He</ontology:hasSymbol>
+        <rdfs:comment xml:lang="en">Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among all the elements.Helium is the second lightest element and is the second most abundant element in the observable universe, being present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined.</rdfs:comment>
+        <rdfs:label xml:lang="de">Helium</rdfs:label>
+        <rdfs:label xml:lang="en">Helium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Holmium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Holmium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Ho</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Holmium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hydrogen -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Hydrogen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasSymbol>H</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Hydrogen</rdfs:label>
+        <rdfs:label xml:lang="en">Wasserstoff</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/HydrogenAtom -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/HydrogenAtom">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Atom"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Indium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Indium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>In</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Indium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iodine -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Iodine">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>I</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Iodine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iridium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Iridium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_9_element"/>
+        <ontology:hasSymbol>Ir</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Iridium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iron -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Iron">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_8_element"/>
+        <ontology:hasSymbol>Fe</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Iron</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kalium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Kalium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>K</ontology:hasSymbol>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Krypton -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Krypton">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Kr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Krypton</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lanthanum -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Lanthanum">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>La</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Lanthanum</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lawrencium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Lawrencium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_3_element"/>
+        <ontology:hasSymbol>Lr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Lawrencium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lead -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Lead">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>Pb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Lead</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lithium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Lithium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>Li</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Lithium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Livermorium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Livermorium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>Lv</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Livermorium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lutetium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Lutetium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_3_element"/>
+        <ontology:hasSymbol>Lu</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Lutetium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Magnesium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Magnesium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Mg</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Magnesium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Manganese -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Manganese">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_7_element"/>
+        <ontology:hasSymbol>Mn</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Manganese</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Meitnerium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Meitnerium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_9_element"/>
+        <ontology:hasSymbol>Mt</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Meitnerium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Melting -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Melting"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mendelevium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Mendelevium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Md</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Mendelevium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mercury -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Mercury">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_12_element"/>
+        <ontology:hasSymbol>Hg</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Mercury</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Molybdenum -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Molybdenum">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_6_element"/>
+        <ontology:hasSymbol>Mo</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Molybdenum</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Natrium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Natrium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>Na</ontology:hasSymbol>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Neodymium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Neodymium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Nd</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Neodymium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Neon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Neon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Ne</ontology:hasSymbol>
+        <rdfs:label xml:lang="de">Neon</rdfs:label>
+        <rdfs:label xml:lang="en">Neon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Neptunium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Neptunium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Np</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Neptunium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Neutron -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Neutron">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Subatomic_particle"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nickel -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Nickel">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_10_element"/>
+        <ontology:hasSymbol>Ni</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Nickel</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Niobium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Niobium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_5_element"/>
+        <ontology:hasSymbol>Nb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Niobium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nitrogen -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Nitrogen">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>N</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Nitrogen</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nobelium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Nobelium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>No</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Nobelium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Osmium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Osmium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_8_element"/>
+        <ontology:hasSymbol>Os</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Osmium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oxygen -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Oxygen">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>O</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Oxygen</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Palladium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Palladium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_10_element"/>
+        <ontology:hasSymbol>Pd</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Palladium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Phosphorus -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Phosphorus">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>P</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Phosphorus</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Platinum -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Platinum">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_10_element"/>
+        <ontology:hasSymbol>Pt</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Platinum</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Plutonium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Plutonium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Pu</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Plutonium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Polonium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Polonium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>Po</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Polonium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Potassium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Potassium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasSymbol>K</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Potassium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Praseodymium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Praseodymium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Pr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Praseodymium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Promethium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Promethium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Pm</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Promethium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Protactinium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Protactinium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Pa</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Protactinium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Proton -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Proton">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Subatomic_particle"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Radium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Radium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Ra</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Radium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Radon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Radon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Rn</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Radon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rhenium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Rhenium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_7_element"/>
+        <ontology:hasSymbol>Re</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Rhenium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rhodium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Rhodium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_9_element"/>
+        <ontology:hasSymbol>Rh</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Rhodium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Roentgenium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Roentgenium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_11_element"/>
+        <ontology:hasSymbol>Rg</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Roentgenium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rubidium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Rubidium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</ontology:hasAtomicNumber>
+        <ontology:hasSymbol>Rb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Rubidium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ruthenium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ruthenium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_8_element"/>
+        <ontology:hasSymbol>Ru</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ruthenium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rutherfordium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Rutherfordium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_4_element"/>
+        <ontology:hasSymbol>Rf</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Rutherfordium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Samarium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Samarium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Sm</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Samarium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Scandium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Scandium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_3_element"/>
+        <ontology:hasSymbol>Sc</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Scandium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seaborgium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Seaborgium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_6_element"/>
+        <ontology:hasSymbol>Sg</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Seaborgium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Selenium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Selenium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>Se</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Selenium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Silicon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Silicon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>Si</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Silicon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Silver -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Silver">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_11_element"/>
+        <ontology:hasSymbol>Ag</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Silver</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sodium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Sodium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_1_element"/>
+        <ontology:hasSymbol>Na</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Sodium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Strontium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Strontium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_2_element"/>
+        <ontology:hasSymbol>Sr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Strontium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sublimating -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Sublimating">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Phase_transition"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sulfur -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Sulfur">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>S</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Sulfur</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tantalum -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Tantalum">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_5_element"/>
+        <ontology:hasSymbol>Ta</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Tantalum</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Technetium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Technetium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_7_element"/>
+        <ontology:hasSymbol>Tc</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Technetium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tellurium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Tellurium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_16_element"/>
+        <ontology:hasSymbol>Te</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Tellurium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Terbium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Terbium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Tb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Terbium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thallium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Thallium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>Tl</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Thallium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thorium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Thorium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Th</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Thorium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thulium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Thulium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Tm</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Thulium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tin -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Tin">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_14_element"/>
+        <ontology:hasSymbol>Sn</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Tin</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Titanium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Titanium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_4_element"/>
+        <ontology:hasSymbol>Ti</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Titanium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tungsten -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Tungsten">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_6_element"/>
+        <ontology:hasSymbol>W</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Tungsten</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ununoctium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ununoctium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Uuo</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ununoctium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ununpentium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ununpentium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_15_element"/>
+        <ontology:hasSymbol>Uup</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ununpentium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ununseptium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ununseptium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_17_element"/>
+        <ontology:hasSymbol>Uus</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ununseptium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ununtrium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ununtrium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_13_element"/>
+        <ontology:hasSymbol>Uut</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ununtrium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Uranium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Uranium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>U</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Uranium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vanadium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Vanadium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_5_element"/>
+        <ontology:hasSymbol>V</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Vanadium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Water -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Water">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+        <rdfs:label xml:lang="de">Wasser</rdfs:label>
+        <rdfs:label xml:lang="en">Water</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Xenon -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Xenon">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_18_element"/>
+        <ontology:hasSymbol>Xe</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Xenon</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ytterbium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Ytterbium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalElement"/>
+        <ontology:hasSymbol>Yb</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Ytterbium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Yttrium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Yttrium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_3_element"/>
+        <ontology:hasSymbol>Y</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Yttrium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Zinc -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Zinc">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_12_element"/>
+        <ontology:hasSymbol>Zn</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Zinc</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Zirconium -->
+
+    <NamedIndividual rdf:about="http://dbpedia.org/resource/Zirconium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Group_4_element"/>
+        <ontology:hasSymbol>Zr</ontology:hasSymbol>
+        <rdfs:label xml:lang="en">Zirconium</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#OxygenAtom -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#OxygenAtom">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Atom"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WaterMolecule -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WaterMolecule">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Molecule"/>
+        <ontology:weight></ontology:weight>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Acetoacetic_Ester_Condensation -->
+
+    <NamedIndividual rdf:about="http://www.physical-chemistry.com/Acetoacetic_Ester_Condensation">
+        <rdf:type rdf:resource="http://www.physical-chemistry.com/OrganicNameReacton"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/resource/Iron -->
+
+    <NamedIndividual rdf:about="https://dbpedia.org/resource/Iron">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalSubstance"/>
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Metal"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/resource/Justus_von_Liebig -->
+
+    <NamedIndividual rdf:about="https://dbpedia.org/resource/Justus_von_Liebig">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#FamousPerson"/>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Acetone"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Acetylene"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Actinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Aluminium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Americium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Antimony"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Argon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Arsenic"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Aspirin"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Astatine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Barium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Berkelium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Beryllium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bismuth"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bohrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Boron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bromine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cadmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Caesium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Calcium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Californium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Carbon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cerium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Chlorine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Chromium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cobalt"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Copernicium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Copper"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Curium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Darmstadtium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Diels_Alder_reaction"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Dubnium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Dysprosium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Einsteinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Electron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Erbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Europium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Fermium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Flerovium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Fluorine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Francium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Freezing"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gadolinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gallium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Germanium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gold"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hafnium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hassium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Helium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Holmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hydrogen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/HydrogenAtom"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Indium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iodine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iridium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Kalium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Krypton"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lanthanum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lawrencium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lead"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lithium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Livermorium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lutetium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Magnesium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Manganese"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Meitnerium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Melting"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Mendelevium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Mercury"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Molybdenum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Natrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neodymium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neptunium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neutron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nickel"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Niobium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nitrogen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nobelium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Osmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Oxygen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Palladium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Phosphorus"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Platinum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Plutonium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Polonium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Potassium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Praseodymium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Promethium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Protactinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Proton"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Radium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Radon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rhenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rhodium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Roentgenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rubidium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ruthenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rutherfordium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Samarium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Scandium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Seaborgium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Selenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Silicon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Silver"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Sodium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Strontium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Sublimating"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Sulfur"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tantalum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Technetium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tellurium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Terbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thallium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thorium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thulium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tin"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Titanium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tungsten"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununoctium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununpentium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununseptium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununtrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Uranium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Vanadium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Water"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Xenon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ytterbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Yttrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Zinc"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Zirconium"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#OxygenAtom"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#WaterMolecule"/>
+            <rdf:Description rdf:about="http://www.physical-chemistry.com/Acetoacetic_Ester_Condensation"/>
+            <rdf:Description rdf:about="https://dbpedia.org/resource/Iron"/>
+            <rdf:Description rdf:about="https://dbpedia.org/resource/Justus_von_Liebig"/>
+        </distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Acetone"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Acetylene"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Actinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Aluminium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Americium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Antimony"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Argon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Arsenic"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Aspirin"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Astatine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Barium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Berkelium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Beryllium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bismuth"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bohrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Boron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Bromine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cadmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Caesium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Calcium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Californium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Carbon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cerium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Chlorine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Chromium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Cobalt"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Copernicium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Copper"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Curium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Darmstadtium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Dubnium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Dysprosium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Einsteinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Erbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Europium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Fermium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Flerovium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Fluorine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Francium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gadolinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gallium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Germanium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Gold"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hafnium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hassium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Helium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Holmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Hydrogen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Indium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iodine"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iridium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Iron"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Kalium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Krypton"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lanthanum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lawrencium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lead"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lithium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Livermorium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Lutetium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Magnesium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Manganese"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Meitnerium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Mendelevium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Mercury"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Molybdenum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Natrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neodymium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Neptunium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nickel"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Niobium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nitrogen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Nobelium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Osmium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Oxygen"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Palladium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Phosphorus"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Platinum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Plutonium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Polonium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Potassium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Praseodymium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Promethium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Protactinium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Radium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Radon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rhenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rhodium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Roentgenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rubidium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ruthenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Rutherfordium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Samarium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Scandium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Seaborgium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Selenium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Silicon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Silver"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Sodium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Strontium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Sulfur"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tantalum"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Technetium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tellurium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Terbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thallium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thorium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Thulium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tin"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Titanium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Tungsten"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununoctium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununpentium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununseptium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ununtrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Uranium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Vanadium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Water"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Xenon"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Ytterbium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Yttrium"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Zinc"/>
+            <rdf:Description rdf:about="http://dbpedia.org/resource/Zirconium"/>
+        </distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+
