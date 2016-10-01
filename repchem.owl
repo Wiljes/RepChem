@@ -4,11 +4,16 @@
      xmlns:dbo="http://dbpedia.org/ontology/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:dbr="http://dbpedia.org/resource/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:www="http://www.physical-chemistry.com/#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:dbpedia="http://dbpedia.org/resource/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://physical-chemistry.com/"/>
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://physical-chemistry.com/">
+        <owl:imports rdf:resource="http://www.ifomis.org/bfo/1.1"/>
+    </owl:Ontology>
     
 
 
@@ -98,6 +103,7 @@
     <!-- http://dbpedia.org/resource/Chemical_element -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Chemical_element">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Object"/>
         <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
         <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
         <rdfs:label xml:lang="en">Chemical element</rdfs:label>
