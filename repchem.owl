@@ -51,9 +51,9 @@
     
 
 
-    <!-- http://dbpedia.org/ontology/abstract -->
+    <!-- http://www.physical-chemistry.com/hasAtomicNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/abstract"/>
+    <owl:DatatypeProperty rdf:about="&www2;hasAtomicNumber"/>
     
 
 
@@ -63,9 +63,9 @@
     
 
 
-    <!-- http://www.physical-chemistry.com/#hasCASGroupNumber -->
+    <!-- http://www.physical-chemistry.com/#hasGroupNumber -->
 
-    <owl:DatatypeProperty rdf:about="&www2;#hasCASGroupNumber"/>
+    <owl:DatatypeProperty rdf:about="&www2;#hasGroupNumber"/>
     
 
 
@@ -80,6 +80,32 @@
     
 
 
+    <!-- http://dbpedia.org/resource/Alkali_metal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/resource/Alkali_metal">
+        <rdfs:label xml:lang="de">Alkalimetall</rdfs:label>
+        <rdfs:label xml:lang="en">Alkali metal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alkaline_earth_metal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/resource/Alkaline_earth_metal">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chalcogen -->
+
+    <owl:Class rdf:about="http://dbpedia.org/resource/Chalcogen">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+    </owl:Class>
+    
+
+
     <!-- http://dbpedia.org/resource/Chemical_element -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Chemical_element">
@@ -87,6 +113,14 @@
         <rdfs:label xml:lang="en">Chemical element</rdfs:label>
         <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
         <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Halogen -->
+
+    <owl:Class rdf:about="http://dbpedia.org/resource/Halogen">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
     </owl:Class>
     
 
@@ -99,6 +133,14 @@
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
         <rdfs:comment xml:lang="de">Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8.</rdfs:comment>
         <rdfs:comment xml:lang="en">The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pnictogen -->
+
+    <owl:Class rdf:about="http://dbpedia.org/resource/Pnictogen">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
     </owl:Class>
     
 
@@ -121,6 +163,60 @@
         <rdfs:label xml:lang="en">Hydrogen</rdfs:label>
         <rdfs:label xml:lang="en">Wasserstoff</rdfs:label>
         <hasSymbol>H</hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Caesium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Caesium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">55</hasAtomicNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Francium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Francium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">87</hasAtomicNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Kalium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Kalium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">19</hasAtomicNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Lithium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Lithium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">3</hasAtomicNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Natrium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Natrium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">11</hasAtomicNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physical-chemistry.com/Rubidium -->
+
+    <owl:NamedIndividual rdf:about="&www2;Rubidium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">37</hasAtomicNumber>
     </owl:NamedIndividual>
     
 
