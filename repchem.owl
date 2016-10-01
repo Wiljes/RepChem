@@ -1,25 +1,14 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY www2 "http://www.physical-chemistry.com/" >
-    <!ENTITY www "http://www.physical-chemistry.com/#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<rdf:RDF xmlns="http://www.physical-chemistry.com/"
-     xml:base="http://www.physical-chemistry.com/"
+<rdf:RDF xmlns="http://physical-chemistry.com/"
+     xml:base="http://physical-chemistry.com/"
+     xmlns:dbo="http://dbpedia.org/ontology/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:www="&www2;#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:www2="http://www.physical-chemistry.com/">
-    <owl:Ontology rdf:about="http://www.physical-chemistry.com/"/>
+     xmlns:dbpedia="http://dbpedia.org/resource/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://physical-chemistry.com/"/>
     
 
 
@@ -34,9 +23,9 @@
     
 
 
-    <!-- http://www.physical-chemistry.com/#cordComment -->
+    <!-- http://physical-chemistry.com/cordComment -->
 
-    <owl:AnnotationProperty rdf:about="&www2;#cordComment"/>
+    <owl:AnnotationProperty rdf:about="http://physical-chemistry.com/cordComment"/>
     
 
 
@@ -51,21 +40,21 @@
     
 
 
-    <!-- http://www.physical-chemistry.com/hasAtomicNumber -->
+    <!-- http://physical-chemistry.com/hasAtomicNumber -->
 
-    <owl:DatatypeProperty rdf:about="&www2;hasAtomicNumber"/>
+    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasAtomicNumber"/>
     
 
 
-    <!-- http://www.physical-chemistry.com/hasSymbol -->
+    <!-- http://physical-chemistry.com/hasGroupNumber -->
 
-    <owl:DatatypeProperty rdf:about="&www2;hasSymbol"/>
+    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasGroupNumber"/>
     
 
 
-    <!-- http://www.physical-chemistry.com/#hasGroupNumber -->
+    <!-- http://physical-chemistry.com/hasSymbol -->
 
-    <owl:DatatypeProperty rdf:about="&www2;#hasGroupNumber"/>
+    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasSymbol"/>
     
 
 
@@ -83,9 +72,9 @@
     <!-- http://dbpedia.org/resource/Alkali_metal -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Alkali_metal">
-        <rdfs:label xml:lang="de">Alkalimetall</rdfs:label>
-        <rdfs:label xml:lang="en">Alkali metal</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+        <rdfs:label xml:lang="en">Alkali metal</rdfs:label>
+        <rdfs:label xml:lang="de">Alkalimetall</rdfs:label>
     </owl:Class>
     
 
@@ -109,10 +98,10 @@
     <!-- http://dbpedia.org/resource/Chemical_element -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Chemical_element">
-        <rdfs:label xml:lang="de">Chemisches Element</rdfs:label>
-        <rdfs:label xml:lang="en">Chemical element</rdfs:label>
-        <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
         <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical element</rdfs:label>
+        <rdfs:label xml:lang="de">Chemisches Element</rdfs:label>
     </owl:Class>
     
 
@@ -128,11 +117,11 @@
     <!-- http://dbpedia.org/resource/Noble_gas -->
 
     <owl:Class rdf:about="http://dbpedia.org/resource/Noble_gas">
-        <rdfs:label xml:lang="de">Edelgas</rdfs:label>
-        <rdfs:label xml:lang="en">Noble gas</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
         <rdfs:comment xml:lang="de">Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8.</rdfs:comment>
         <rdfs:comment xml:lang="en">The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity.</rdfs:comment>
+        <rdfs:label xml:lang="de">Edelgas</rdfs:label>
+        <rdfs:label xml:lang="en">Noble gas</rdfs:label>
     </owl:Class>
     
 
@@ -156,74 +145,128 @@
     
 
 
-    <!-- http://sbpedia.org/resource/Hydrogen -->
+    <!-- http://dbpedia.org/resource/Barium -->
 
-    <owl:NamedIndividual rdf:about="http://sbpedia.org/resource/Hydrogen">
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Beryllium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Beryllium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Caesium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Caesium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</hasAtomicNumber>
+        <hasSymbol>Cs</hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Calcium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Calcium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Francium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Francium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</hasAtomicNumber>
+        <hasSymbol>Fr</hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hydrogen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hydrogen">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
+        <hasSymbol>H</hasSymbol>
         <rdfs:label xml:lang="en">Hydrogen</rdfs:label>
         <rdfs:label xml:lang="en">Wasserstoff</rdfs:label>
-        <hasSymbol>H</hasSymbol>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Caesium -->
+    <!-- http://dbpedia.org/resource/Kalium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Caesium">
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kalium">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">55</hasAtomicNumber>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</hasAtomicNumber>
+        <hasSymbol>K</hasSymbol>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Francium -->
+    <!-- http://dbpedia.org/resource/Lithium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Francium">
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lithium">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">87</hasAtomicNumber>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasAtomicNumber>
+        <hasSymbol>Li</hasSymbol>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Kalium -->
+    <!-- http://dbpedia.org/resource/Magnesium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Kalium">
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Magnesium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Natrium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Natrium">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">19</hasAtomicNumber>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hasAtomicNumber>
+        <hasSymbol>Na</hasSymbol>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Lithium -->
+    <!-- http://dbpedia.org/resource/Radium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Lithium">
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Radium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rubidium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rubidium">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">3</hasAtomicNumber>
+        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</hasAtomicNumber>
+        <hasSymbol>RB</hasSymbol>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Natrium -->
+    <!-- http://dbpedia.org/resource/Strontium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Natrium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">11</hasAtomicNumber>
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Strontium">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.physical-chemistry.com/Rubidium -->
+    <!-- http://physical-chemistry.com/Helium -->
 
-    <owl:NamedIndividual rdf:about="&www2;Rubidium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="&xsd;integer">37</hasAtomicNumber>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.physical-chemistry.com/#Helium -->
-
-    <owl:NamedIndividual rdf:about="&www2;#Helium">
+    <owl:NamedIndividual rdf:about="http://physical-chemistry.com/Helium">
         <rdf:type rdf:resource="http://dbpedia.org/resource/Noble_gas"/>
         <hasSymbol>He</hasSymbol>
     </owl:NamedIndividual>
@@ -231,5 +274,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
 
