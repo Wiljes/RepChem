@@ -3,6 +3,7 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix dbr: <http://dbpedia.org/resource/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -67,9 +68,61 @@ dbo:metre rdf:type rdfs:Datatype .
 #################################################################
 
 
-###  http://dbpedia.org/ontology/hasMolecularMass
+###  http://dbpedia.org/ontology/boilingPoint
 
-dbo:hasMolecularMass rdf:type owl:ObjectProperty .
+dbo:boilingPoint rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain dbo:ChemicalSubstance .
+
+
+
+###  http://dbpedia.org/ontology/formula
+
+dbo:formula rdf:type owl:ObjectProperty .
+
+
+
+###  http://dbpedia.org/ontology/inchi
+
+dbo:inchi rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain dbo:ChemicalCompound .
+
+
+
+###  http://dbpedia.org/ontology/inn
+
+dbo:inn rdf:type owl:ObjectProperty ;
+        
+        rdfs:domain dbo:ChemicalCompound .
+
+
+
+###  http://dbpedia.org/ontology/molecularWeight
+
+dbo:molecularWeight rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:domain dbo:ChemicalSubstance ;
+                    
+                    rdfs:label "has malecular weight" .
+
+
+
+###  http://dbpedia.org/ontology/pubchem
+
+dbo:pubchem rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain dbo:ChemicalSubstance .
+
+
+
+###  http://dbpedia.org/ontology/smiles
+
+dbo:smiles rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain dbo:ChemicalCompound ;
+           
+           rdfs:range dbr:Chemical_reaction .
 
 
 
@@ -86,7 +139,7 @@ dbo:hasMolecularMass rdf:type owl:ObjectProperty .
 
 dbo:boilingPoint rdf:type owl:DatatypeProperty ;
                  
-                 rdfs:domain dbo:ChemicalSubstance .
+                 rdfs:domain dbo:ChemicalCompound .
 
 
 
@@ -135,7 +188,14 @@ dbo:weight rdf:type owl:DatatypeProperty ;
 
 dbo:ChemicalCompound rdf:type owl:Class ;
                      
-                     rdfs:subClassOf dbo:ChemicalSubstance .
+                     rdfs:subClassOf dbo:ChemicalCompound ,
+                                     dbo:ChemicalSubstance ;
+                     
+                     rdfs:label "Chemical Compound"@en ,
+                                "Chemische Verbindung"@de ;
+                     
+                     rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemische_Verbindung"@de ,
+                                  "https://en.wikipedia.org/wiki/Chemical_substance"@en .
 
 
 
@@ -143,7 +203,12 @@ dbo:ChemicalCompound rdf:type owl:Class ;
 
 dbo:ChemicalSubstance rdf:type owl:Class ;
                       
-                      rdfs:subClassOf obo:BFO_0000027 .
+                      owl:equivalentClass dul:ChemicalObject ;
+                      
+                      rdfs:subClassOf obo:BFO_0000027 ;
+                      
+                      rdfs:label "chemical substance"@en ,
+                                 "chemische Substanz"@de .
 
 
 
@@ -177,17 +242,6 @@ dbr:Catalyst rdf:type owl:Class ;
 
 
 
-###  http://dbpedia.org/resource/Chemical_compound
-
-dbr:Chemical_compound rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf obo:BFO_0000027 ;
-                      
-                      rdfs:label "Chemical compound"@en ,
-                                 "Chemische Verbindung"@de .
-
-
-
 ###  http://dbpedia.org/resource/Chemical_element
 
 dbr:Chemical_element rdf:type owl:Class ;
@@ -200,7 +254,8 @@ dbr:Chemical_element rdf:type owl:Class ;
                      rdfs:label "Chemical element"@en ,
                                 "Chemisches Element"@de ;
                      
-                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Chemical_element"@de .
+                     rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemisches_Element"@de ,
+                                  "https://en.wikipedia.org/wiki/Chemical_element"@en .
 
 
 
@@ -534,7 +589,8 @@ dbr:Subatomic_particle rdf:type owl:Class ;
                        rdfs:label "Elementarteilchen"@de ,
                                   "Elementary particle"@en ;
                        
-                       rdfs:seeAlso "https://en.wikipedia.org/wiki/Elementary_particle"@en .
+                       rdfs:seeAlso "https://de.wikipedia.org/wiki/Elementarteilchen"@de ,
+                                    "https://en.wikipedia.org/wiki/Elementary_particle"@en .
 
 
 
@@ -554,6 +610,22 @@ dbr:Time rdf:type owl:Class ;
 
 
 
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject
+
+dul:ChemicalObject rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf obo:BFO_0000027 .
+
+
+
+###  https://dbpedisa.org/resource/Molecule
+
+<https://dbpedisa.org/resource/Molecule> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf obo:BFO_0000030 .
+
+
+
 
 
 #################################################################
@@ -565,8 +637,7 @@ dbr:Time rdf:type owl:Class ;
 
 ###  http://dbpedia.org/resource/Acetone
 
-dbr:Acetone rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_compound ;
+dbr:Acetone rdf:type owl:NamedIndividual ;
             
             rdfs:label "Aceton"@de ,
                        "Acetone"@en .
@@ -575,8 +646,7 @@ dbr:Acetone rdf:type owl:NamedIndividual ,
 
 ###  http://dbpedia.org/resource/Acetylene
 
-dbr:Acetylene rdf:type owl:NamedIndividual ,
-                       dbr:Chemical_compound ;
+dbr:Acetylene rdf:type owl:NamedIndividual ;
               
               rdfs:label "Acetylen"@de ,
                          "Acetylene"@en .
@@ -651,8 +721,7 @@ dbr:Arsenic rdf:type owl:NamedIndividual ,
 
 ###  http://dbpedia.org/resource/Aspirin
 
-dbr:Aspirin rdf:type owl:NamedIndividual ,
-                     dbr:Chemical_compound ;
+dbr:Aspirin rdf:type owl:NamedIndividual ;
             
             <http://dbpedia.org/property/synonyms> "O-acetylsalicylic acid"@en ,
                                                    "acetylsalicylate"@en ,
@@ -1881,8 +1950,7 @@ dbr:Vanadium rdf:type owl:NamedIndividual ,
 
 ###  http://dbpedia.org/resource/Water
 
-dbr:Water rdf:type owl:NamedIndividual ,
-                   dbr:Chemical_compound ;
+dbr:Water rdf:type owl:NamedIndividual ;
           
           rdfs:label "Wasser"@de ,
                      "Water"@en .
@@ -1941,6 +2009,19 @@ dbr:Zirconium rdf:type owl:NamedIndividual ,
               dbo:hasSymbol "Zr" ;
               
               rdfs:label "Zirconium"@en .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+dbo:boilingPoint rdfs:label "has boiling point" .
 
 
 
