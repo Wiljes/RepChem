@@ -1,284 +1,368 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://physical-chemistry.com/"
-     xml:base="http://physical-chemistry.com/"
-     xmlns:dbo="http://dbpedia.org/ontology/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:dbr="http://dbpedia.org/resource/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:www="http://www.physical-chemistry.com/#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://physical-chemistry.com/">
-        <owl:imports rdf:resource="http://www.ifomis.org/bfo/1.1"/>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://physical-chemistry.com/cordComment -->
-
-    <owl:AnnotationProperty rdf:about="http://physical-chemistry.com/cordComment"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://physical-chemistry.com/hasAtomicNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasAtomicNumber"/>
-    
-
-
-    <!-- http://physical-chemistry.com/hasGroupNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasGroupNumber"/>
-    
-
-
-    <!-- http://physical-chemistry.com/hasSymbol -->
-
-    <owl:DatatypeProperty rdf:about="http://physical-chemistry.com/hasSymbol"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://dbpedia.org/resource/Alkali_metal -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Alkali_metal">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-        <rdfs:label xml:lang="en">Alkali metal</rdfs:label>
-        <rdfs:label xml:lang="de">Alkalimetall</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Alkaline_earth_metal -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Alkaline_earth_metal">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Chalcogen -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Chalcogen">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Chemical_element -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Chemical_element">
-        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Object"/>
-        <rdfs:comment xml:lang="en">A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist.</rdfs:comment>
-        <rdfs:label xml:lang="en">Chemical element</rdfs:label>
-        <rdfs:label xml:lang="de">Chemisches Element</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Halogen -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Halogen">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Noble_gas -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Noble_gas">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-        <rdfs:comment xml:lang="de">Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity.</rdfs:comment>
-        <rdfs:label xml:lang="de">Edelgas</rdfs:label>
-        <rdfs:label xml:lang="en">Noble gas</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://dbpedia.org/resource/Pnictogen -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Pnictogen">
-        <rdfs:subClassOf rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://dbpedia.org/resource/Barium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Beryllium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Beryllium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Caesium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Caesium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</hasAtomicNumber>
-        <hasSymbol>Cs</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Calcium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Calcium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Francium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Francium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</hasAtomicNumber>
-        <hasSymbol>Fr</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Hydrogen -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hydrogen">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Chemical_element"/>
-        <hasSymbol>H</hasSymbol>
-        <rdfs:label xml:lang="en">Hydrogen</rdfs:label>
-        <rdfs:label xml:lang="en">Wasserstoff</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Kalium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kalium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</hasAtomicNumber>
-        <hasSymbol>K</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Lithium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lithium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasAtomicNumber>
-        <hasSymbol>Li</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Magnesium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Magnesium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Natrium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Natrium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hasAtomicNumber>
-        <hasSymbol>Na</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Radium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Radium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Rubidium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rubidium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkali_metal"/>
-        <hasAtomicNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</hasAtomicNumber>
-        <hasSymbol>RB</hasSymbol>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Strontium -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Strontium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Alkaline_earth_metal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://physical-chemistry.com/Helium -->
-
-    <owl:NamedIndividual rdf:about="http://physical-chemistry.com/Helium">
-        <rdf:type rdf:resource="http://dbpedia.org/resource/Noble_gas"/>
-        <hasSymbol>He</hasSymbol>
-    </owl:NamedIndividual>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
-
+@prefix : <http://physical-chemistry.com/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix www: <http://www.physical-chemistry.com/#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://physical-chemistry.com/> a owl:Ontology ;
+	owl:imports <http://www.ifomis.org/bfo/1.1> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://physical-chemistry.com/hasMolecularMass
+
+:hasMolecularMass a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://physical-chemistry.com/hasAtomicNumber
+
+:hasAtomicNumber a owl:DatatypeProperty .
+# 
+# http://physical-chemistry.com/hasGroupNumber
+
+:hasGroupNumber a owl:DatatypeProperty .
+# 
+# http://physical-chemistry.com/hasSymbol
+
+:hasSymbol a owl:DatatypeProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Amount_of_substance
+
+dbr:Amount_of_substance a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://dbpedia.org/resource/Catalyst
+
+dbr:Catalyst a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Role> ;
+	rdfs:label "Katalysator"@de , "catalyst"@en .
+# 
+# http://dbpedia.org/resource/Chemical_compound
+
+dbr:Chemical_compound a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate> ;
+	rdfs:label "Chemical compound"@en , "Chemische Verbindung"@de .
+# 
+# http://dbpedia.org/resource/Chemical_element
+
+dbr:Chemical_element a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Object> ;
+	rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en , "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
+	rdfs:label "Chemical element"@en , "Chemisches Element"@de .
+# 
+# http://dbpedia.org/resource/Chemical_reaction
+
+dbr:Chemical_reaction a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#Process> ;
+	rdfs:comment "A chemical reaction is a process that leads to the transformation of one set of chemical substances to another. Classically, chemical reactions encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei (no change to the elements present), and can often be described by a chemical equation."@en , "Eine chemische Reaktion ist ein Vorgang, bei dem eine oder meist mehrere chemische Verbindungen in andere umgewandelt werden. Auch Elemente können an Reaktionen beteiligt sein. Chemische Reaktionen sind in der Regel mit Veränderungen der chemischen Bindungen in Molekülen oder Kristallen verbunden. Durch eine chemische Reaktion können sich die Eigenschaften der Produkte im Vergleich zu den Edukten stark ändern."@de ;
+	rdfs:label "Chemische Reaktion"@de , "chemical reaction"@en .
+# 
+# http://dbpedia.org/resource/Electric_current
+
+dbr:Electric_current a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://dbpedia.org/resource/Group_10_element
+
+dbr:Group_10_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_11_element
+
+dbr:Group_11_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_12_element
+
+dbr:Group_12_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_13_element
+
+dbr:Group_13_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_14_element
+
+dbr:Group_14_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_15_element
+
+dbr:Group_15_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_16_element
+
+dbr:Group_16_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element ;
+	rdfs:comment "Die Elemente der 6. Hauptgruppe des Periodensystems werden Chalkogene genannt (wörtlich „Erzbildner“, von griech.: χαλκός „Kupfer, Bronze“ und γεννάω „erzeugen“). Die Gruppe wird nach dem ersten Element auch als Sauerstoff-Gruppe bezeichnet. Nach der neueren Nummerierung der IUPAC der Gruppen ist es die Gruppe 16. Zu dieser Stoffgruppe gehören die Elemente Sauerstoff, Schwefel, Selen, Tellur, Polonium sowie das künstlich hergestellte Livermorium."@en , "The chalcogens (/ˈkælkədʒɨnz/) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family. It consists of the elements oxygen (O), sulfur (S), selenium (Se), tellurium (Te), and the radioactive element polonium (Po). The synthetic element livermorium (Lv) is predicted to be a chalcogen as well."@en ;
+	rdfs:label "Chalcogen"@en , "Chalkogen"@de .
+# 
+# http://dbpedia.org/resource/Group_17_element
+
+dbr:Group_17_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element ;
+	rdfs:comment "Die Halogene [halogeːnə] („Salzbildner“, von altgriechisch ἅλος halos „Salz“ und γεννάω gennáō „erzeugen“) bilden die 7. Hauptgruppe oder nach neuer Gruppierung des Periodensystems die Gruppe 17 im Periodensystem der Elemente, die aus folgenden sechs Elementen besteht: Fluor, Chlor, Brom, Iod, dem äußerst seltenen radioaktiven Astat und dem 2010 erstmals künstlich erzeugten, sehr instabilen Ununseptium."@de , "The halogens or halogen elements (/ˈhælɵdʒɨn/) are a group in the periodic table consisting of five chemically related elements: fluorine (F), chlorine (Cl), bromine (Br), iodine (I), and astatine (At). The artificially created element 117 (ununseptium) may also be a halogen. In the modern IUPAC nomenclature, this group is known as group 17.The name 'halogen' means 'salt-producing'."@en ;
+	rdfs:label "Halogen"@de , "Halogen"@en .
+# 
+# http://dbpedia.org/resource/Group_18_element
+
+dbr:Group_18_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element ;
+	rdfs:comment "Die Edelgase, auch inerte Gase oder Inertgase bilden eine Gruppe im Periodensystem der Elemente, die insgesamt sieben Elemente umfasst: Helium, Neon, Argon, Krypton, Xenon, das radioaktive Radon sowie das künstlich erzeugte, ebenfalls radioaktive Ununoctium. Die Gruppe wird systematisch auch 8."@de , "The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity."@en ;
+	rdfs:label "Edelgas"@de , "Noble gas"@en .
+# 
+# http://dbpedia.org/resource/Group_1_element
+
+dbr:Group_1_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element ;
+	rdfs:comment "Als Alkalimetalle werden die chemischen Elemente Lithium, Natrium, Kalium, Rubidium, Caesium und Francium aus der 1. Hauptgruppe des Periodensystems bezeichnet. Sie sind silbrig glänzende, reaktive Metalle, die in ihrer Valenzschale ein einzelnes Elektron besitzen."@de , "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this element/electron configuration results in their characteristic properties."@en ;
+	rdfs:label "Alkali metal"@en , "Alkalimetall"@de .
+# 
+# http://dbpedia.org/resource/Group_2_element
+
+dbr:Group_2_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element ;
+	rdfs:comment "Der Name Erdalkalimetalle [ˈeːrtʔalˌkaːlimeˌtalə] bezeichnet die Elemente der 2. Hauptgruppe des Periodensystems. Die Bezeichnung leitet sich von den beiden benachbarten Hauptgruppen, den Alkalimetallen und den Erdmetallen, ab. Ihr gehören die stabilen Elemente Beryllium (Be), Magnesium (Mg), Calcium (Ca), Strontium (Sr) und Barium (Ba) an. Das 6. Element der Gruppe, Radium (Ra), ist ein radioaktives Zwischenprodukt natürlicher Zerfallsreihen."@de , "The alkaline earth metals are six chemical elements in column (group) 2 of the Periodic table. They are beryllium (Be), magnesium (Mg), calcium (Ca), strontium (Sr), barium (Ba), and radium (Ra). They have very similar properties: they are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure.Structurally, they have in common an outer s- electron shell which is full;. ("@en ;
+	rdfs:label "Alkaline earth metal"@en , "Erdalkalimetall"@de .
+# 
+# http://dbpedia.org/resource/Group_3_element
+
+dbr:Group_3_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_4_element
+
+dbr:Group_4_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_5_element
+
+dbr:Group_5_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_6_element
+
+dbr:Group_6_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_7_element
+
+dbr:Group_7_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_8_element
+
+dbr:Group_8_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Group_9_element
+
+dbr:Group_9_element a owl:Class ;
+	rdfs:subClassOf dbr:Chemical_element .
+# 
+# http://dbpedia.org/resource/Length
+
+dbr:Length a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://dbpedia.org/resource/Luminous_intensity
+
+dbr:Luminous_intensity a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://dbpedia.org/resource/Mass
+
+dbr:Mass a owl:Class ;
+	rdfs:subClassOf :SiQualities ;
+	rdfs:label "Masse"@de , "mass"@en .
+# 
+# http://dbpedia.org/resource/Melting_point
+
+dbr:Melting_point a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Quality> ;
+	rdfs:comment "Als Schmelztemperatur bezeichnet man die Temperatur, bei der ein Stoff schmilzt, das heißt vom festen in den flüssigen Aggregatzustand übergeht. Die Schmelztemperatur ist abhängig vom Stoff, im Gegensatz zur Siedetemperatur aber nur sehr wenig vom Druck (Schmelzdruck). Schmelztemperatur und Druck werden zusammen als Schmelzpunkt bezeichnet, wobei dieser den Zustand eines Reinstoffes beschreibt und Teil der Schmelzkurve im Phasendiagramm des Stoffes ist."@de , "The melting point (or, rarely, liquefaction point) of a solid is the temperature at which it changes state from solid to liquid at atmospheric pressure. At the melting point the solid and liquid phase exist in equilibrium. The melting point of a substance depends on pressure and is usually specified at standard pressure. When considered as the temperature of the reverse change from liquid to solid, it is referred to as the freezing point or crystallization point."@en ;
+	rdfs:label "Schmelzpunkt"@de , "melting point"@en .
+# 
+# http://dbpedia.org/resource/Phase_transition
+
+dbr:Phase_transition a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#Process> ;
+	rdfs:label "Phasenübergang"@de , "phase transition"@en .
+# 
+# http://dbpedia.org/resource/Temperature
+
+dbr:Temperature a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://dbpedia.org/resource/Time
+
+dbr:Time a owl:Class ;
+	rdfs:subClassOf :SiQualities .
+# 
+# http://physical-chemistry.com/SiQualities
+
+:SiQualities a owl:Class ;
+	rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Quality> ;
+	rdfs:label "SI Größen"@de , "SI Qualities"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Aspirin
+
+dbr:Aspirin a owl:NamedIndividual , dbr:Chemical_compound .
+# 
+# http://dbpedia.org/resource/Barium
+
+dbr:Barium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Beryllium
+
+dbr:Beryllium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Caesium
+
+dbr:Caesium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "55"^^xsd:integer ;
+	:hasSymbol "Cs" ;
+	rdfs:label "Caesium"@de .
+# 
+# http://dbpedia.org/resource/Calcium
+
+dbr:Calcium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Diels_Alder_reaction
+
+dbr:Diels_Alder_reaction a owl:NamedIndividual , dbr:Chemical_reaction ;
+	rdfs:comment "Die Diels-Alder-Reaktion ist eine chemische Reaktion, bei der Bindungen zwischen Kohlenstoff-Atomen aufgebaut werden. Sie wurde nach ihren Entdeckern Otto Diels und Kurt Alder benannt, die für ihre Arbeit 1950 mit dem Nobelpreis ausgezeichnet wurden. Bei dieser Umsetzung wird ein Ring aus sechs Kohlenstoffatomen gebildet, wobei ein konjugiertes Dien und ein substituiertes Alken verknüpft werden."@de , "The Diels–Alder reaction is an organic chemical reaction (specifically, a [4+2] cycloaddition) between a conjugated diene and a substituted alkene, commonly termed the dienophile, to form a substituted cyclohexene system. It was first described by Otto Paul Hermann Diels and Kurt Alder in 1928, for which work they were awarded the Nobel Prize in Chemistry in 1950."@en ;
+	rdfs:label "Diels-Alder-Reaktion"@en , "Diels–Alder reaction"@en .
+# 
+# http://dbpedia.org/resource/Francium
+
+dbr:Francium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "87"^^xsd:integer ;
+	:hasSymbol "Fr" .
+# 
+# http://dbpedia.org/resource/Freezing
+
+dbr:Freezing a owl:NamedIndividual , dbr:Phase_transition ;
+	rdfs:comment "Erstarren bezeichnet in der Physik den Übergang eines Stoffes vom flüssigen in den festen Aggregatzustand. In den meisten Fällen erfolgt dies durch Abkühlung. Der Umkehrprozess des Erstarrens ist das Schmelzen.Bei Reinstoffen und konstantem Druck erfolgt das Erstarren immer bei einer bestimmten Temperatur, die Gefrierpunkt genannt wird (Erstarrungslinie). Er entspricht bei reinen Stoffen exakt dem Schmelzpunkt."@de , "Freezing, or solidification, is a phase transition in which a liquid turns into a solid when its temperature is lowered below its freezing point.For most substances, the melting and freezing points are the same temperature; however, certain substances possess differing solid–liquid transition temperatures. For example, agar displays a hysteresis in its melting and freezing temperatures. It melts at 85 °C (185 °F) and solidifies from 31 °C to 40 °C (89.6 °F to 104 °F)."@en ;
+	rdfs:label "Erstarren"@de , "Freezing"@en .
+# 
+# http://dbpedia.org/resource/Helium
+
+dbr:Helium a owl:NamedIndividual , dbr:Group_18_element ;
+	:hasSymbol "He" .
+# 
+# http://dbpedia.org/resource/Hydrogen
+
+dbr:Hydrogen a owl:NamedIndividual , dbr:Chemical_element ;
+	:hasSymbol "H" ;
+	rdfs:label "Hydrogen"@en , "Wasserstoff"@en .
+# 
+# http://dbpedia.org/resource/Kalium
+
+dbr:Kalium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "19"^^xsd:integer ;
+	:hasSymbol "K" .
+# 
+# http://dbpedia.org/resource/Lithium
+
+dbr:Lithium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "3"^^xsd:integer ;
+	:hasSymbol "Li" .
+# 
+# http://dbpedia.org/resource/Magnesium
+
+dbr:Magnesium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Natrium
+
+dbr:Natrium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "11"^^xsd:integer ;
+	:hasSymbol "Na" .
+# 
+# http://dbpedia.org/resource/Radium
+
+dbr:Radium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Rubidium
+
+dbr:Rubidium a owl:NamedIndividual , dbr:Group_1_element ;
+	:hasAtomicNumber "37"^^xsd:integer ;
+	:hasSymbol "Rb" .
+# 
+# http://dbpedia.org/resource/Strontium
+
+dbr:Strontium a owl:NamedIndividual , dbr:Group_2_element .
+# 
+# http://dbpedia.org/resource/Water
+
+dbr:Water a owl:NamedIndividual , dbr:Chemical_compound .
+# 
+# http://physical-chemistry.com/Astatine
+
+:Astatine a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "85"^^xsd:integer .
+# 
+# http://physical-chemistry.com/Bromine
+
+:Bromine a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "35"^^xsd:integer .
+# 
+# http://physical-chemistry.com/Chlorine
+
+:Chlorine a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "17"^^xsd:integer .
+# 
+# http://physical-chemistry.com/Fluorine
+
+:Fluorine a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "9"^^xsd:integer .
+# 
+# http://physical-chemistry.com/Iodine
+
+:Iodine a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "53"^^xsd:integer .
+# 
+# http://physical-chemistry.com/Ununseptium
+
+:Ununseptium a owl:NamedIndividual , dbr:Group_17_element ;
+	:hasAtomicNumber "117"^^xsd:integer .
+# 
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
