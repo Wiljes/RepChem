@@ -1752,6 +1752,18 @@ chem:Compound rdf:type owl:Class ;
 
 
 
+###  http://www.physical-chemistry.com/HeterogeneousSubstance
+
+chem:HeterogeneousSubstance rdf:type owl:Class .
+
+
+
+###  http://www.physical-chemistry.com/HomegeneousSubstance
+
+chem:HomegeneousSubstance rdf:type owl:Class .
+
+
+
 ###  http://www.physical-chemistry.com/Mixture
 
 chem:Mixture rdf:type owl:Class ;
