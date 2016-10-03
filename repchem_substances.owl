@@ -72,11 +72,22 @@ ontology:ChemicalElement rdf:type owl:Class ;
 
 
 
+###  http://dbpedia.org/resource/Actinide
+
+dbr:Actinide rdf:type owl:Class ;
+             
+             rdfs:subClassOf ontology:ChemicalElement ;
+             
+             rdfs:label "Actinide"@en .
+
+
+
 ###  http://dbpedia.org/resource/Actinium
 
 dbr:Actinium rdf:type owl:Class ;
              
-             rdfs:subClassOf ontology:ChemicalElement ;
+             rdfs:subClassOf dbr:Actinide ,
+                             dbr:Group_3_element ;
              
              ontology:hasSymbol "Ac" ;
              
@@ -100,7 +111,7 @@ dbr:Aluminium rdf:type owl:Class ;
 
 dbr:Americium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Actinide ;
               
               ontology:hasSymbol "Am" ;
               
@@ -172,7 +183,7 @@ dbr:Barium rdf:type owl:Class ;
 
 dbr:Berkelium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Actinide ;
               
               ontology:hasSymbol "Bk" ;
               
@@ -283,7 +294,7 @@ dbr:Calcium rdf:type owl:Class ;
 
 dbr:Californium rdf:type owl:Class ;
                 
-                rdfs:subClassOf ontology:ChemicalElement ;
+                rdfs:subClassOf dbr:Actinide ;
                 
                 ontology:hasSymbol "Cf" ;
                 
@@ -307,7 +318,7 @@ dbr:Carbon rdf:type owl:Class ;
 
 dbr:Cerium rdf:type owl:Class ;
            
-           rdfs:subClassOf ontology:ChemicalElement ;
+           rdfs:subClassOf dbr:Lanthanide ;
            
            ontology:hasSymbol "Ce" ;
            
@@ -379,7 +390,7 @@ dbr:Copper rdf:type owl:Class ;
 
 dbr:Curium rdf:type owl:Class ;
            
-           rdfs:subClassOf ontology:ChemicalElement ;
+           rdfs:subClassOf dbr:Actinide ;
            
            ontology:hasSymbol "Cm" ;
            
@@ -415,7 +426,7 @@ dbr:Dubnium rdf:type owl:Class ;
 
 dbr:Dysprosium rdf:type owl:Class ;
                
-               rdfs:subClassOf ontology:ChemicalElement ;
+               rdfs:subClassOf dbr:Lanthanide ;
                
                ontology:hasSymbol "Dy" ;
                
@@ -427,7 +438,7 @@ dbr:Dysprosium rdf:type owl:Class ;
 
 dbr:Einsteinium rdf:type owl:Class ;
                 
-                rdfs:subClassOf ontology:ChemicalElement ;
+                rdfs:subClassOf dbr:Actinide ;
                 
                 ontology:hasSymbol "Es" ;
                 
@@ -439,7 +450,7 @@ dbr:Einsteinium rdf:type owl:Class ;
 
 dbr:Erbium rdf:type owl:Class ;
            
-           rdfs:subClassOf ontology:ChemicalElement ;
+           rdfs:subClassOf dbr:Lanthanide ;
            
            ontology:hasSymbol "Er" ;
            
@@ -451,7 +462,7 @@ dbr:Erbium rdf:type owl:Class ;
 
 dbr:Europium rdf:type owl:Class ;
              
-             rdfs:subClassOf ontology:ChemicalElement ;
+             rdfs:subClassOf dbr:Lanthanide ;
              
              ontology:hasSymbol "Eu" ;
              
@@ -463,7 +474,7 @@ dbr:Europium rdf:type owl:Class ;
 
 dbr:Fermium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Actinide ;
             
             ontology:hasSymbol "Fm" ;
             
@@ -513,7 +524,7 @@ dbr:Francium rdf:type owl:Class ;
 
 dbr:Gadolinium rdf:type owl:Class ;
                
-               rdfs:subClassOf ontology:ChemicalElement ;
+               rdfs:subClassOf dbr:Lanthanide ;
                
                ontology:hasSymbol "Gd" ;
                
@@ -589,7 +600,9 @@ dbr:Group_11_element rdf:type owl:Class ;
 
 dbr:Group_12_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf ontology:ChemicalElement .
+                     rdfs:subClassOf ontology:ChemicalElement ;
+                     
+                     rdfs:label "Group 12 element"@en .
 
 
 
@@ -597,7 +610,9 @@ dbr:Group_12_element rdf:type owl:Class ;
 
 dbr:Group_13_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf ontology:ChemicalElement .
+                     rdfs:subClassOf ontology:ChemicalElement ;
+                     
+                     rdfs:label "Group 13 element"@en .
 
 
 
@@ -605,7 +620,9 @@ dbr:Group_13_element rdf:type owl:Class ;
 
 dbr:Group_14_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf ontology:ChemicalElement .
+                     rdfs:subClassOf ontology:ChemicalElement ;
+                     
+                     rdfs:label "Group 14 element"@en .
 
 
 
@@ -613,7 +630,9 @@ dbr:Group_14_element rdf:type owl:Class ;
 
 dbr:Group_15_element rdf:type owl:Class ;
                      
-                     rdfs:subClassOf ontology:ChemicalElement .
+                     rdfs:subClassOf ontology:ChemicalElement ;
+                     
+                     rdfs:label "Group 15 element"@en .
 
 
 
@@ -627,7 +646,9 @@ dbr:Group_16_element rdf:type owl:Class ;
                                   "The chalcogens (/ˈkælkədʒɨnz/) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family. It consists of the elements oxygen (O), sulfur (S), selenium (Se), tellurium (Te), and the radioactive element polonium (Po). The synthetic element livermorium (Lv) is predicted to be a chalcogen as well."@en ;
                      
                      rdfs:label "Chalcogen"@en ,
-                                "Chalkogen"@de .
+                                "Chalkogen"@de ,
+                                "Group 16 element"@en ,
+                                "VI. Hauptgruppe"@de .
 
 
 
@@ -640,8 +661,10 @@ dbr:Group_17_element rdf:type owl:Class ;
                      rdfs:comment "Die Halogene [halogeːnə] („Salzbildner“, von altgriechisch ἅλος halos „Salz“ und γεννάω gennáō „erzeugen“) bilden die 7. Hauptgruppe oder nach neuer Gruppierung des Periodensystems die Gruppe 17 im Periodensystem der Elemente, die aus folgenden sechs Elementen besteht: Fluor, Chlor, Brom, Iod, dem äußerst seltenen radioaktiven Astat und dem 2010 erstmals künstlich erzeugten, sehr instabilen Ununseptium."@de ,
                                   "The halogens or halogen elements (/ˈhælɵdʒɨn/) are a group in the periodic table consisting of five chemically related elements: fluorine (F), chlorine (Cl), bromine (Br), iodine (I), and astatine (At). The artificially created element 117 (ununseptium) may also be a halogen. In the modern IUPAC nomenclature, this group is known as group 17.The name 'halogen' means 'salt-producing'."@en ;
                      
-                     rdfs:label "Halogen"@de ,
-                                "Halogen"@en .
+                     rdfs:label "Group 17 element"@en ,
+                                "Halogen"@de ,
+                                "Halogen"@en ,
+                                "VII. Hauptgruppe"@de .
 
 
 
@@ -655,7 +678,9 @@ dbr:Group_18_element rdf:type owl:Class ;
                                   "The noble gases make a group of chemical elements with similar properties. Under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity."@en ;
                      
                      rdfs:label "Edelgas"@de ,
-                                "Noble gas"@en .
+                                "Group 18 element"@en ,
+                                "Noble gas"@en ,
+                                "VIII. Hauptgruppe"@de .
 
 
 
@@ -668,9 +693,10 @@ dbr:Group_1_element rdf:type owl:Class ;
                     rdfs:comment "Als Alkalimetalle werden die chemischen Elemente Lithium, Natrium, Kalium, Rubidium, Caesium und Francium aus der 1. Hauptgruppe des Periodensystems bezeichnet. Sie sind silbrig glänzende, reaktive Metalle, die in ihrer Valenzschale ein einzelnes Elektron besitzen."@de ,
                                  "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this element/electron configuration results in their characteristic properties."@en ;
                     
-                    rdfs:label "1. Hauptgruppe"@de ,
-                               "Alkali metal"@en ,
-                               "Alkalimetall"@de .
+                    rdfs:label "Alkali metal"@en ,
+                               "Alkalimetall"@de ,
+                               "Group 1 element"@en ,
+                               "I. Hauptgruppe"@de .
 
 
 
@@ -683,9 +709,10 @@ dbr:Group_2_element rdf:type owl:Class ;
                     rdfs:comment "Der Name Erdalkalimetalle [ˈeːrtʔalˌkaːlimeˌtalə] bezeichnet die Elemente der 2. Hauptgruppe des Periodensystems. Die Bezeichnung leitet sich von den beiden benachbarten Hauptgruppen, den Alkalimetallen und den Erdmetallen, ab. Ihr gehören die stabilen Elemente Beryllium (Be), Magnesium (Mg), Calcium (Ca), Strontium (Sr) und Barium (Ba) an. Das 6. Element der Gruppe, Radium (Ra), ist ein radioaktives Zwischenprodukt natürlicher Zerfallsreihen."@de ,
                                  "The alkaline earth metals are six chemical elements in column (group) 2 of the Periodic table. They are beryllium (Be), magnesium (Mg), calcium (Ca), strontium (Sr), barium (Ba), and radium (Ra). They have very similar properties: they are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure.Structurally, they have in common an outer s- electron shell which is full;. ("@en ;
                     
-                    rdfs:label "2. Hauptgruppe"@de ,
-                               "Alkaline earth metal"@en ,
-                               "Erdalkalimetall"@de .
+                    rdfs:label "Alkaline earth metal"@en ,
+                               "Erdalkalimetall"@de ,
+                               "Group 2 element"@en ,
+                               "II. Hauptgruppe"@de .
 
 
 
@@ -693,7 +720,9 @@ dbr:Group_2_element rdf:type owl:Class ;
 
 dbr:Group_3_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 3 element"@en .
 
 
 
@@ -701,7 +730,9 @@ dbr:Group_3_element rdf:type owl:Class ;
 
 dbr:Group_4_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 4 element"@en .
 
 
 
@@ -709,7 +740,9 @@ dbr:Group_4_element rdf:type owl:Class ;
 
 dbr:Group_5_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 5 element"@en .
 
 
 
@@ -717,7 +750,9 @@ dbr:Group_5_element rdf:type owl:Class ;
 
 dbr:Group_6_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 6 element"@en .
 
 
 
@@ -725,7 +760,9 @@ dbr:Group_6_element rdf:type owl:Class ;
 
 dbr:Group_7_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 7 element"@en .
 
 
 
@@ -733,7 +770,9 @@ dbr:Group_7_element rdf:type owl:Class ;
 
 dbr:Group_8_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 8 element"@en .
 
 
 
@@ -741,7 +780,9 @@ dbr:Group_8_element rdf:type owl:Class ;
 
 dbr:Group_9_element rdf:type owl:Class ;
                     
-                    rdfs:subClassOf ontology:ChemicalElement .
+                    rdfs:subClassOf ontology:ChemicalElement ;
+                    
+                    rdfs:label "Group 9  element"@en .
 
 
 
@@ -788,7 +829,7 @@ dbr:Helium rdf:type owl:Class ;
 
 dbr:Holmium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Lanthanide ;
             
             ontology:hasSymbol "Ho" ;
             
@@ -800,8 +841,7 @@ dbr:Holmium rdf:type owl:Class ;
 
 dbr:Hydrogen rdf:type owl:Class ;
              
-             rdfs:subClassOf ontology:ChemicalElement ,
-                             dbr:Group_1_element ;
+             rdfs:subClassOf dbr:Group_1_element ;
              
              ontology:hasSymbol "H" ;
              
@@ -858,18 +898,6 @@ dbr:Iron rdf:type owl:Class ;
 
 
 
-###  http://dbpedia.org/resource/Kalium
-
-dbr:Kalium rdf:type owl:Class ;
-           
-           rdfs:subClassOf dbr:Group_1_element ;
-           
-           ontology:hasAtomicNumber 19 ;
-           
-           ontology:hasSymbol "K" .
-
-
-
 ###  http://dbpedia.org/resource/Krypton
 
 dbr:Krypton rdf:type owl:Class ;
@@ -882,11 +910,22 @@ dbr:Krypton rdf:type owl:Class ;
 
 
 
+###  http://dbpedia.org/resource/Lanthanide
+
+dbr:Lanthanide rdf:type owl:Class ;
+               
+               rdfs:subClassOf ontology:ChemicalElement ;
+               
+               rdfs:label "Lanthanide"@en .
+
+
+
 ###  http://dbpedia.org/resource/Lanthanum
 
 dbr:Lanthanum rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Group_3_element ,
+                              dbr:Lanthanide ;
               
               ontology:hasSymbol "La" ;
               
@@ -898,7 +937,7 @@ dbr:Lanthanum rdf:type owl:Class ;
 
 dbr:Lawrencium rdf:type owl:Class ;
                
-               rdfs:subClassOf dbr:Group_3_element ;
+               rdfs:subClassOf dbr:Actinide ;
                
                ontology:hasSymbol "Lr" ;
                
@@ -948,7 +987,7 @@ dbr:Livermorium rdf:type owl:Class ;
 
 dbr:Lutetium rdf:type owl:Class ;
              
-             rdfs:subClassOf dbr:Group_3_element ;
+             rdfs:subClassOf dbr:Lanthanide ;
              
              ontology:hasSymbol "Lu" ;
              
@@ -996,7 +1035,7 @@ dbr:Meitnerium rdf:type owl:Class ;
 
 dbr:Mendelevium rdf:type owl:Class ;
                 
-                rdfs:subClassOf ontology:ChemicalElement ;
+                rdfs:subClassOf dbr:Actinide ;
                 
                 ontology:hasSymbol "Md" ;
                 
@@ -1028,23 +1067,11 @@ dbr:Molybdenum rdf:type owl:Class ;
 
 
 
-###  http://dbpedia.org/resource/Natrium
-
-dbr:Natrium rdf:type owl:Class ;
-            
-            rdfs:subClassOf dbr:Group_1_element ;
-            
-            ontology:hasAtomicNumber 11 ;
-            
-            ontology:hasSymbol "Na" .
-
-
-
 ###  http://dbpedia.org/resource/Neodymium
 
 dbr:Neodymium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Lanthanide ;
               
               ontology:hasSymbol "Nd" ;
               
@@ -1069,7 +1096,7 @@ dbr:Neon rdf:type owl:Class ;
 
 dbr:Neptunium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Actinide ;
               
               ontology:hasSymbol "Np" ;
               
@@ -1117,7 +1144,7 @@ dbr:Nitrogen rdf:type owl:Class ;
 
 dbr:Nobelium rdf:type owl:Class ;
              
-             rdfs:subClassOf ontology:ChemicalElement ;
+             rdfs:subClassOf dbr:Actinide ;
              
              ontology:hasSymbol "No" ;
              
@@ -1189,7 +1216,7 @@ dbr:Platinum rdf:type owl:Class ;
 
 dbr:Plutonium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Actinide ;
               
               ontology:hasSymbol "Pu" ;
               
@@ -1217,7 +1244,8 @@ dbr:Potassium rdf:type owl:Class ;
               
               ontology:hasSymbol "K" ;
               
-              rdfs:label "Potassium"@en .
+              rdfs:label "Kalium"@de ,
+                         "Potassium"@en .
 
 
 
@@ -1225,7 +1253,7 @@ dbr:Potassium rdf:type owl:Class ;
 
 dbr:Praseodymium rdf:type owl:Class ;
                  
-                 rdfs:subClassOf ontology:ChemicalElement ;
+                 rdfs:subClassOf dbr:Lanthanide ;
                  
                  ontology:hasSymbol "Pr" ;
                  
@@ -1237,7 +1265,7 @@ dbr:Praseodymium rdf:type owl:Class ;
 
 dbr:Promethium rdf:type owl:Class ;
                
-               rdfs:subClassOf ontology:ChemicalElement ;
+               rdfs:subClassOf dbr:Lanthanide ;
                
                ontology:hasSymbol "Pm" ;
                
@@ -1249,7 +1277,7 @@ dbr:Promethium rdf:type owl:Class ;
 
 dbr:Protactinium rdf:type owl:Class ;
                  
-                 rdfs:subClassOf ontology:ChemicalElement ;
+                 rdfs:subClassOf dbr:Actinide ;
                  
                  ontology:hasSymbol "Pa" ;
                  
@@ -1359,7 +1387,7 @@ dbr:Rutherfordium rdf:type owl:Class ;
 
 dbr:Samarium rdf:type owl:Class ;
              
-             rdfs:subClassOf ontology:ChemicalElement ;
+             rdfs:subClassOf dbr:Lanthanide ;
              
              ontology:hasSymbol "Sm" ;
              
@@ -1435,7 +1463,8 @@ dbr:Sodium rdf:type owl:Class ;
            
            ontology:hasSymbol "Na" ;
            
-           rdfs:label "Sodium"@en .
+           rdfs:label "Natrium"@de ,
+                      "Sodium"@en .
 
 
 
@@ -1503,7 +1532,7 @@ dbr:Tellurium rdf:type owl:Class ;
 
 dbr:Terbium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Lanthanide ;
             
             ontology:hasSymbol "Tb" ;
             
@@ -1527,7 +1556,7 @@ dbr:Thallium rdf:type owl:Class ;
 
 dbr:Thorium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Actinide ;
             
             ontology:hasSymbol "Th" ;
             
@@ -1539,7 +1568,7 @@ dbr:Thorium rdf:type owl:Class ;
 
 dbr:Thulium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Lanthanide ;
             
             ontology:hasSymbol "Tm" ;
             
@@ -1635,7 +1664,7 @@ dbr:Ununtrium rdf:type owl:Class ;
 
 dbr:Uranium rdf:type owl:Class ;
             
-            rdfs:subClassOf ontology:ChemicalElement ;
+            rdfs:subClassOf dbr:Actinide ;
             
             ontology:hasSymbol "U" ;
             
@@ -1671,7 +1700,7 @@ dbr:Xenon rdf:type owl:Class ;
 
 dbr:Ytterbium rdf:type owl:Class ;
               
-              rdfs:subClassOf ontology:ChemicalElement ;
+              rdfs:subClassOf dbr:Lanthanide ;
               
               ontology:hasSymbol "Yb" ;
               
