@@ -62,6 +62,8 @@ dbr:Physics rdf:type owl:Class ;
 
 dbr:Science rdf:type owl:Class ;
             
+            rdfs:comment "Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. In an older and closely related meaning, \"science\" also refers to this body of knowledge itself, of the type that can be rationally explained and reliably applied. Ever since classical antiquity, science as a type of knowledge has been closely linked to philosophy."@en ;
+            
             rdfs:label "science"@en .
 
 
@@ -70,23 +72,177 @@ dbr:Science rdf:type owl:Class ;
 
 <https://dbpedia.org/resource/Analytical_chemistry> rdf:type owl:Class ;
                                                     
+                                                    rdfs:subClassOf dbr:Chemistry ;
+                                                    
+                                                    rdfs:comment "Analytical chemistry is the study of the separation, identification, and quantification of the chemical components of natural and artificial materials. Qualitative analysis gives an indication of the identity of the chemical species in the sample, and quantitative analysis determines the amount of certain components in the substance. The separation of components is often performed prior to analysis.Analytical methods can be separated into classical and instrumental."@en .
+
+
+
+###  https://en.wikipedia.org/wiki/Agrochemistry
+
+<https://en.wikipedia.org/wiki/Agrochemistry> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Astrochemistry
+
+<https://en.wikipedia.org/wiki/Astrochemistry> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Atmospheric_chemistry
+
+<https://en.wikipedia.org/wiki/Atmospheric_chemistry> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Biochemistry
+
+<https://en.wikipedia.org/wiki/Biochemistry> rdf:type owl:Class ;
+                                             
+                                             rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Chemical_kinetics
+
+<https://en.wikipedia.org/wiki/Chemical_kinetics> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Chemical_thermodynamics
+
+<https://en.wikipedia.org/wiki/Chemical_thermodynamics> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Condensed_matter_physics
+
+<https://en.wikipedia.org/wiki/Condensed_matter_physics> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf dbr:Physics .
+
+
+
+###  https://en.wikipedia.org/wiki/Electrochemistry
+
+<https://en.wikipedia.org/wiki/Electrochemistry> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Inorganic_chemistry
+
+<https://en.wikipedia.org/wiki/Inorganic_chemistry> rdf:type owl:Class ;
+                                                    
                                                     rdfs:subClassOf dbr:Chemistry .
 
 
 
-###  https://dbpedia.org/resource/Environmental_chemistry
+###  https://en.wikipedia.org/wiki/Materials_science
 
-<https://dbpedia.org/resource/Environmental_chemistry> rdf:type owl:Class ;
-                                                       
-                                                       rdfs:subClassOf dbr:Chemistry .
-
-
-
-###  https://dbpedia.org/resource/Physical_chemistry
-
-<https://dbpedia.org/resource/Physical_chemistry> rdf:type owl:Class ;
+<https://en.wikipedia.org/wiki/Materials_science> rdf:type owl:Class ;
                                                   
                                                   rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Molecular_biology
+
+<https://en.wikipedia.org/wiki/Molecular_biology> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf dbr:Biology .
+
+
+
+###  https://en.wikipedia.org/wiki/Molecular_physics
+
+<https://en.wikipedia.org/wiki/Molecular_physics> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf dbr:Physics .
+
+
+
+###  https://en.wikipedia.org/wiki/Neurochemistry
+
+<https://en.wikipedia.org/wiki/Neurochemistry> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Nuclear_chemistry
+
+<https://en.wikipedia.org/wiki/Nuclear_chemistry> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Organic_chemistry
+
+<https://en.wikipedia.org/wiki/Organic_chemistry> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Organometallic_chemistry
+
+<https://en.wikipedia.org/wiki/Organometallic_chemistry> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/Inorganic_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Physical_chemistry
+
+<https://en.wikipedia.org/wiki/Physical_chemistry> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Quantum_chemistry
+
+<https://en.wikipedia.org/wiki/Quantum_chemistry> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf dbr:Chemistry .
+
+
+
+###  https://en.wikipedia.org/wiki/Spectroscopy
+
+<https://en.wikipedia.org/wiki/Spectroscopy> rdf:type owl:Class ;
+                                             
+                                             rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Statistical_mechanics
+
+<https://en.wikipedia.org/wiki/Statistical_mechanics> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf <https://en.wikipedia.org/wiki/Physical_chemistry> .
+
+
+
+###  https://en.wikipedia.org/wiki/Theoretical_chemistry
+
+<https://en.wikipedia.org/wiki/Theoretical_chemistry> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf dbr:Chemistry .
 
 
 

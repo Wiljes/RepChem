@@ -64,11 +64,21 @@ ontology:ChemicalElement rdf:type owl:Class ;
                          rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en ,
                                       "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
                          
-                         rdfs:label "Chemical element"@en ,
-                                    "Chemisches Element"@de ;
+                         rdfs:label "Chemisches Element"@de ,
+                                    "Elementary Substance"@en ;
                          
                          rdfs:seeAlso "https://de.wikipedia.org/wiki/Chemisches_Element"@de ,
                                       "https://en.wikipedia.org/wiki/Chemical_element"@en .
+
+
+
+###  http://dbpedia.org/resource/Acetone
+
+dbr:Acetone rdf:type owl:Class ;
+            
+            rdfs:subClassOf chem:Compound ;
+            
+            rdfs:label "Acetone" .
 
 
 
@@ -1684,6 +1694,16 @@ dbr:Vanadium rdf:type owl:Class ;
 
 
 
+###  http://dbpedia.org/resource/Water
+
+dbr:Water rdf:type owl:Class ;
+          
+          rdfs:subClassOf chem:Compound ;
+          
+          rdfs:label "Water" .
+
+
+
 ###  http://dbpedia.org/resource/Xenon
 
 dbr:Xenon rdf:type owl:Class ;
@@ -1752,23 +1772,27 @@ chem:Compound rdf:type owl:Class ;
 
 
 
-###  http://www.physical-chemistry.com/HeterogeneousSubstance
+###  http://www.physical-chemistry.com/D-Glucose
 
-chem:HeterogeneousSubstance rdf:type owl:Class .
-
-
-
-###  http://www.physical-chemistry.com/HomegeneousSubstance
-
-chem:HomegeneousSubstance rdf:type owl:Class .
+chem:D-Glucose rdf:type owl:Class ;
+               
+               rdfs:subClassOf <https://wikipedia.org/resource/Glucose> .
 
 
 
-###  http://www.physical-chemistry.com/Mixture
+###  http://www.physical-chemistry.com/L-Glucose
 
-chem:Mixture rdf:type owl:Class ;
-             
-             rdfs:subClassOf chem:Substance .
+chem:L-Glucose rdf:type owl:Class ;
+               
+               rdfs:subClassOf <https://wikipedia.org/resource/Glucose> .
+
+
+
+###  http://www.physical-chemistry.com/MixedSubstance
+
+chem:MixedSubstance rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf chem:Substance .
 
 
 
@@ -1784,7 +1808,7 @@ chem:PureSubstance rdf:type owl:Class ;
 
 chem:Solution rdf:type owl:Class ;
               
-              rdfs:subClassOf chem:Mixture .
+              rdfs:subClassOf chem:MixedSubstance .
 
 
 
@@ -1798,7 +1822,25 @@ chem:Substance rdf:type owl:Class .
 
 chem:Suspension rdf:type owl:Class ;
                 
-                rdfs:subClassOf chem:Mixture .
+                rdfs:subClassOf chem:MixedSubstance .
+
+
+
+###  https://wikipedia.org/resource/Glucose
+
+<https://wikipedia.org/resource/Glucose> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf chem:Compound .
+
+
+
+###  https://wikipedia.org/resource/Sodium_chloride
+
+<https://wikipedia.org/resource/Sodium_chloride> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf chem:Compound ;
+                                                 
+                                                 rdfs:label "Sodium Chloride" .
 
 
 

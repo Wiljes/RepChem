@@ -1,9 +1,191 @@
-@prefix : <http://datacite.org/ontology/2016/9/untitled-ontology-57#> .
+@prefix : <http://datacite.org/ontology/2016/9/untitled-ontology-57/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://datacite.org/ontology/2016/9/untitled-ontology-57> .
 
-<http://datacite.org/ontology/2016/9/untitled-ontology-57> rdf:type owl:Ontology .
+<http://datacite.org/ontology/2016/9/untitled-ontology-57> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.physical-chemistry.com/hasEduct
+
+<http://www.physical-chemistry.com/hasEduct> a owl:ObjectProperty .
+# 
+# http://www.physical-chemistry.com/hasProduct
+
+<http://www.physical-chemistry.com/hasProduct> a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.physical-chemistry.com/hasBoilingTemperature
+
+<http://www.physical-chemistry.com/hasBoilingTemperature> a owl:DatatypeProperty .
+# 
+# http://www.physical-chemistry.com/hasWeight
+
+<http://www.physical-chemistry.com/hasWeight> a owl:DatatypeProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.physical-chemistry.com/ChemicalReaction
+
+<http://www.physical-chemistry.com/ChemicalReaction> a owl:Class .
+# 
+# http://www.physical-chemistry.com/ChemicalSubstance
+
+<http://www.physical-chemistry.com/ChemicalSubstance> a owl:Class .
+# 
+# http://www.physical-chemistry.com/Dilithium
+
+<http://www.physical-chemistry.com/Dilithium> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/Particle> , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
+	owl:hasValue "18u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/H
+
+<http://www.physical-chemistry.com/H> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/Particle> , _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
+	owl:hasValue "2u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/H2O
+
+<http://www.physical-chemistry.com/H2O> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/Particle> , _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
+	owl:hasValue "18u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/Hydrogen
+
+<http://www.physical-chemistry.com/Hydrogen> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/ChemicalSubstance> .
+# 
+# http://www.physical-chemistry.com/Knallgasreaktion
+
+<http://www.physical-chemistry.com/Knallgasreaktion> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/ChemicalReaction> , _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasEduct> ;
+	owl:someValuesFrom <http://www.physical-chemistry.com/Hydrogen> .
+
+<http://www.physical-chemistry.com/Knallgasreaktion> rdfs:subClassOf _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasEduct> ;
+	owl:someValuesFrom <http://www.physical-chemistry.com/Oxygen> .
+
+<http://www.physical-chemistry.com/Knallgasreaktion> rdfs:subClassOf _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasProduct> ;
+	owl:someValuesFrom <http://www.physical-chemistry.com/Water> .
+# 
+# http://www.physical-chemistry.com/O
+
+<http://www.physical-chemistry.com/O> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/Particle> , _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
+	owl:hasValue "32u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/Oxygen
+
+<http://www.physical-chemistry.com/Oxygen> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/ChemicalSubstance> .
+# 
+# http://www.physical-chemistry.com/Particle
+
+<http://www.physical-chemistry.com/Particle> a owl:Class .
+# 
+# http://www.physical-chemistry.com/Water
+
+<http://www.physical-chemistry.com/Water> a owl:Class ;
+	rdfs:subClassOf <http://www.physical-chemistry.com/ChemicalSubstance> , _:genid8 .
+
+_:genid8 a owl:Restriction ;
+	owl:onProperty <http://www.physical-chemistry.com/hasBoilingTemperature> ;
+	owl:hasValue "373K" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.physical-chemistry.com/DilithiumCrystal1701
+
+<http://www.physical-chemistry.com/DilithiumCrystal1701> a owl:NamedIndividual , <http://www.physical-chemistry.com/Dilithium> .
+# 
+# http://www.physical-chemistry.com/H
+
+<http://www.physical-chemistry.com/H> a owl:NamedIndividual , <http://www.physical-chemistry.com/Particle> ;
+	<http://www.physical-chemistry.com/hasWeight> "2u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/H2O
+
+<http://www.physical-chemistry.com/H2O> a owl:NamedIndividual , <http://www.physical-chemistry.com/Particle> ;
+	<http://www.physical-chemistry.com/hasWeight> "18u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/Hydrogen
+
+<http://www.physical-chemistry.com/Hydrogen> a owl:NamedIndividual , <http://www.physical-chemistry.com/ChemicalSubstance> .
+# 
+# http://www.physical-chemistry.com/Knallgasreaktion
+
+<http://www.physical-chemistry.com/Knallgasreaktion> a owl:NamedIndividual , <http://www.physical-chemistry.com/ChemicalReaction> ;
+	<http://www.physical-chemistry.com/hasEduct> <http://www.physical-chemistry.com/Hydrogen> , <http://www.physical-chemistry.com/Oxygen> ;
+	<http://www.physical-chemistry.com/hasProduct> <http://www.physical-chemistry.com/Water> .
+# 
+# http://www.physical-chemistry.com/KnallgasreaktionSampleInstance
+
+<http://www.physical-chemistry.com/KnallgasreaktionSampleInstance> a owl:NamedIndividual , <http://www.physical-chemistry.com/Knallgasreaktion> .
+# 
+# http://www.physical-chemistry.com/O
+
+<http://www.physical-chemistry.com/O> a owl:NamedIndividual , <http://www.physical-chemistry.com/Particle> ;
+	<http://www.physical-chemistry.com/hasWeight> "32u"^^xsd:string .
+# 
+# http://www.physical-chemistry.com/Oxygen
+
+<http://www.physical-chemistry.com/Oxygen> a owl:NamedIndividual , <http://www.physical-chemistry.com/ChemicalSubstance> .
+# 
+# http://www.physical-chemistry.com/Water
+
+<http://www.physical-chemistry.com/Water> a owl:NamedIndividual , <http://www.physical-chemistry.com/ChemicalSubstance> ;
+	<http://www.physical-chemistry.com/hasBoilingTemperature> "373K" .
+# 
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
