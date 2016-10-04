@@ -2,8 +2,10 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="bfo.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1475344407120" name="duplicate:/" uri="repchem.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1475344407120" name="duplicate:/" uri="repchem_ontoclean_test.ttl"/>
-        <uri id="Automatically generated entry, Timestamp=1475344407120" name="http://purl.obolibrary.org/obo/bfo.owl" uri="bfo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475519954036" name="/" uri="repchem.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475519954036" name="http://purl.obolibrary.org/obo/bfo.owl" uri="bfo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475519954036" name="http://www.physical-chemistry.com/2016/6/untitled-ontology-29" uri="tests/rdfxml.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475519954036" name="http://www.semanticweb.org/cwiljes/ontologies/2016/5/untitled-ontology-46/" uri="tests/reasonertest.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475519954036" name="shadowed:/" uri="ontoclean_test/repchem_ontoclean_test_via_sparql_antipattern.ttl"/>
     </group>
 </catalog>
