@@ -11,6 +11,21 @@
 
 #################################################################
 #
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://datacite.org/ontology/2016/9/untitled-ontology-57/hasEduct
+
+:hasEduct rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
 #    Object Properties
 #
 #################################################################
@@ -25,6 +40,12 @@
 ###  http://www.physical-chemistry.com/hasProduct
 
 <http://www.physical-chemistry.com/hasProduct> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.physical-chemistry.com/hasStep
+
+<http://www.physical-chemistry.com/hasStep> rdf:type owl:ObjectProperty .
 
 
 
@@ -58,6 +79,12 @@
 #################################################################
 
 
+###  http://datacite.org/ontology/2016/9/untitled-ontology-57/Step
+
+:Step rdf:type owl:Class .
+
+
+
 ###  http://www.physical-chemistry.com/ChemicalReaction
 
 <http://www.physical-chemistry.com/ChemicalReaction> rdf:type owl:Class .
@@ -67,42 +94,6 @@
 ###  http://www.physical-chemistry.com/ChemicalSubstance
 
 <http://www.physical-chemistry.com/ChemicalSubstance> rdf:type owl:Class .
-
-
-
-###  http://www.physical-chemistry.com/Dilithium
-
-<http://www.physical-chemistry.com/Dilithium> rdf:type owl:Class ;
-                                              
-                                              rdfs:subClassOf <http://www.physical-chemistry.com/Particle> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
-                                                                owl:hasValue "18u"^^xsd:string
-                                                              ] .
-
-
-
-###  http://www.physical-chemistry.com/H
-
-<http://www.physical-chemistry.com/H> rdf:type owl:Class ;
-                                      
-                                      rdfs:subClassOf <http://www.physical-chemistry.com/Particle> ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
-                                                        owl:hasValue "2u"^^xsd:string
-                                                      ] .
-
-
-
-###  http://www.physical-chemistry.com/H2O
-
-<http://www.physical-chemistry.com/H2O> rdf:type owl:Class ;
-                                        
-                                        rdfs:subClassOf <http://www.physical-chemistry.com/Particle> ,
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
-                                                          owl:hasValue "18u"^^xsd:string
-                                                        ] .
 
 
 
@@ -134,29 +125,11 @@
 
 
 
-###  http://www.physical-chemistry.com/O
-
-<http://www.physical-chemistry.com/O> rdf:type owl:Class ;
-                                      
-                                      rdfs:subClassOf <http://www.physical-chemistry.com/Particle> ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.physical-chemistry.com/hasWeight> ;
-                                                        owl:hasValue "32u"^^xsd:string
-                                                      ] .
-
-
-
 ###  http://www.physical-chemistry.com/Oxygen
 
 <http://www.physical-chemistry.com/Oxygen> rdf:type owl:Class ;
                                            
                                            rdfs:subClassOf <http://www.physical-chemistry.com/ChemicalSubstance> .
-
-
-
-###  http://www.physical-chemistry.com/Particle
-
-<http://www.physical-chemistry.com/Particle> rdf:type owl:Class .
 
 
 
@@ -181,31 +154,6 @@
 #################################################################
 
 
-###  http://www.physical-chemistry.com/DilithiumCrystal1701
-
-<http://www.physical-chemistry.com/DilithiumCrystal1701> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.physical-chemistry.com/Dilithium> .
-
-
-
-###  http://www.physical-chemistry.com/H
-
-<http://www.physical-chemistry.com/H> rdf:type owl:NamedIndividual ,
-                                               <http://www.physical-chemistry.com/Particle> ;
-                                      
-                                      <http://www.physical-chemistry.com/hasWeight> "2u"^^xsd:string .
-
-
-
-###  http://www.physical-chemistry.com/H2O
-
-<http://www.physical-chemistry.com/H2O> rdf:type owl:NamedIndividual ,
-                                                 <http://www.physical-chemistry.com/Particle> ;
-                                        
-                                        <http://www.physical-chemistry.com/hasWeight> "18u"^^xsd:string .
-
-
-
 ###  http://www.physical-chemistry.com/Hydrogen
 
 <http://www.physical-chemistry.com/Hydrogen> rdf:type owl:NamedIndividual ,
@@ -218,26 +166,9 @@
 <http://www.physical-chemistry.com/Knallgasreaktion> rdf:type owl:NamedIndividual ,
                                                               <http://www.physical-chemistry.com/ChemicalReaction> ;
                                                      
-                                                     <http://www.physical-chemistry.com/hasEduct> <http://www.physical-chemistry.com/Hydrogen> ,
-                                                                                                  <http://www.physical-chemistry.com/Oxygen> ;
-                                                     
-                                                     <http://www.physical-chemistry.com/hasProduct> <http://www.physical-chemistry.com/Water> .
-
-
-
-###  http://www.physical-chemistry.com/KnallgasreaktionSampleInstance
-
-<http://www.physical-chemistry.com/KnallgasreaktionSampleInstance> rdf:type owl:NamedIndividual ,
-                                                                            <http://www.physical-chemistry.com/Knallgasreaktion> .
-
-
-
-###  http://www.physical-chemistry.com/O
-
-<http://www.physical-chemistry.com/O> rdf:type owl:NamedIndividual ,
-                                               <http://www.physical-chemistry.com/Particle> ;
-                                      
-                                      <http://www.physical-chemistry.com/hasWeight> "32u"^^xsd:string .
+                                                     <http://www.physical-chemistry.com/hasStep> [ rdf:type :Step ;
+                                                                                                   :hasEduct [ ]
+                                                     ] .
 
 
 
@@ -245,6 +176,13 @@
 
 <http://www.physical-chemistry.com/Oxygen> rdf:type owl:NamedIndividual ,
                                                     <http://www.physical-chemistry.com/ChemicalSubstance> .
+
+
+
+###  http://www.physical-chemistry.com/Step1test
+
+<http://www.physical-chemistry.com/Step1test> rdf:type owl:NamedIndividual ,
+                                                       :Step .
 
 
 
@@ -257,6 +195,8 @@
 
 
 
+[ rdf:type :Step
+] .
 
 ###  Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
 

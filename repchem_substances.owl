@@ -59,7 +59,7 @@ skos:example rdf:type owl:AnnotationProperty .
 
 ontology:ChemicalElement rdf:type owl:Class ;
                          
-                         rdfs:subClassOf chem:PureSubstance ;
+                         rdfs:subClassOf <https://dbpedia.org/ressource/Chemical_substance> ;
                          
                          rdfs:comment "A chemical element (or element) is a chemical substance consisting of atoms having the same number of protons in their atomic nuclei (i.e. the same atomic number, Z). There are 118 elements that have been identified, of which the first 94 occur naturally on Earth with the remaining 24 being synthetic elements. There are 80 elements that have at least one stable isotope and 38 that have exclusively radioactive isotopes, which decay over time into other elements."@en ,
                                       "Chemisches Element ist die Sammelbezeichnung für alle Nuklide mit derselben Ordnungszahl. Somit haben alle Atome eines chemischen Elements dieselbe Anzahl an Protonen im Atomkern. Da man mit chemischen Mitteln Atome nicht zerteilen kann, gelten sie für die Chemie als kleinste Einheit von Materie. Ein Element wird durch ein Elementsymbol bezeichnet, eine Abkürzung, die meist vom lateinischen Namen des Elements (beispielsweise Pb von plumbum, Fe von ferrum) abgeleitet ist."@de ;
@@ -1764,11 +1764,27 @@ dbr:Zirconium rdf:type owl:Class ;
 
 
 
+###  http://www.physical-chemistry.com/Composite_Particles
+
+chem:Composite_Particles rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf <https://dbpedia.org/ressource/Particle> .
+
+
+
 ###  http://www.physical-chemistry.com/Compound
 
 chem:Compound rdf:type owl:Class ;
               
-              rdfs:subClassOf chem:PureSubstance .
+              rdfs:subClassOf <https://dbpedia.org/ressource/Chemical_substance> .
+
+
+
+###  http://www.physical-chemistry.com/Cs-Atom
+
+chem:Cs-Atom rdf:type owl:Class ;
+             
+             rdfs:subClassOf chem:Group_1_Atom .
 
 
 
@@ -1780,6 +1796,54 @@ chem:D-Glucose rdf:type owl:Class ;
 
 
 
+###  http://www.physical-chemistry.com/EthanolMolecule
+
+chem:EthanolMolecule rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Molecules> .
+
+
+
+###  http://www.physical-chemistry.com/Fr
+
+chem:Fr rdf:type owl:Class ;
+        
+        rdfs:subClassOf chem:Group_1_Atom .
+
+
+
+###  http://www.physical-chemistry.com/Gasphase
+
+chem:Gasphase rdf:type owl:Class ;
+              
+              rdfs:subClassOf chem:Phase .
+
+
+
+###  http://www.physical-chemistry.com/Group_1_Atom
+
+chem:Group_1_Atom rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf <https://en.wikipedia.org/wiki/Atom> .
+
+
+
+###  http://www.physical-chemistry.com/H-Atom
+
+chem:H-Atom rdf:type owl:Class ;
+            
+            rdfs:subClassOf chem:Group_1_Atom .
+
+
+
+###  http://www.physical-chemistry.com/H2O
+
+chem:H2O rdf:type owl:Class ;
+         
+         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Molecules> .
+
+
+
 ###  http://www.physical-chemistry.com/L-Glucose
 
 chem:L-Glucose rdf:type owl:Class ;
@@ -1788,27 +1852,59 @@ chem:L-Glucose rdf:type owl:Class ;
 
 
 
-###  http://www.physical-chemistry.com/MixedSubstance
+###  http://www.physical-chemistry.com/Li-Atom
 
-chem:MixedSubstance rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf chem:Substance .
-
-
-
-###  http://www.physical-chemistry.com/PureSubstance
-
-chem:PureSubstance rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf chem:Substance .
+chem:Li-Atom rdf:type owl:Class ;
+             
+             rdfs:subClassOf chem:Group_1_Atom .
 
 
 
-###  http://www.physical-chemistry.com/Solution
+###  http://www.physical-chemistry.com/Liquidphase
 
-chem:Solution rdf:type owl:Class ;
-              
-              rdfs:subClassOf chem:MixedSubstance .
+chem:Liquidphase rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf chem:Phase .
+
+
+
+###  http://www.physical-chemistry.com/NH3
+
+chem:NH3 rdf:type owl:Class ;
+         
+         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Molecules> .
+
+
+
+###  http://www.physical-chemistry.com/Na-Atom
+
+chem:Na-Atom rdf:type owl:Class ;
+             
+             rdfs:subClassOf chem:Group_1_Atom .
+
+
+
+###  http://www.physical-chemistry.com/Phase
+
+chem:Phase rdf:type owl:Class ;
+           
+           rdfs:comment "In the physical sciences, a phase is a region of space (a thermodynamic system), throughout which all physical properties of a material are essentially uniform."@en .
+
+
+
+###  http://www.physical-chemistry.com/Rb-Atom
+
+chem:Rb-Atom rdf:type owl:Class ;
+             
+             rdfs:subClassOf chem:Group_1_Atom .
+
+
+
+###  http://www.physical-chemistry.com/Solidphase
+
+chem:Solidphase rdf:type owl:Class ;
+                
+                rdfs:subClassOf chem:Phase .
 
 
 
@@ -1818,11 +1914,293 @@ chem:Substance rdf:type owl:Class .
 
 
 
-###  http://www.physical-chemistry.com/Suspension
+###  http://www.physical-chemistry.com/Z_boson
 
-chem:Suspension rdf:type owl:Class ;
-                
-                rdfs:subClassOf chem:MixedSubstance .
+chem:Z_boson rdf:type owl:Class ;
+             
+             rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  http://www.physical-chemistry.com/temp
+
+chem:temp rdf:type owl:Class .
+
+
+
+###  https://dbpedia.org/ressource/Chemical_substance
+
+<https://dbpedia.org/ressource/Chemical_substance> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf chem:Substance ;
+                                                   
+                                                   rdfs:label "pure substance" .
+
+
+
+###  https://dbpedia.org/ressource/Colloid
+
+<https://dbpedia.org/ressource/Colloid> rdf:type owl:Class ;
+                                        
+                                        rdfs:subClassOf <https://dbpedia.org/ressource/Mixture> .
+
+
+
+###  https://dbpedia.org/ressource/Mixture
+
+<https://dbpedia.org/ressource/Mixture> rdf:type owl:Class ;
+                                        
+                                        rdfs:subClassOf chem:Substance .
+
+
+
+###  https://dbpedia.org/ressource/Particle
+
+<https://dbpedia.org/ressource/Particle> rdf:type owl:Class ;
+                                         
+                                         rdfs:comment "A particle is a minute fragment or quantity of matter.[1] In the physical sciences, a particle is a small localized object to which can be ascribed several physical or chemical properties such as volume or mass.[2] They vary greatly in size, from subatomic particles like the electron, to microscopic particles like atoms and molecules, to macroscopic particles like powders and other granular materials. Particles can also be used to create scientific models of even larger objects, such as humans moving in a crowd."@en .
+
+
+
+###  https://dbpedia.org/ressource/Solution
+
+<https://dbpedia.org/ressource/Solution> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf <https://dbpedia.org/ressource/Mixture> .
+
+
+
+###  https://dbpedia.org/ressource/Suspension
+
+<https://dbpedia.org/ressource/Suspension> rdf:type owl:Class ;
+                                           
+                                           rdfs:subClassOf <https://dbpedia.org/ressource/Mixture> .
+
+
+
+###  https://en.wikipedia.org/wiki/Atom
+
+<https://en.wikipedia.org/wiki/Atom> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf chem:Composite_Particles .
+
+
+
+###  https://en.wikipedia.org/wiki/Chemical_reaction
+
+<https://en.wikipedia.org/wiki/Chemical_reaction> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:comment "A chemical reaction is a process that leads to the transformation of one set of chemical substances to another.[1] Classically, chemical reactions encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei (no change to the elements present), and can often be described by a chemical equation. Nuclear chemistry is a sub-discipline of chemistry that involves the chemical reactions of unstable and radioactive elements where both electronic and nuclear changes may occur."@en .
+
+
+
+###  https://en.wikipedia.org/wiki/Decomposition_reaction
+
+<https://en.wikipedia.org/wiki/Decomposition_reaction> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf <https://en.wikipedia.org/wiki/Chemical_reaction> .
+
+
+
+###  https://en.wikipedia.org/wiki/Double_replacement_reaction
+
+<https://en.wikipedia.org/wiki/Double_replacement_reaction> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <https://en.wikipedia.org/wiki/Chemical_reaction> .
+
+
+
+###  https://en.wikipedia.org/wiki/Electron
+
+<https://en.wikipedia.org/wiki/Electron> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Electron_neutrino
+
+<https://en.wikipedia.org/wiki/Electron_neutrino> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Elementary_particle
+
+<https://en.wikipedia.org/wiki/Elementary_particle> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:subClassOf <https://dbpedia.org/ressource/Particle> ;
+                                                    
+                                                    rdfs:comment "Elementary particles are particles with no measurable internal structure; that is, they are not composed of other particles. They are the fundamental objects of quantum field theory. Many families and sub-families of elementary particles exist. Elementary particles are classified according to their spin. Fermions have half-integer spin while bosons have integer spin. All the particles of the Standard Model have been experimentally observed, recently including the Higgs boson."@en .
+
+
+
+###  https://en.wikipedia.org/wiki/Gluon
+
+<https://en.wikipedia.org/wiki/Gluon> rdf:type owl:Class ;
+                                      
+                                      rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Graviton
+
+<https://en.wikipedia.org/wiki/Graviton> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Higgs_boson
+
+<https://en.wikipedia.org/wiki/Higgs_boson> rdf:type owl:Class ;
+                                            
+                                            rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_organic_reactions
+
+<https://en.wikipedia.org/wiki/List_of_organic_reactions> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf chem:temp .
+
+
+
+###  https://en.wikipedia.org/wiki/Muon
+
+<https://en.wikipedia.org/wiki/Muon> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Muon_neutrino
+
+<https://en.wikipedia.org/wiki/Muon_neutrino> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Photon
+
+<https://en.wikipedia.org/wiki/Photon> rdf:type owl:Class ;
+                                       
+                                       rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  https://en.wikipedia.org/wiki/Single_replacement_reaction
+
+<https://en.wikipedia.org/wiki/Single_replacement_reaction> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <https://en.wikipedia.org/wiki/Chemical_reaction> .
+
+
+
+###  https://en.wikipedia.org/wiki/Synthesis_reaction
+
+<https://en.wikipedia.org/wiki/Synthesis_reaction> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf <https://en.wikipedia.org/wiki/Chemical_reaction> .
+
+
+
+###  https://en.wikipedia.org/wiki/Tau_neutrino
+
+<https://en.wikipedia.org/wiki/Tau_neutrino> rdf:type owl:Class ;
+                                             
+                                             rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
+
+
+
+###  https://en.wikipedia.org/wiki/W_boson
+
+<https://en.wikipedia.org/wiki/W_boson> rdf:type owl:Class ;
+                                        
+                                        rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Bosons> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Atomic_nuclei
+
+<https://en.wikipedia.org/wiki/List_of_particles#Atomic_nuclei> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf chem:Composite_Particles .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Baryons
+
+<https://en.wikipedia.org/wiki/List_of_particles#Baryons> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Hadrons> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Bosons
+
+<https://en.wikipedia.org/wiki/List_of_particles#Bosons> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/Elementary_particle> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Fermions
+
+<https://en.wikipedia.org/wiki/List_of_particles#Fermions> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <https://en.wikipedia.org/wiki/Elementary_particle> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Hadrons
+
+<https://en.wikipedia.org/wiki/List_of_particles#Hadrons> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf chem:Composite_Particles .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Leptons
+
+<https://en.wikipedia.org/wiki/List_of_particles#Leptons> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Fermions> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Mesons
+
+<https://en.wikipedia.org/wiki/List_of_particles#Mesons> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Hadrons> .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Molecules
+
+<https://en.wikipedia.org/wiki/List_of_particles#Molecules> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf chem:Composite_Particles .
+
+
+
+###  https://en.wikipedia.org/wiki/List_of_particles#Quarks
+
+<https://en.wikipedia.org/wiki/List_of_particles#Quarks> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Fermions> .
+
+
+
+###  https://en.wikipedia.org/wiki/Tau_(particle)
+
+<https://en.wikipedia.org/wiki/Tau_(particle)> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <https://en.wikipedia.org/wiki/List_of_particles#Leptons> .
 
 
 
