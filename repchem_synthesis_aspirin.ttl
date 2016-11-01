@@ -12,19 +12,6 @@
 # 
 # #################################################################
 # #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://repchem.org/hasStep
-
-:hasStep a owl:AnnotationProperty .
-# 
-# 
-# 
-# #################################################################
-# #
 # #    Object Properties
 # #
 # #################################################################
@@ -42,6 +29,10 @@
 
 :hasProduct a owl:ObjectProperty .
 # 
+# http://repchem.org/hasStep
+
+:hasStep a owl:ObjectProperty .
+# 
 # http://schema.org/image
 
 <http://schema.org/image> a owl:ObjectProperty .
@@ -52,6 +43,10 @@ time:after a owl:ObjectProperty ;
 	rdfs:domain time:Interval ;
 	rdfs:range time:Interval ;
 	rdfs:label "after" .
+# 
+# http://www.w3.org/2006/time#ends
+
+time:ends a owl:ObjectProperty .
 # 
 # http://www.w3.org/2006/time#starts
 
@@ -143,6 +138,7 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis
 
 :Aspirin_Synthesis a owl:NamedIndividual , :Aspirin_Synthesis ;
+	:hasStep :Aspirin_Synthesis_Step_1 , :Aspirin_Synthesis_Step_2 , :Aspirin_Synthesis_Step_3 , :Aspirin_Synthesis_Step_4 , :Aspirin_Synthesis_Step_5 , :Aspirin_Synthesis_Step_6 , :Aspirin_Synthesis_Step_7 , :Aspirin_Synthesis_Step_8 , :Aspirin_Synthesis_Step_9 ;
 	:hasSafetyWarning "PUT ON YOUR CHEMICAL SPLASH-PROOF SAFETY GOGGLES!" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_1
@@ -175,6 +171,7 @@ dbp:Salicylic_acid a owl:Class ;
 
 :Aspirin_Synthesis_Step_2.3 a owl:NamedIndividual , time:Interval ;
 	time:after :Aspirin_Synthesis_Step_2.2 ;
+	time:ends :Aspirin_Synthesis_Step_2 ;
 	rdfs:comment "Carefully add 8 drops of concentrated sulfuric acid (18 M H2SO4), a catalyst, to the flask." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_3
@@ -192,6 +189,8 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_3.2
 
 :Aspirin_Synthesis_Step_3.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_3.1 ;
+	time:ends :Aspirin_Synthesis_Step_3 ;
 	rdfs:comment "Place the flask in the water bath and heat. After the water begins to boil, heat for an additional 15 minutes. (NOTE: The hot water bath will be used again later in the procedure.)" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_4
@@ -209,11 +208,14 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_4.2
 
 :Aspirin_Synthesis_Step_4.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_4.1 ;
 	rdfs:comment "After the flask has cooled for about 3 minutes, CAUTIOUSLY add 15 mL of room temperature water to the flask to facilitate the decomposition of the excess acetic anhydride. Swirl the flask to mix the contents." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_4.3
 
 :Aspirin_Synthesis_Step_4.3 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_4.2 ;
+	time:ends :Aspirin_Synthesis_Step_4 ;
 	rdfs:comment "Label your flask containing the reaction mixture and place it in an ice bath and cool until the crystallization of the aspirin appears complete (approx. 15 min.). If crystals do not appear, you can scratch the walls of the flask with a stirring rod to induce crystallization." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_5
@@ -231,11 +233,14 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_5.2
 
 :Aspirin_Synthesis_Step_5.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_5.1 ;
 	rdfs:comment "Rinse the flask twice with 3 mL of ice cold water to remove any residual crystals." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_5.3
 
 :Aspirin_Synthesis_Step_5.3 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_5.2 ;
+	time:ends :Aspirin_Synthesis_Step_5 ;
 	rdfs:comment "Discard the filtrate left in the filter flask into the waste container under the hood." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_6
@@ -253,16 +258,20 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_6.2
 
 :Aspirin_Synthesis_Step_6.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_6.1 ;
 	rdfs:comment "Add 10 mL of 95% ethanol to the beaker and if necessary, warm (do not boil!) the mixture in the water bath to dissolve the crystals. If the crystals do not all dissolve, add 2 mL more of the ethanol and continue to warm the mixture to dissolve the crystals." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_6.3
 
 :Aspirin_Synthesis_Step_6.3 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_6.2 ;
 	rdfs:comment "When the crystals are all dissolved, add 10 mL of deionized water, cover the beaker with a watch glass, and allow the solution to cool slowly on the lab bench undisturbed for about 10 minutes." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_6.4
 
 :Aspirin_Synthesis_Step_6.4 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_6.4 ;
+	time:ends :Aspirin_Synthesis_Step_6 ;
 	rdfs:comment "After the 10 minutes cooling on the lab bench, complete the crystallization by placing the beaker and contents in the ice bath. (Label your beaker!) Crystals should form. If an \"oil\" appears instead of a solid, reheat the beaker in the hot water bath until the oil disappears. If crystals do not appear, you can scratch the bottom of the beaker with a stirring rod to induce crystallization." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_7
@@ -280,11 +289,14 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_7.2
 
 :Aspirin_Synthesis_Step_7.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_7.1 ;
 	rdfs:comment "Dry the crystals by pulling air through them for about 15 minutes. (Discard the filtrate left in the filter flask into the waste container under the hood. Rinse the filter flask with water and discard the rinse water into the waste container under the hood.)" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_7.3
 
 :Aspirin_Synthesis_Step_7.3 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_7.2 ;
+	time:ends :Aspirin_Synthesis_Step_7 ;
 	rdfs:comment "Place the aspirin onto a doubled piece of paper towel and set aside to dry while performing the qualitative analysis of the aspirin. (Wash the filter funnel with water and discard the rinse water into the waste container under the hood.)" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_8
@@ -302,22 +314,28 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_8.1.1
 
 :Aspirin_Synthesis_Step_8.1.1 a owl:NamedIndividual , time:Interval ;
+	time:starts :Aspirin_Synthesis_Step_8.1 ;
 	rdfs:comment "Add about 1 mL of deionized water to five clean 10-cm test tubes. Using a clean stirring rod, place a crystal of salicylic acid into the first test tube. In the second, place a crystal of powdered commercial aspirin, and in the third, place a crystal of your synthesized aspirin. The forth test tube is the control." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_8.1.2
 
 :Aspirin_Synthesis_Step_8.1.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_8.1.1 ;
+	time:ends :Aspirin_Synthesis_Step_8.1 ;
 	rdfs:comment "To each test tube add 1 drop of iron(III) chloride) solution. Shake each test tube and observe the colors produced. Record your observations and conclusions on the Data Sheet." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_8.2
 
 :Aspirin_Synthesis_Step_8.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_8.1 ;
+	time:ends :Aspirin_Synthesis_Step_8 ;
 	rdfs:comment "Measure the melting point range of your synthesized aspirin with the Meltemp Apparatus as demonstrated by your lab instructor and compare to the value for pure aspirin of 138-140 oC. Record the melting temperature on the Data Sheet." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_9
 
 :Aspirin_Synthesis_Step_9 a owl:NamedIndividual , time:Interval ;
 	time:after :Aspirin_Synthesis_Step_8 ;
+	time:ends :Aspirin_Synthesis ;
 	rdfs:label "Calculating the Percent Yield of Aspirin" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_9.1
@@ -329,11 +347,14 @@ dbp:Salicylic_acid a owl:Class ;
 # http://repchem.org/Aspirin_Synthesis_Step_9.2
 
 :Aspirin_Synthesis_Step_9.2 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_9.1 ;
 	rdfs:comment "Based on your percent yield, iron(III) chloride test, and the measured melting point range, draw a conclusion about the success of your synthesis." .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_9.3
 
 :Aspirin_Synthesis_Step_9.3 a owl:NamedIndividual , time:Interval ;
+	time:after :Aspirin_Synthesis_Step_9.2 ;
+	time:ends :Aspirin_Synthesis_Step_9 ;
 	rdfs:comment "Place your aspirin in the jar labeled \"Student Prep Aspirin\"." .
 # 
 # https://dbpedia.org/resource/Acetic_acid
@@ -367,8 +388,7 @@ dbp:Salicylic_acid a owl:NamedIndividual , dbp:Salicylic_acid .
 # 
 # 
 
-:Aspirin_Synthesis rdfs:seeAlso "http://www.chem.latech.edu/~deddy/chem104/104Aspirin.htm" ;
-	:hasStep :Aspirin_Synthesis_Step_1 .
+:Aspirin_Synthesis rdfs:seeAlso "http://www.chem.latech.edu/~deddy/chem104/104Aspirin.htm" .
 # 
 
 dbp:Acetic_acid rdfs:comment "Acetic acid /əˈsiːtɨk/, systematically named ethanoic acid /ˌɛθəˈnoʊɨk/, is an organic compound with the chemical formula CH3COOH (also written as CH3CO2H or C2H4O2). It is a colourless liquid that when undiluted is also called glacial acetic acid. Vinegar is roughly 3–9% acetic acid by volume, making acetic acid the main component of vinegar apart from water. Acetic acid has a distinctive sour taste and pungent smell." .
