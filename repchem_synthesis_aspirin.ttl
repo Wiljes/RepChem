@@ -147,13 +147,13 @@ dbp:Salicylic_acid a owl:Class ;
 	:hasEduct dbp:Acetic_anhydride , dbp:Salicylic_acid ;
 	:hasProduct dbp:Acetic_acid , dbp:Aspirin ;
 	time:starts :Aspirin_Synthesis ;
-	rdfs:comment "Put on your chemical Splash-proof safety goggles!" .
+	rdfs:label "Put on your chemical Splash-proof safety goggles!" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_2
 
 :Aspirin_Synthesis_Step_2 a owl:NamedIndividual , time:Interval ;
 	time:after :Aspirin_Synthesis_Step_1 ;
-	rdfs:comment "Adding The Starting Materials" .
+	rdfs:label "Adding The Starting Materials" .
 # 
 # http://repchem.org/Aspirin_Synthesis_Step_2.1
 
