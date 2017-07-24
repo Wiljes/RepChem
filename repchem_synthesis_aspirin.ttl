@@ -23,15 +23,30 @@
 # 
 # http://repchem.org/hasEduct
 
-:hasEduct a owl:ObjectProperty .
+:hasEduct a owl:ObjectProperty ;
+	owl:inverseOf :isEductOf .
 # 
 # http://repchem.org/hasProduct
 
-:hasProduct a owl:ObjectProperty .
+:hasProduct a owl:ObjectProperty ;
+	owl:inverseOf :isProductOf .
 # 
 # http://repchem.org/hasStep
 
-:hasStep a owl:ObjectProperty .
+:hasStep a owl:ObjectProperty ;
+	owl:inverseOf :isStepOf .
+# 
+# http://repchem.org/isEductOf
+
+:isEductOf a owl:ObjectProperty .
+# 
+# http://repchem.org/isProductOf
+
+:isProductOf a owl:ObjectProperty .
+# 
+# http://repchem.org/isStepOf
+
+:isStepOf a owl:ObjectProperty .
 # 
 # http://schema.org/image
 
